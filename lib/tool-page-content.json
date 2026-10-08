@@ -1,0 +1,734 @@
+{
+  "pdf-compressor": {
+    "title": "Keep the useful document, not just fewer bytes",
+    "paragraphs": [
+      "A text-based report and a scan need different compression decisions. Structural optimization is the first attempt; suitable image-only scans can then be recompressed. Automatic processing protects selectable text and interactive features from an unrequested page-image conversion. An explicit image-based copy is a separate advanced choice with a feature-loss warning.",
+      "Compare the actual output size and inspect small text and diagrams. If no meaningfully smaller result is possible, the tool reports that the PDF is already well optimized. That is a useful outcome, not a reason to offer a larger file under a compressed filename."
+    ],
+    "example": "If a portal needs only pages 2–4, extract that selection before deciding whether the remaining document needs compression.",
+    "related": [
+      "pdf-splitter",
+      "pdf-merger",
+      "pdf-to-word"
+    ],
+    "guides": [
+      "reduce-pdf-file-size-without-losing-quality"
+    ]
+  },
+  "pdf-merger": {
+    "title": "Plan the order before combining",
+    "paragraphs": [
+      "Treat file order as the order of complete documents. Check the individual page counts and identify draft copies before merging. A cover, main report and appendix should appear in that deliberate sequence; a correct total page count alone does not prove that the correct files were chosen.",
+      "Review the document junctions after download. Page copying preserves visible content, but interactive forms, bookmarks and digital signatures are not guaranteed to carry over. Keep originals and follow the recipient’s requirements when those features matter."
+    ],
+    "example": "An 8-page report plus a 3-page appendix should contain 11 pages when both are included in full. Check their junction as well as that count.",
+    "related": [
+      "reorder-pdf-pages",
+      "pdf-splitter",
+      "pdf-compressor"
+    ],
+    "guides": [
+      "combine-pdf-files-in-the-right-order"
+    ]
+  },
+  "pdf-splitter": {
+    "title": "Extract a selection, not a set of separate files",
+    "paragraphs": [
+      "This tool creates one new PDF from the pages and ranges you select. It is useful for an application that asks for an excerpt, an appendix that needs sharing separately or a document with unnecessary pages. The source remains unchanged, so save the extracted copy under a clear name.",
+      "Selection order matters. Review the preview or resulting PDF to ensure the requested pages appear in the intended sequence. Duplicate selections and invalid ranges are rejected; extraction does not promise to preserve every document-level form, bookmark or signature feature."
+    ],
+    "example": "A selection such as 2–4, 7 produces one PDF containing those four source pages in that order.",
+    "related": [
+      "delete-pdf-pages",
+      "reorder-pdf-pages",
+      "pdf-merger"
+    ],
+    "guides": [
+      "combine-pdf-files-in-the-right-order",
+      "reduce-pdf-file-size-without-losing-quality"
+    ]
+  },
+  "pdf-to-jpg": {
+    "title": "Page pictures serve a different purpose from editable text",
+    "paragraphs": [
+      "A rendered JPG or PNG captures the visible page, including text and vector drawings, as pixels. Use it for an image attachment, a slide or a visual review. It does not create an editable transcription. If you need Word text, native conversion or OCR is a different workflow.",
+      "Choose resolution according to the image’s destination and inspect small labels. Higher resolution uses more memory and usually more bytes. JPEG uses a white page background; PNG is useful when avoiding JPEG artifacts matters. Download selected page images individually or together as a ZIP."
+    ],
+    "example": "Export a chart page, then inspect its smallest labels before resizing it for a presentation.",
+    "related": [
+      "image-resizer",
+      "image-compressor",
+      "jpg-to-pdf"
+    ],
+    "guides": [
+      "image-dimensions-vs-file-size",
+      "jpeg-png-webp-which-format"
+    ]
+  },
+  "jpg-to-pdf": {
+    "title": "Protect image edges when creating pages",
+    "paragraphs": [
+      "Choose a standard paper size when the recipient requires one, or Auto for an image-based layout. Fit preserves the complete image with possible whitespace. Fill occupies the frame by cropping when proportions differ. For receipts and certificates, missing edges can remove important information.",
+      "Put the images in reading order and inspect orientation, scale and page count after conversion. The PDF contains images, not automatically recognized text. Creating a PDF neither guarantees a smaller file nor adds a searchable text layer. Recognition belongs to a separate OCR task."
+    ],
+    "example": "Use Fit for a photographed form, then check all four corners and the smallest print in the exported PDF.",
+    "related": [
+      "image-cropper",
+      "rotate-pdf",
+      "pdf-merger"
+    ],
+    "guides": [
+      "jpg-png-to-pdf-page-size-margins",
+      "combine-pdf-files-in-the-right-order"
+    ]
+  },
+  "pdf-to-word": {
+    "title": "Native text becomes ordinary editable Word content",
+    "paragraphs": [
+      "Use this route for a PDF with extractable text. Body text becomes normal Word paragraphs, headings and runs rather than page screenshots or positioned text boxes. Recoverable table geometry creates real editable rows and cells. Localized images and complex diagram regions remain graphics, with surrounding text editable.",
+      "Page boundaries are protected as closely as practical, but PDF text placement is not the same as Word document structure. Fonts and unusual layouts can differ. Review paragraphs, wrapped table cells, page breaks and diagrams in your word processor. Image-only files receive separate OCR guidance; recognition is never silently invoked here."
+    ],
+    "example": "Select a complete paragraph, edit a heading and inspect a table row against the source before relying on the converted document.",
+    "related": [
+      "word-to-pdf",
+      "pdf-ocr"
+    ],
+    "guides": [
+      "make-pdf-editable-native-text-or-ocr",
+      "scanned-vs-searchable-pdf"
+    ]
+  },
+  "pdf-ocr": {
+    "title": "Recognition is a transcription to review",
+    "paragraphs": [
+      "Use OCR when the PDF’s letters are part of scanned page images rather than usable native text. This tool recognizes printed English locally, page by page, and reconstructs a readable result. Names, dates, decimal values and identifiers deserve particular attention because a plausible-looking transcription can still be wrong.",
+      "Copy the reviewed text or export TXT or editable DOCX. These outputs are not a searchable-PDF copy of the original scan. Browser memory sets practical limits, especially on phones. If your PDF already has usable text, choose native PDF-to-Word conversion rather than asking OCR to guess it again."
+    ],
+    "example": "Compare an invoice amount and its row label with the source scan before copying the extracted values.",
+    "related": [
+      "pdf-to-word",
+      "image-to-text",
+      "text-cleaner"
+    ],
+    "guides": [
+      "scanned-vs-searchable-pdf",
+      "make-pdf-editable-native-text-or-ocr"
+    ]
+  },
+  "word-to-pdf": {
+    "title": "Review the exported document, not just the input",
+    "paragraphs": [
+      "DOCX contains paragraphs, runs, tables and document settings. This converter parses supported structure without OCR and respects explicit and saved page breaks where available. It is useful for sharing a PDF copy while keeping the editable DOCX as the authoring source. It does not process legacy DOC files.",
+      "Complex layouts, unsupported fonts, headers or drawing behavior can differ from Microsoft Word. Check the first page, intentional blank areas, tables and the final page after export. For requirements that depend on exact Word rendering, use the originating word processor’s export and review the result there."
+    ],
+    "example": "Keep the DOCX, create a separate PDF delivery copy and compare page boundaries before sending it.",
+    "related": [
+      "pdf-merger",
+      "pdf-compressor",
+      "pdf-to-word"
+    ],
+    "guides": [
+      "make-pdf-editable-native-text-or-ocr",
+      "combine-pdf-files-in-the-right-order"
+    ]
+  },
+  "rotate-pdf": {
+    "title": "Rotation changes orientation without flattening the page",
+    "paragraphs": [
+      "Use page rotation for a sideways scan or a landscape page that opens incorrectly. Choose the affected pages and the rotation angle. The page content is copied without being rasterized as part of this operation, so it is different from exporting and recreating pages as pictures.",
+      "Review mixed portrait and landscape documents after saving. Rotating a page does not deskew text photographed at a slight angle or rearrange the document’s order. Keep the original until the selected pages and their orientation have been checked."
+    ],
+    "example": "Rotate one sideways appendix by 90 degrees while leaving the rest of the report unchanged.",
+    "related": [
+      "reorder-pdf-pages",
+      "pdf-to-jpg",
+      "pdf-merger"
+    ],
+    "guides": [
+      "combine-pdf-files-in-the-right-order"
+    ]
+  },
+  "delete-pdf-pages": {
+    "title": "Remove pages while retaining the remaining sequence",
+    "paragraphs": [
+      "Delete is useful for unwanted covers, accidental duplicates or an appendix that should not be shared. Select the pages to remove and check the retained document before downloading. It creates a separate copy and keeps the surviving pages in their source order.",
+      "Deleting a page is not redaction of sensitive content within the pages that remain. Inspect the actual result and any document-level features you depend on. If you need only a small positive selection rather than removing many pages, extraction may be easier to check."
+    ],
+    "example": "Remove an accidental duplicate page, then compare the new count and the pages on either side of the deletion.",
+    "related": [
+      "pdf-splitter",
+      "reorder-pdf-pages",
+      "pdf-compressor"
+    ],
+    "guides": [
+      "combine-pdf-files-in-the-right-order"
+    ]
+  },
+  "reorder-pdf-pages": {
+    "title": "Specify a complete sequence",
+    "paragraphs": [
+      "This tool changes the order of pages inside one PDF. Each source page must appear exactly once, so an incomplete list or repeated page is rejected. Use ranges where convenient and inspect the finished sequence rather than assuming a valid list is the intended list.",
+      "Reordering does not merge a second document or remove unwanted pages. Those tasks have separate tools. Printed page numbers embedded in the page content also remain as they were; the tool changes sequence, not the words or numbering drawn on the pages."
+    ],
+    "example": "For a three-page file received backward, use 3, 2, 1 and inspect the cover and final page after saving.",
+    "related": [
+      "pdf-merger",
+      "delete-pdf-pages",
+      "rotate-pdf"
+    ],
+    "guides": [
+      "combine-pdf-files-in-the-right-order"
+    ]
+  },
+  "image-compressor": {
+    "title": "Solve the actual byte limit",
+    "paragraphs": [
+      "Compression and resizing are related but different choices. If a destination sets a pixel limit, change dimensions deliberately. If it sets a byte limit, compare format and quality at suitable dimensions. A smaller result is useful only if the image still contains the detail required by its recipient.",
+      "Inspect photographs, tiny text and transparent boundaries separately. A quality setting is an encoder control, not a percentage of retained visual quality. Conversion or recompression can increase an already optimized image’s size; keep the suitable smaller original when that happens."
+    ],
+    "example": "For a 1 MB JPG upload limit, resize only if needed, then lower quality gradually while checking the exported result.",
+    "related": [
+      "image-resizer",
+      "image-converter",
+      "image-cropper"
+    ],
+    "guides": [
+      "image-dimensions-vs-file-size",
+      "jpeg-png-webp-which-format"
+    ]
+  },
+  "image-resizer": {
+    "title": "Pixels and proportions come first",
+    "paragraphs": [
+      "Resize when an image needs a particular width or height. Use the aspect-ratio lock to avoid accidental distortion. Fit preserves proportions, Fill crops to occupy the target frame and Stretch can distort content. A square portrait requirement is often a crop decision, not a reason to squeeze a landscape photo.",
+      "Upscaling creates more pixels but cannot recover missing source detail. Review the intended display size and compare actual bytes separately. A correct pixel size may still exceed an upload limit, so format or compression may be a second step."
+    ],
+    "example": "A 1600 × 900 image resized proportionally to width 800 becomes 800 × 450.",
+    "related": [
+      "image-cropper",
+      "image-compressor",
+      "image-converter"
+    ],
+    "guides": [
+      "image-dimensions-vs-file-size"
+    ]
+  },
+  "image-converter": {
+    "title": "Choose a format the destination accepts",
+    "paragraphs": [
+      "Use a real conversion rather than renaming a file extension. A photograph, a transparent logo and a screenshot of small text have different encoding needs. JPEG removes transparency; PNG retains it; WebP can be useful when accepted by the destination. Browser support determines whether a particular codec can be decoded or exported.",
+      "Compare dimensions, transparency and actual size after conversion. A new format cannot restore detail previously lost in a JPEG, and the still-image workflow does not preserve animation or metadata. Keep your original if those properties matter."
+    ],
+    "example": "For a transparent logo, preview a PNG or WebP copy against the intended background before choosing JPEG.",
+    "related": [
+      "png-to-jpg",
+      "jpg-to-png",
+      "webp-converter"
+    ],
+    "guides": [
+      "jpeg-png-webp-which-format",
+      "image-dimensions-vs-file-size"
+    ]
+  },
+  "image-cropper": {
+    "title": "Crop the subject instead of stretching the source",
+    "paragraphs": [
+      "A crop removes pixels outside a selected region. It is useful for a profile-photo shape, a tighter screenshot or a photographed page with unwanted background. Exact coordinates and presets help when a destination requires a particular frame. Keep meaningful edges, labels and signatures that belong to the source.",
+      "Cropping does not add detail or repair blur. Review the selected area before export and check dimensions if the destination also sets a pixel requirement. Resizing the cropped result is a separate decision; preserve its proportions unless distortion is intentional."
+    ],
+    "example": "Crop a square portrait around the subject, then resize that square to the requested pixel dimensions.",
+    "related": [
+      "image-resizer",
+      "image-compressor",
+      "jpg-to-pdf"
+    ],
+    "guides": [
+      "image-dimensions-vs-file-size",
+      "jpg-png-to-pdf-page-size-margins"
+    ]
+  },
+  "jpg-to-png": {
+    "title": "A lossless copy cannot undo earlier JPEG losses",
+    "paragraphs": [
+      "Converting a JPG to PNG stores the decoded picture in a lossless format. It does not recover texture or sharp lettering that previous JPEG encoding discarded. Use this task when a destination requests PNG or when you need a PNG-compatible editing step, rather than as an image-restoration method.",
+      "Dimensions remain unchanged, and the file may become larger. A JPG source has no alpha transparency to recover simply by changing format. Inspect the result and keep the original; a successful format conversion is not the same as a compression saving."
+    ],
+    "example": "Convert a JPG screenshot to PNG when a workflow requires PNG, but do not expect previously blurred text to become sharp.",
+    "related": [
+      "image-converter",
+      "png-to-jpg",
+      "image-resizer"
+    ],
+    "guides": [
+      "jpeg-png-webp-which-format"
+    ]
+  },
+  "png-to-jpg": {
+    "title": "Decide whether transparency is needed",
+    "paragraphs": [
+      "PNG-to-JPG conversion is useful for a photograph or accepted JPG-only upload. JPEG does not support alpha transparency, so this tool places transparent areas on white. Preview that background change before using the result for a logo, icon or product image.",
+      "Adjust quality and compare actual file sizes. Small labels and flat-color edges may show JPEG artifacts even when photographs look acceptable. The PNG source remains unchanged; use it again if a different background or output quality is required."
+    ],
+    "example": "A transparent black logo can look different on white. Check its edges rather than judging the file only by the smaller byte count.",
+    "related": [
+      "image-converter",
+      "jpg-to-png",
+      "image-compressor"
+    ],
+    "guides": [
+      "jpeg-png-webp-which-format"
+    ]
+  },
+  "webp-converter": {
+    "title": "Use WebP where the receiving workflow supports it",
+    "paragraphs": [
+      "WebP can represent still images with transparency and adjustable quality. It can be useful for websites or applications that accept the format. A portal requesting JPG may reject WebP, even when the browser displays it correctly. Confirm the accepted type before preparing the delivery copy.",
+      "Compare the real output size and inspect difficult edges. Savings depend on content and settings; WebP is not guaranteed to beat every source. Animated input produces a still frame in this workflow, and metadata is not preserved. Keep an original for animation or metadata-dependent uses."
+    ],
+    "example": "Try a WebP delivery copy of a photograph, then compare it with a JPG at the same dimensions.",
+    "related": [
+      "image-converter",
+      "image-compressor",
+      "image-resizer"
+    ],
+    "guides": [
+      "jpeg-png-webp-which-format",
+      "image-dimensions-vs-file-size"
+    ]
+  },
+  "image-to-text": {
+    "title": "A readable transcription still needs checking",
+    "paragraphs": [
+      "Use a clear JPG or PNG containing printed English. Recognition extracts words from pixels and reconstructs lines and paragraphs, but faint print, skew, blur and unusual fonts can introduce mistakes. Compare names, dates and numeric values with the source before using the text elsewhere.",
+      "Copy the reviewed output or export TXT or DOCX. It is a transcription, not a recreated screenshot or a guarantee of exact original layout. For a multi-page scanned PDF, use the PDF OCR workflow instead of exporting every page as a separate image first."
+    ],
+    "example": "Check an amount such as 100.00 against the image so a mistaken letter O does not become part of your record.",
+    "related": [
+      "pdf-ocr",
+      "text-cleaner",
+      "word-counter"
+    ],
+    "guides": [
+      "scanned-vs-searchable-pdf",
+      "word-character-count-unicode"
+    ]
+  },
+  "gpa-calculator": {
+    "title": "Use your institution’s grade-point scale",
+    "paragraphs": [
+      "The weighted sum includes each course’s credits multiplied by its grade points. More credits mean more influence. Enter the grade points assigned by your institution, not raw marks or a universal letter-grade conversion. Only include courses and attempts that its policy counts.",
+      "Check the total credits and keep available precision until the final rounding step. The result is a personal calculation rather than an official transcript. Pass/fail courses, repeat attempts and withdrawals can have institution-specific inclusion rules."
+    ],
+    "example": "Three credits at 4.0 and one credit at 2.0 give (12 + 2) ÷ 4 = 3.5, not 3.0.",
+    "related": [
+      "cgpa-calculator",
+      "marks-calculator",
+      "percentage-calculator"
+    ],
+    "guides": [
+      "gpa-vs-cgpa-credit-weighted"
+    ]
+  },
+  "cgpa-calculator": {
+    "title": "Weight semesters and avoid duplicate study",
+    "paragraphs": [
+      "A semester with more included credits contributes more to the cumulative result. Multiply each semester GPA by its credits, add the contributions and divide by total credits. Averaging the GPA numbers equally is valid only when their weights are equal.",
+      "Do not enter a previous cumulative result alongside all the same semesters it already summarizes. That double-counts study. Rounded semester GPAs can also differ slightly from a registrar’s calculation using unrounded course-level points. Use the institution’s repeat-course and rounding policies."
+    ],
+    "example": "A 3.8 GPA over 12 credits and 3.0 over 18 credits combine to 3.32.",
+    "related": [
+      "gpa-calculator",
+      "marks-calculator"
+    ],
+    "guides": [
+      "gpa-vs-cgpa-credit-weighted"
+    ]
+  },
+  "percentage-calculator": {
+    "title": "Choose the base before calculating",
+    "paragraphs": [
+      "Percent of a number and one value as a percentage of another are inverse tasks. Select the mode that matches your question and check the displayed formula. A result without its base can be misleading, especially when comparing rates or successive discounts.",
+      "A ratio with a zero denominator is undefined. Percentage points are a direct difference between two percentages, while a relative percentage change uses the old value as its base. This calculator’s two modes should not be mistaken for a dedicated relative-change mode."
+    ],
+    "example": "15% of 200 is 30. Conversely, 30 is 15% of 200.",
+    "related": [
+      "marks-calculator",
+      "discount-calculator",
+      "profit-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "marks-calculator": {
+    "title": "Separate a marks ratio from a target plan",
+    "paragraphs": [
+      "Marks percentage is obtained marks divided by possible marks, multiplied by 100. A target-score calculation also needs the remaining assessment total. Use compatible totals and your actual weighting rules; unequal component weights cannot be inferred from raw marks alone.",
+      "Check whether the required future score is achievable within the remaining marks. An arithmetic target does not guarantee a grade or replace institutional rounding and assessment policies. GPA uses grade points and credits, which is a separate calculation."
+    ],
+    "example": "72 marks out of 90 gives 80%. Check any weighted final-grade rule before treating that ratio as your course result.",
+    "related": [
+      "percentage-calculator",
+      "gpa-calculator",
+      "university-merit-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points",
+      "gpa-vs-cgpa-credit-weighted"
+    ]
+  },
+  "attendance-calculator": {
+    "title": "Future classes change both counts",
+    "paragraphs": [
+      "Attending a future class increases attended and conducted counts together. Missing a future class increases only the conducted count. Those changing denominators determine classes required for a target and how many future absences may be possible.",
+      "Use the same session-count convention in both totals and compare the estimate with the remaining timetable. Approved leave, cancellations and labs may have institution-specific rules. A mathematical percentage is not a certification of eligibility."
+    ],
+    "example": "18 attended out of 25 gives 72%; attending the next three yields 21 out of 28, exactly 75%.",
+    "related": [
+      "percentage-calculator",
+      "marks-calculator"
+    ],
+    "guides": [
+      "attendance-percentage-target-classes"
+    ]
+  },
+  "university-merit-calculator": {
+    "title": "Enter the official weights yourself",
+    "paragraphs": [
+      "An admission aggregate combines component percentages under specified weights. Copy the current formula from the relevant university or program. The calculator does not fetch admission policies, merit lists or current closing aggregates, and preset options are not an official institutional rule.",
+      "Verify marks totals and make sure the weights match the formula you intend to use. An estimated aggregate is not an admission offer. Do not substitute CGPA, raw marks and percentage values without the conversion specified by the institution."
+    ],
+    "example": "If a formula weights a component at 40%, its 80% score contributes 32 percentage points to the aggregate.",
+    "related": [
+      "percentage-calculator",
+      "marks-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points",
+      "gpa-vs-cgpa-credit-weighted"
+    ]
+  },
+  "fuel-cost-calculator": {
+    "title": "Use compatible units and a real price",
+    "paragraphs": [
+      "Distance, efficiency and price units must describe the same calculation. US MPG and Imperial MPG use different gallons. Country choices set sensible unit defaults, but your entered price determines the estimate; no live fuel market price or exchange rate is fetched.",
+      "Include both directions for a return journey and decide whether an equal traveller split is appropriate. Traffic, weather and vehicle condition change actual consumption. Tolls, parking and other travel costs are not part of the calculated fuel total."
+    ],
+    "example": "A 120 km journey at 12 km/L uses 10 litres. Multiply by your own price per litre for the fuel estimate.",
+    "related": [
+      "percentage-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "age-calculator": {
+    "title": "Calendar age is not a fixed days-per-year division",
+    "paragraphs": [
+      "Calendar age uses the selected birth date and as-of date to find complete years, months and days. It is different from dividing elapsed days by 365 because month lengths and leap years vary. Use the intended as-of date rather than assuming every question asks for age today.",
+      "The calculation treats inputs as calendar dates without time-zone offsets. It does not include a birth time or certify legal eligibility. If an application specifies a cutoff date, enter that date and use the authority’s actual rule."
+    ],
+    "example": "For an application deadline, calculate age as of the stated deadline rather than the date you complete the form.",
+    "related": [],
+    "guides": [
+      "browser-tools-and-privacy"
+    ]
+  },
+  "loan-emi-calculator": {
+    "title": "A fixed monthly-payment estimate has assumptions",
+    "paragraphs": [
+      "The model uses an annual rate divided by 12 and a fixed monthly payment over the chosen term. It estimates principal and interest under that convention. At zero interest, principal is divided across the monthly payments. Fees, insurance and taxes are excluded.",
+      "Compare lenders using their actual repayment schedules and included costs, not only this estimate. Changing a term can lower a monthly payment while increasing total interest. An input rate is not automatically an effective annual rate or an official lender quote."
+    ],
+    "example": "For a zero-interest 12,000 loan over 12 months, the principal-only monthly payment is 1,000 before any fees.",
+    "related": [
+      "savings-calculator",
+      "salary-calculator",
+      "percentage-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "savings-calculator": {
+    "title": "Separate deposits from estimated growth",
+    "paragraphs": [
+      "This projection uses a constant return with monthly compounding and deposits at the end of each month. It shows contributions separately from growth. It is useful for comparing input scenarios, but an assumed return is not a guaranteed investment result.",
+      "Timing and compounding conventions affect results. Fees, taxes, inflation and changing returns can alter real outcomes. Keep the estimate labeled with its rate, term and deposit schedule; do not treat the projection as personalized investment guidance."
+    ],
+    "example": "With zero return, an initial 1,000 plus twelve monthly deposits of 100 totals 2,200.",
+    "related": [
+      "loan-emi-calculator",
+      "percentage-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "profit-calculator": {
+    "title": "Margin and markup have different bases",
+    "paragraphs": [
+      "Profit or loss is revenue minus cost. Margin divides that difference by revenue; markup divides it by cost. A positive profit can therefore have two different percentage labels without either being wrong. Include the costs relevant to your estimate.",
+      "A zero denominator makes the associated percentage undefined. The arithmetic does not certify accounting profit or tax liability. Discounts, platform fees and other expenses may need to be included in the figures you choose."
+    ],
+    "example": "Revenue 150 and cost 100 give profit 50, margin about 33.33% and markup 50%.",
+    "related": [
+      "discount-calculator",
+      "percentage-calculator",
+      "invoice-generator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "discount-calculator": {
+    "title": "The original price is the percentage base",
+    "paragraphs": [
+      "A percentage discount reduces the entered price by that percentage of the same price. The result shows both the saving and the remaining amount. Check whether a displayed offer price already includes its discount before applying the reduction again.",
+      "Taxes and additional fees are not added by this calculator. Successive discounts normally use the reduced price as the next base, so their percentages do not simply add. Read the offer’s rules if it specifies a different calculation."
+    ],
+    "example": "A 20% discount on 250 saves 50 and leaves 200 before other charges.",
+    "related": [
+      "percentage-calculator",
+      "profit-calculator",
+      "invoice-generator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "salary-calculator": {
+    "title": "Compare gross pay with your working schedule",
+    "paragraphs": [
+      "Hourly and other period conversions depend on the hours and weeks you enter. The calculation uses its stated schedule conventions, including five working days per week and twelve months per year. Choose inputs that describe the gross pay comparison you actually want.",
+      "This is not a take-home salary or tax calculation. Taxes, deductions, overtime rules and benefits can make real pay different. Comparing two offers using gross equivalents does not compare their full compensation or legal employment terms."
+    ],
+    "example": "An hourly rate of 10 over 40 hours per week gives 400 weekly gross pay; annual equivalents also depend on working weeks.",
+    "related": [
+      "loan-emi-calculator",
+      "percentage-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points"
+    ]
+  },
+  "word-counter": {
+    "title": "Know the counting rule before using a limit",
+    "paragraphs": [
+      "Words are non-empty whitespace-separated tokens. A hyphenated expression without spaces can count as one token, while another editor may split it differently. Reading time uses a 200-words-per-minute assumption and is a planning estimate, not a measurement of your reader.",
+      "Characters use Unicode code points. Some emoji and combined symbols contain more than one code point. For a platform or assignment with a prescribed counting rule, compare that rule rather than assuming every tool must return the same total."
+    ],
+    "example": "hello-world is one whitespace-separated token; hello world is two.",
+    "related": [
+      "character-counter",
+      "text-cleaner",
+      "case-converter"
+    ],
+    "guides": [
+      "word-character-count-unicode"
+    ]
+  },
+  "character-counter": {
+    "title": "A visible symbol can contain several code points",
+    "paragraphs": [
+      "The total including whitespace and the total excluding whitespace answer different questions. Unicode code-point counting is also different from byte length or user-perceived symbols. Complex emoji can contribute several code points even when they appear as one graphic.",
+      "Check which definition a receiving platform uses for its limit. Copy the exact text, including line breaks, when comparing counters. A different count may reflect a different rule rather than a broken editor."
+    ],
+    "example": "The visible emoji 👩‍💻 contains three code points: woman, joiner and laptop.",
+    "related": [
+      "word-counter",
+      "text-cleaner"
+    ],
+    "guides": [
+      "word-character-count-unicode"
+    ]
+  },
+  "case-converter": {
+    "title": "Review mechanical casing before replacing text",
+    "paragraphs": [
+      "Uppercase and lowercase are useful for consistent labels; title and sentence case can help tidy a draft. These are mechanical transformations, not an understanding of names, acronyms or grammatical context. Keep the original input so you can review changes.",
+      "A name, brand or abbreviation may need its own capitalization after conversion. Unicode casing can also change some strings in ways that do not match a language-specific editorial rule. Check the result before pasting it over an important document."
+    ],
+    "example": "Review API, JSON and personal names after a sentence-case conversion.",
+    "related": [
+      "text-cleaner",
+      "word-counter",
+      "character-counter"
+    ],
+    "guides": [
+      "word-character-count-unicode"
+    ]
+  },
+  "remove-duplicate-lines": {
+    "title": "Choose what makes two lines the same",
+    "paragraphs": [
+      "The first occurrence is retained while later matches are removed under the selected case and whitespace rules. This is useful for a copied list, repeated entries or a simple text export. It is not a substitute for deduplicating structured records with different fields.",
+      "Repeated lines can be intentional. Review names, repeated form labels and meaningful blank lines before replacing the original. A case-insensitive comparison can combine entries that a case-sensitive system considers distinct."
+    ],
+    "example": "Decide whether Item and item should be separate before applying a case-insensitive cleanup.",
+    "related": [
+      "text-cleaner",
+      "case-converter",
+      "word-counter"
+    ],
+    "guides": [
+      "word-character-count-unicode"
+    ]
+  },
+  "text-cleaner": {
+    "title": "Keep meaningful paragraph structure",
+    "paragraphs": [
+      "Pasted text can include repeated spaces, tabs or unwanted line breaks. Select only the cleanup operations that match the task. A paragraph break can convey structure, so removing every break is not automatically an improvement. The original and result stay separate for comparison.",
+      "Whitespace cleanup does not correct OCR recognition or grammar. Review names and numbers against their source before using cleaned recognized text. Keep a copy if the spacing encodes relationships, as it can in an aligned list or form."
+    ],
+    "example": "Tidy extra spaces in a paragraph without flattening the paragraph breaks that separate ideas.",
+    "related": [
+      "remove-duplicate-lines",
+      "word-counter",
+      "case-converter"
+    ],
+    "guides": [
+      "word-character-count-unicode"
+    ]
+  },
+  "json-formatter": {
+    "title": "Syntax validation is only the first check",
+    "paragraphs": [
+      "Formatting makes nested data readable; minifying removes unnecessary JSON whitespace. Neither operation validates a custom API schema or confirms that values have the right business meaning. Comments, unquoted names and trailing commas are invalid JSON rather than formatting preferences.",
+      "JavaScript parsing can lose precision for very large numeric identifiers and keeps the later occurrence of duplicate object names. Use strings or a suitable specialized parser when exact preservation matters. Keep the original payload and compare before replacing it with serialized output."
+    ],
+    "example": "Use {\"id\":\"9007199254740993\",\"active\":true} when the data contract permits a string identifier requiring exact digits.",
+    "related": [
+      "base64-encoder-decoder",
+      "url-encoder-decoder",
+      "uuid-generator"
+    ],
+    "guides": [
+      "fix-invalid-json"
+    ]
+  },
+  "base64-encoder-decoder": {
+    "title": "Encoding is reversible representation",
+    "paragraphs": [
+      "This tool encodes and decodes UTF-8 text, including non-Latin characters and emoji. Base64 is a way to represent bytes as text; it is not encryption or compression. The text workflow is not a general binary-file conversion service.",
+      "Decode only the wrapper that the source actually uses. A decoded token payload is not evidence that its signature is valid. Keep secrets out of copied examples and shared URLs even though the transformation runs locally."
+    ],
+    "example": "The text hello encodes as aGVsbG8= under ordinary UTF-8 Base64.",
+    "related": [
+      "url-encoder-decoder",
+      "json-formatter"
+    ],
+    "guides": [
+      "base64-vs-url-encoding",
+      "fix-invalid-json"
+    ]
+  },
+  "url-encoder-decoder": {
+    "title": "Escape one component at the right boundary",
+    "paragraphs": [
+      "Component encoding prevents characters in a value from being mistaken for URL separators. It is appropriate for a query value or single path component, not for escaping an entire assembled URL. The decoder rejects malformed percent escapes instead of guessing missing data.",
+      "This uses encodeURIComponent and decodeURIComponent conventions. A literal plus sign is not automatically a space, unlike some form-encoding rules. Encoding an already escaped value can create a second layer; keep raw and encoded versions separate."
+    ],
+    "example": "A&B becomes A%26B. Encoding that output again produces A%2526B.",
+    "related": [
+      "base64-encoder-decoder",
+      "json-formatter",
+      "qr-code-generator"
+    ],
+    "guides": [
+      "base64-vs-url-encoding"
+    ]
+  },
+  "uuid-generator": {
+    "title": "Random identifiers are not permissions",
+    "paragraphs": [
+      "The tool creates version 4 UUIDs with browser cryptographic randomness. They are useful for sample records, local identifiers and systems that accept UUID v4. They do not verify uniqueness against your database, establish ownership or authorize a user.",
+      "Copy the required quantity and validate the format expected by the receiving system. A UUID is not a replacement for an authentication token or an access-control check. Generated values stay in page memory rather than being stored in Tool Fera history."
+    ],
+    "example": "Use a generated UUID for a sample JSON record when the application expects a UUID v4 identifier.",
+    "related": [
+      "json-formatter",
+      "random-number-generator",
+      "password-generator"
+    ],
+    "guides": [
+      "fix-invalid-json",
+      "browser-tools-and-privacy"
+    ]
+  },
+  "color-converter": {
+    "title": "Equivalent formats can round differently",
+    "paragraphs": [
+      "HEX, RGB and HSL describe color in different notations. The preview helps you check the intended value while the copied forms suit different design or code workflows. Optional alpha describes transparency, whose visible result also depends on the background.",
+      "Eight-bit channel and alpha values can introduce rounding when moving between notations. A color conversion does not guarantee contrast accessibility or a particular print appearance. Check the copied syntax and its rendered result in the destination."
+    ],
+    "example": "Cobalt-looking screen colors can have a different apparent contrast over white and navy backgrounds.",
+    "related": [],
+    "guides": [
+      "browser-tools-and-privacy"
+    ]
+  },
+  "qr-code-generator": {
+    "title": "Test the code and the destination",
+    "paragraphs": [
+      "The generator creates a static code containing your link or text. PNG and SVG downloads serve different placement needs. Keep the quiet zone, square proportions and contrast intact. A code that works enlarged on screen can fail when printed too small or placed on a busy background.",
+      "No tracking redirect or subscription expiry is added. The destination website can still change or become unavailable. Test the actual downloaded and final printed version rather than trusting the preview alone. The tool does not promise custom-logo or decorative-code scan reliability."
+    ],
+    "example": "Scan a downloaded code, confirm its exact URL and print one at the intended size before distributing it.",
+    "related": [
+      "url-encoder-decoder",
+      "image-resizer"
+    ],
+    "guides": [
+      "qr-code-not-scanning-print-checklist"
+    ]
+  },
+  "password-generator": {
+    "title": "Generate a unique password and store it safely",
+    "paragraphs": [
+      "Choose a length and character groups accepted by the destination. The generator uses browser cryptographic randomness with unbiased selection rather than Math.random. A generated value still needs safe handling: create a different password for each account and save it in a password manager.",
+      "Tool Fera does not upload or store generated passwords. Clipboard contents and shared device sessions are outside that promise. Do not put generated passwords into a public link or treat Base64 as a secure way to share them."
+    ],
+    "example": "Generate a fresh value for a new account rather than adapting a password already used elsewhere.",
+    "related": [
+      "random-number-generator",
+      "uuid-generator"
+    ],
+    "guides": [
+      "browser-tools-and-privacy",
+      "base64-vs-url-encoding"
+    ]
+  },
+  "random-number-generator": {
+    "title": "Define the range and repetition rule",
+    "paragraphs": [
+      "Generate whole numbers between your selected bounds using browser cryptographic randomness. Unique mode means no repeated value within the generated set; it is possible only when the range contains enough distinct integers for the requested count.",
+      "The result does not prove fairness of a public draw or satisfy a gambling, audit or regulatory requirement. Keep the bounds and repetition rule with your copied output if someone needs to understand it. Random-looking values and a verified drawing process are different things."
+    ],
+    "example": "A range from 1 to 3 can supply three unique numbers, but not four.",
+    "related": [
+      "uuid-generator",
+      "password-generator"
+    ],
+    "guides": [
+      "browser-tools-and-privacy"
+    ]
+  },
+  "invoice-generator": {
+    "title": "Review the document before issuing it",
+    "paragraphs": [
+      "Enter your own business, recipient and line-item details. Totals use the specified two-decimal calculation, with discount applied before tax. Tax is an entered rate, not a retrieved jurisdictional rule. The downloaded PDF is a simple invoice document rather than an accounting record stored by Tool Fera.",
+      "Check line descriptions, amounts, due dates and your applicable invoicing requirements. Required tax fields, numbering rules and legal wording vary; the generator does not certify compliance. Keep your own issued copy and records outside the tool."
+    ],
+    "example": "Compare quantity × unit price on a line, then review the subtotal, discount and tax sequence before downloading.",
+    "related": [
+      "discount-calculator",
+      "profit-calculator",
+      "percentage-calculator"
+    ],
+    "guides": [
+      "percentage-vs-percentage-points",
+      "browser-tools-and-privacy"
+    ]
+  }
+}

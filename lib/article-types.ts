@@ -1,0 +1,2 @@
+export type ArticleSection={id:string;title:string;paragraphs:string[];list?:string[];table?:{headers:string[];rows:string[][]};code?:string};
+export type Article={slug:string;title:string;seoTitle:string;description:string;primary:string;secondary:string[];longTail:string[];intent:string;topic:string;category:string;relatedTools:string[];relatedArticles:string[];published:string;intro:string;sections:ArticleSection[];conclusion:string;sources:{title:string;url:string}[]};

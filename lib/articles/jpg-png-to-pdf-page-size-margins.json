@@ -1,0 +1,119 @@
+{
+  "slug": "jpg-png-to-pdf-page-size-margins",
+  "title": "JPG and PNG to PDF: page size, fit and margins",
+  "seoTitle": "JPG & PNG to PDF: Page Size, Fit, Fill & Margins",
+  "description": "Combine images into readable PDF pages. Choose page size and orientation, understand Fit versus Fill and check edges, order and scan quality.",
+  "primary": "JPG PNG to PDF page size and margins",
+  "secondary": [
+    "fit versus fill image PDF",
+    "image PDF page layout"
+  ],
+  "longTail": [
+    "convert phone photographs to PDF without cropped edges",
+    "A4 or Letter for image PDF"
+  ],
+  "intent": "Informational: JPG PNG to PDF page size and margins",
+  "topic": "Images",
+  "category": "image-tools",
+  "relatedTools": [
+    "jpg-to-pdf",
+    "image-cropper",
+    "rotate-pdf",
+    "pdf-merger"
+  ],
+  "relatedArticles": [
+    "combine-pdf-files-in-the-right-order",
+    "image-dimensions-vs-file-size"
+  ],
+  "published": "2026-10-08",
+  "intro": "For documents, choose Fit when you need every edge of the image to remain visible. Choose Fill only when cropping is acceptable. Put the images in reading order and inspect the resulting PDF; a correct page size does not guarantee readable small text.",
+  "sections": [
+    {
+      "id": "prepare-readable-source-images",
+      "title": "Prepare readable source images",
+      "paragraphs": [
+        "A clear source matters more than a complicated export setting. For photographed pages, check focus, lighting and whether the entire page is captured. A bright reflection can erase words even in a high-resolution photo. If an edge is cut off in the source, placing the image in a PDF will not restore it.",
+        "Keep the original photograph and make any cropped copy separately. Use [Image Cropper](/image-tools/image-cropper/) to remove unnecessary background, but keep stamps, signatures and page numbers that belong to the document. Avoid tightly cropping text if the receiving organization expects the full original page."
+      ]
+    },
+    {
+      "id": "put-the-images-in-the-intended-reading-order",
+      "title": "Put the images in the intended reading order",
+      "paragraphs": [
+        "Before conversion, give each image a recognizable name or inspect its preview. Phone filenames are not always enough to establish document order. A receipt photographed twice should not appear twice unless both views are needed. A cover page followed by pages 2, 1 and 3 is still incorrect even though the total page count looks plausible.",
+        "The [JPG & PNG to PDF tool](/pdf-tools/jpg-to-pdf/) lets you order images before creating the PDF. It accepts JPG and PNG; convert other supported formats first if needed. The current bounds are up to 20 images, 20 MB per file and 40 MB total, with image-pixel limits to protect browser memory."
+      ]
+    },
+    {
+      "id": "choose-page-size-separately-from-image-dimensions",
+      "title": "Choose page size separately from image dimensions",
+      "paragraphs": [
+        "Auto uses an image-based page layout, while A4 and Letter give standard page choices. A4 and Letter have different dimensions, so fitting the same image to each can produce different whitespace. Choose the format required by the recipient instead of assuming every form expects A4.",
+        "Orientation also matters. A wide table may be more readable on a landscape page than shrunk onto a portrait one. Do not stretch it to match the paper shape. If the source is a photograph of a portrait page, preserve that proportion and allow space around it where appropriate. The [pixels and file-size guide](/blog/image-dimensions-vs-file-size/) explains why paper size is not the same as source detail."
+      ]
+    },
+    {
+      "id": "fit-and-fill-answer-different-questions",
+      "title": "Fit and Fill answer different questions",
+      "paragraphs": [
+        "Fit asks how to show the complete image inside the page. It preserves the image’s proportions and can leave whitespace. Fill asks how to occupy the frame, which can crop part of the image when its proportions do not match the page. Neither is inherently better; their purposes differ.",
+        "For certificates, forms and receipts, Fit is usually the safer starting point because missing an edge can remove required information. For a decorative cover image, Fill may be appropriate. Preview the result and check all four corners. Do not choose Fill simply to remove blank areas without noticing the content it cuts away."
+      ],
+      "table": {
+        "headers": [
+          "Choice",
+          "What it protects",
+          "What to review"
+        ],
+        "rows": [
+          [
+            "Fit",
+            "The complete image and its proportions",
+            "Whitespace and readable scale"
+          ],
+          [
+            "Fill",
+            "An occupied frame without distortion",
+            "Cropped edges and missing details"
+          ],
+          [
+            "Auto page size",
+            "An image-based page shape",
+            "Recipient paper-size requirements"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "margins-can-help-rather-than-waste-space",
+      "title": "Margins can help rather than waste space",
+      "paragraphs": [
+        "A border of blank space makes it easier to view a photographed page without cutting off edge details. It can also help when a PDF is printed on a device that cannot print to the paper edge. Removing all margins does not necessarily make the document more professional or easier to read.",
+        "Choose spacing according to the task. A full-page photograph and a small receipt have different useful scales. If a receipt becomes tiny on a standard page, inspect the exported PDF before sending it. Enlarging it beyond its source detail can expose blur without improving legibility."
+      ]
+    },
+    {
+      "id": "understand-what-the-result-contains",
+      "title": "Understand what the result contains",
+      "paragraphs": [
+        "An image-to-PDF workflow embeds images as document pages. It does not turn the photographed letters into native editable PDF text. Search, selection and copy may therefore be unavailable. If you need recognized text, use [Image to Text OCR](/image-tools/image-to-text/) or [PDF OCR](/pdf-tools/pdf-ocr/) as a separate workflow and review the recognition output.",
+        "PNG transparency also needs context: the visible page background affects how transparent areas appear. Tool Fera creates the PDF locally, leaving the source images unchanged. Creating a PDF is not a promise of smaller bytes, searchable text, accessibility tagging or preservation of image metadata."
+      ]
+    },
+    {
+      "id": "review-and-combine-the-final-pages",
+      "title": "Review and combine the final pages",
+      "paragraphs": [
+        "Open the exported PDF and check page count, order, orientation and small text. Look at the first page and every transition between images. A sideways page can be corrected with [Rotate PDF Pages](/pdf-tools/rotate-pdf/) without reshooting an otherwise good source image. Keep a copy of the originals for later corrections.",
+        "If these pages must join an existing report, use [PDF Merger](/pdf-tools/pdf-merger/) after checking the image-based PDF. Follow the [merge order checklist](/blog/combine-pdf-files-in-the-right-order/) so the attachments appear in the right place. Measure the final size against the submission requirement; a successful conversion does not prove that the merged file fits its byte limit."
+      ]
+    }
+  ],
+  "conclusion": "Protect completeness first: clear sources, deliberate order and a fitting choice that keeps required edges visible. Then check paper size, scale and final bytes. A readable PDF with intentional margins is better than an edge-to-edge document that has lost part of the source.",
+  "sources": [
+    {
+      "title": "Tool Fera image-to-PDF layout and limits",
+      "url": "/pdf-tools/jpg-to-pdf/"
+    }
+  ]
+}

@@ -1,0 +1,780 @@
+{
+  "date": "2026-10-08T10:43:50.470Z",
+  "publishedVersion": 33,
+  "browser": "Cloud Chrome desktop",
+  "viewport": {
+    "height": 936,
+    "width": 1363
+  },
+  "pages": [
+    {
+      "path": "/pdf-tools/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/pdf-tools/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/pdf-tools/",
+      "h1": [
+        "PDF Tools"
+      ],
+      "h2": [
+        "Build the document you need",
+        "Questions about pdf tools",
+        "Choose a workflow, not just a file format",
+        "Helpful reading for this collection",
+        "Explore another collection"
+      ],
+      "mainExcerpt": "Home\nPDF Tools\nThe collection\nPDF Tools\n\nMerge, split, rotate, delete or reorder PDF pages locally. Optimize a PDF, export PNG/JPG page images, combine PNG/JPG files or convert native PDF text into editable Word without a processing server.\n\n11 tools ready to use\n\nPDF Tools\nPDF Compressor\n\nCompress a PDF and compare the actual savings.\n\nOpen tool\nPDF Tools\nPDF Merger\n\nBring multiple PDFs into one document.\n\nOpen tool\nPDF Tools\nPDF Splitter\n\nExtract the pages you actually need.\n\nOpen tool\nPDF Tools\nPDF to PNG/JPG\n\nExport PDF pages as JPG or PNG images.\n\nOpen tool\nPDF Tools\nPNG/JPG to PDF\n\nCombine JPG and PNG images into a PDF.\n\nOpen tool\nPDF Tools\nPDF to Word\n\nConvert PDF text into editable Word with preserved page layout.\n\nOpen tool\nPDF Tools\nPDF OCR\n\nExtract structured English text from scanned PDF pages.\n\nOpen tool\nPDF Tools\nWord to PDF\n\nCreate a PDF from a DOCX with selectable text.\n\nOpen tool\nPDF Tools\nRotate PDF\n\nTurn selected page",
+      "mainLinks": 31,
+      "robots": "index, follow",
+      "title": "PDF Tools \u2014 Compress, Merge, Convert & OCR | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/image-tools/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/image-tools/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/image-tools/",
+      "h1": [
+        "Image Tools"
+      ],
+      "h2": [
+        "Choose dimensions, then format",
+        "Questions about image tools",
+        "Choose a workflow, not just a file format",
+        "Helpful reading for this collection",
+        "Explore another collection"
+      ],
+      "mainExcerpt": "Home\nImage Tools\nThe collection\nImage Tools\n\nResize, crop, compress or convert images on your device, or extract English text with local OCR. Set exact dimensions, preserve proportions or crop to fit, choose an output format, and compare actual file sizes before downloading.\n\n8 tools ready to use\n\nImage Tools\nImage Compressor\n\nCompress, compare and download a lighter image.\n\nOpen tool\nImage Tools\nImage Resizer\n\nSet dimensions, choose a format and resize precisely.\n\nOpen tool\nImage Tools\nImage Converter\n\nConvert between supported image formats locally.\n\nOpen tool\nImage Tools\nImage Cropper\n\nSelect precise pixels and export a cropped image.\n\nOpen tool\nImage Tools\nJPG to PNG\n\nConvert photographs to PNG format.\n\nOpen tool\nImage Tools\nPNG to JPG\n\nMake a JPEG from your PNG image.\n\nOpen tool\nImage Tools\nWebP Converter\n\nSwitch images to a modern web format.\n\nOpen tool\nImage Tools\nImage to Text OCR\n\nExtract readable text from an image.\n\nOpen tool",
+      "mainLinks": 28,
+      "robots": "index, follow",
+      "title": "Image Tools \u2014 Compress, Resize, Crop & Convert | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/student-tools/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/student-tools/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/student-tools/",
+      "h1": [
+        "Student Tools"
+      ],
+      "h2": [
+        "Credits make the difference",
+        "Questions about student tools",
+        "Choose a workflow, not just a file format",
+        "Helpful reading for this collection",
+        "Explore another collection"
+      ],
+      "mainExcerpt": "Home\nStudent Tools\nThe collection\nStudent Tools\n\nCalculate GPA and CGPA, check marks and attendance, or build a custom admission aggregate. Use your own institution\u2019s grade points and credit rules.\n\n6 tools ready to use\n\nStudent Tools\nGPA Calculator\n\nCalculate your credit-weighted semester GPA.\n\nOpen tool\nStudent Tools\nCGPA Calculator\n\nSee your overall academic progress.\n\nOpen tool\nStudent Tools\nPercentage Calculator\n\nQuick answers for everyday percentages.\n\nOpen tool\nStudent Tools\nMarks Calculator\n\nWork out totals and target marks.\n\nOpen tool\nStudent Tools\nAttendance Calculator\n\nStay on top of your attendance target.\n\nOpen tool\nStudent Tools\nUniversity Merit Calculator\n\nExplore admission aggregate calculations.\n\nOpen tool\nCredits make the difference\n\nA course with more credits contributes more to your GPA. For a cumulative result, weight each semester GPA by its credits instead of taking a simple average. These calculators accept scale",
+      "mainLinks": 24,
+      "robots": "index, follow",
+      "title": "Student Calculators \u2014 GPA, CGPA, Marks & Attendance | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/pdf-tools/pdf-compressor/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/pdf-tools/pdf-compressor/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/pdf-tools/pdf-compressor/",
+      "h1": [
+        "PDF Compressor"
+      ],
+      "h2": [
+        "How to use it",
+        "Keep the useful document, not just fewer bytes",
+        "Useful details and limits",
+        "Questions about this tool",
+        "Understand the workflow",
+        "Related tools",
+        "A useful next step"
+      ],
+      "mainExcerpt": "Home\nPDF Tools\nPDF Compressor\nPDF Tools\nPDF Compressor\n\nMake a PDF lighter on your device with Recommended, Strong compression or Best quality. Compare actual original and compressed sizes; download is offered only when the result is meaningfully smaller.\n\nPDF Compressor\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nChoose an unencrypted PDF up to 20 MB.\n02\nKeep Recommended or choose Strong compression / Best quality, then select Compress PDF.\n03\nCompare Original, Compressed and Saved values, review the PDF and download the smaller file.\nKeep the useful document, not just fewer bytes\n\nA text-based report and a scan need different compression decisions. Structural optimization is the first attempt; suitable image-only scans can then be recompressed. Automatic processing protects selectable text and interactive features from an unrequested page-image conversion. An explicit image-based copy is a separate advanced choice wit",
+      "mainLinks": 11,
+      "robots": "index, follow",
+      "title": "Compress PDF Online \u2014 Reduce File Size | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/pdf-tools/pdf-to-word/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/pdf-tools/pdf-to-word/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/pdf-tools/pdf-to-word/",
+      "h1": [
+        "PDF to Word"
+      ],
+      "h2": [
+        "How to use it",
+        "Native text becomes ordinary editable Word content",
+        "Useful details and limits",
+        "Questions about this tool",
+        "Understand the workflow",
+        "Related tools",
+        "A useful next step"
+      ],
+      "mainExcerpt": "Home\nPDF Tools\nPDF to Word\nPDF Tools\nPDF to Word\n\nConvert selectable PDF text into normal editable Word paragraphs, headings and recoverable tables. Source page boundaries are protected as closely as practical, with localized images for complex diagrams.\n\nPDF to Word\nOn-device processing\nTool controls\nPreparing file picker\u2026\nPDF \u00b7 up to 20 MB and 40 pages \u00b7 no upload\nBrowse files\n1. Read PDF\n2. Check pages\n3. Create editable Word\n4. Download DOCX\n\nEditable Word with preserved page layout\nNative PDF text becomes normal paragraphs in Word\u2019s main document body, so selection and copying can continue across paragraphs and pages. Source page boundaries and intentional blank spaces are preserved. Recoverable tables stay editable; logos and complex diagrams remain localized images. No OCR. Font substitution and complex layouts can still differ from the PDF.\n\nConvert to WordConverting\u2026Convert to Word\nCancel & resetReset\n\nAll processing stays on y",
+      "mainLinks": 10,
+      "robots": "index, follow",
+      "title": "PDF to Word \u2014 Editable DOCX from Native PDF Text | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/image-tools/image-compressor/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/image-tools/image-compressor/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/image-tools/image-compressor/",
+      "h1": [
+        "Image Compressor"
+      ],
+      "h2": [
+        "How to use it",
+        "Solve the actual byte limit",
+        "Useful details and limits",
+        "Questions about this tool",
+        "Understand the workflow",
+        "Related tools",
+        "A useful next step"
+      ],
+      "mainExcerpt": "Home\nImage Tools\nImage Compressor\nImage Tools\nImage Compressor\n\nAdjust output format, quality and optional maximum width, then compare the original and compressed image. File size, bytes saved and percentage change are calculated from the actual output.\n\nImage Compressor\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nChoose an image and review its original size and dimensions.\n02\nChoose an output format, adjust quality where available, and optionally limit width.\n03\nCompress, compare the two previews and actual sizes, then download the result.\nSolve the actual byte limit\n\nCompression and resizing are related but different choices. If a destination sets a pixel limit, change dimensions deliberately. If it sets a byte limit, compare format and quality at suitable dimensions. A smaller result is useful only if the image still contains the detail required by its recipient.\n\nInspect photographs, tiny text and transparent bounda",
+      "mainLinks": 12,
+      "robots": "index, follow",
+      "title": "Image Compressor \u2014 Compare Real File Size Savings | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/student-tools/percentage-calculator/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/student-tools/percentage-calculator/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/student-tools/percentage-calculator/",
+      "h1": [
+        "Percentage Calculator"
+      ],
+      "h2": [
+        "How to use it",
+        "Choose the base before calculating",
+        "Useful details and limits",
+        "Questions about this tool",
+        "Understand the workflow",
+        "Related tools",
+        "A useful next step"
+      ],
+      "mainExcerpt": "Home\nStudent Tools\nPercentage Calculator\nStudent Tools\nPercentage Calculator\n\nFind a percentage of a number or work out what percentage one value represents of another. Results update as you type, with the formula shown alongside your answer.\n\nPercentage Calculator\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nChoose the type of percentage calculation.\n02\nEnter your two numbers.\n03\nRead the answer and check the formula.\nChoose the base before calculating\n\nPercent of a number and one value as a percentage of another are inverse tasks. Select the mode that matches your question and check the displayed formula. A result without its base can be misleading, especially when comparing rates or successive discounts.\n\nA ratio with a zero denominator is undefined. Percentage points are a direct difference between two percentages, while a relative percentage change uses the old value as its base. This calculator\u2019s two modes should n",
+      "mainLinks": 11,
+      "robots": "index, follow",
+      "title": "Percentage Calculator \u2014 Percent of a Number & Ratio | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/developer-tools/json-formatter/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/developer-tools/json-formatter/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/developer-tools/json-formatter/",
+      "h1": [
+        "JSON Formatter"
+      ],
+      "h2": [
+        "How to use it",
+        "Syntax validation is only the first check",
+        "Useful details and limits",
+        "Questions about this tool",
+        "Understand the workflow",
+        "Related tools",
+        "A useful next step"
+      ],
+      "mainExcerpt": "Home\nDeveloper Tools\nJSON Formatter\nDeveloper Tools\nJSON Formatter\n\nCheck JSON syntax, add readable indentation or produce a compact version. Your input stays in your browser and is never sent to a formatting service.\n\nJSON Formatter\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nPaste valid JSON into the input editor.\n02\nChoose Format or Minify.\n03\nReview or copy the resulting JSON.\nSyntax validation is only the first check\n\nFormatting makes nested data readable; minifying removes unnecessary JSON whitespace. Neither operation validates a custom API schema or confirms that values have the right business meaning. Comments, unquoted names and trailing commas are invalid JSON rather than formatting preferences.\n\nJavaScript parsing can lose precision for very large numeric identifiers and keeps the later occurrence of duplicate object names. Use strings or a suitable specialized parser when exact preservation matters. Keep th",
+      "mainLinks": 11,
+      "robots": "index, follow",
+      "title": "JSON Formatter \u2014 Validate, Beautify and Minify | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/generators/qr-code-generator/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/generators/qr-code-generator/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/generators/qr-code-generator/",
+      "h1": [
+        "QR Code Generator"
+      ],
+      "h2": [
+        "How to use it",
+        "Test the code and the destination",
+        "Useful details and limits",
+        "Questions about this tool",
+        "Understand the workflow",
+        "Related tools",
+        "A useful next step"
+      ],
+      "mainExcerpt": "Home\nGenerators\nQR Code Generator\nGenerators\nQR Code Generator\n\nCreate a static QR code from a link or text and download it as PNG or SVG. Generation happens in your browser, with no redirect service or tracking added.\n\nQR Code Generator\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nEnter a full link or the text to encode.\n02\nChoose a PNG size and select Generate QR code.\n03\nDownload PNG or SVG and test it with a scanner before sharing.\nTest the code and the destination\n\nThe generator creates a static code containing your link or text. PNG and SVG downloads serve different placement needs. Keep the quiet zone, square proportions and contrast intact. A code that works enlarged on screen can fail when printed too small or placed on a busy background.\n\nNo tracking redirect or subscription expiry is added. The destination website can still change or become unavailable. Test the actual downloaded and final printed version rath",
+      "mainLinks": 9,
+      "robots": "index, follow",
+      "title": "QR Code Generator \u2014 Download PNG or SVG | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/blog/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/blog/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/blog/",
+      "h1": [
+        "Useful tools. Useful know-how."
+      ],
+      "h2": [
+        "What \u201cprocessed in your browser\u201d actually means",
+        "Start with the question you need answered.",
+        "Instructions beside the tools.",
+        "Put the know-how to work."
+      ],
+      "mainExcerpt": "Home\nGuides & articles\nA LITTLE EXTRA CLARITY\nUseful tools. Useful know-how.\n\nUnderstand the workflow, choose the right settings and know what to check in the result. Practical reading for everyday digital tasks.\n\nON YOUR DEVICE\nFEATURED GUIDE \u00b7 Privacy & productivity\nWhat \u201cprocessed in your browser\u201d actually means\n\nUnderstand file picking, local processing, saved tool IDs and the practical limits of doing the work o",
+      "mainLinks": 25,
+      "robots": "index, follow",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "title": "Practical Guides \u2014 PDFs, Images, Grades & Code | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/blog/make-pdf-editable-native-text-or-ocr/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/blog/make-pdf-editable-native-text-or-ocr/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/blog/make-pdf-editable-native-text-or-ocr/",
+      "h1": [
+        "How to make a PDF editable: native text or OCR?"
+      ],
+      "h2": [
+        "On this page",
+        "Try a selection and copy test first",
+        "Why a PDF is not already a Word document",
+        "Convert selectable text without OCR",
+        "Use the separate OCR workflow for scans",
+        "Check paragraphs, tables and graphics separately",
+        "Finish the editing workflow without losing the source",
+        "References and tool documentation",
+        "Put the guide to work",
+        "Keep reading"
+      ],
+      "mainExcerpt": "Home\nGuides & articles\nHow to make a PDF editable: native text or OCR?\nPDF & documents\nHow to make a PDF editable: native text or OCR?\n\nFirst check whether the PDF contains usable text. Selectable text should go through native PDF-to-Word conversion. A scanned page needs text recognition instead. Choosing the right path protects the real text and avoids treating every document as a photograph.\n\nBy Tool Fera\n\u00b7\n8 Octob",
+      "mainLinks": 20,
+      "robots": "index, follow",
+      "schema": [
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "title": "Make a PDF Editable: Native Text, Word & OCR | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/blog/jpeg-png-webp-which-format/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/blog/jpeg-png-webp-which-format/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/blog/jpeg-png-webp-which-format/",
+      "h1": [
+        "JPEG, PNG or WebP: choose the format for the job"
+      ],
+      "h2": [
+        "On this page",
+        "Begin with the content and the destination",
+        "JPEG is useful for photos but has trade-offs",
+        "PNG is useful for sharp edges and transparency",
+        "WebP is an option to test rather than a universal rule",
+        "Use a small decision table",
+        "Compare the output at its intended size",
+        "Keep an original and a delivery copy",
+        "References and tool documentation",
+        "Put the guide to work",
+        "Keep reading"
+      ],
+      "mainExcerpt": "Home\nGuides & articles\nJPEG, PNG or WebP: choose the format for the job\nImages\nJPEG, PNG or WebP: choose the format for the job\n\nUse JPEG for a photograph when broad compatibility matters and transparency is unnecessary. Use PNG when lossless edges or transparency matter more than size. Try WebP when the destination accepts it and you can compare the actual result. There is no single smallest format for every image.\n",
+      "mainLinks": 24,
+      "robots": "index, follow",
+      "schema": [
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "title": "JPEG vs PNG vs WebP: Photos, Transparency & File Size | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/blog/fix-invalid-json/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/blog/fix-invalid-json/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/blog/fix-invalid-json/",
+      "h1": [
+        "How to fix invalid JSON without changing the data"
+      ],
+      "h2": [
+        "On this page",
+        "Separate JSON from JavaScript object notation",
+        "Use the error location as a clue",
+        "Check the common structural mistakes",
+        "Valid syntax is not schema validation",
+        "Protect large identifiers and duplicate keys",
+        "Decode the right wrapper before validating",
+        "Choose formatted or minified output deliberately",
+        "References and tool documentation",
+        "Put the guide to work",
+        "Keep reading"
+      ],
+      "mainExcerpt": "Home\nGuides & articles\nHow to fix invalid JSON without changing the data\nDeveloper\nHow to fix invalid JSON without changing the data\n\nFix syntax before formatting. JSON needs double-quoted keys and strings, correctly paired brackets and commas only between entries. Once it parses, check whether the values still mean what you intended: valid syntax does not guarantee a correct data model.\n\nBy Tool Fera\n\u00b7\n8 October 202",
+      "mainLinks": 22,
+      "robots": "index, follow",
+      "schema": [
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "title": "Fix Invalid JSON: Syntax, Formatting & Precision Checks | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/about/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/about/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/about/",
+      "h1": [
+        "Everyday work. A clearer way through."
+      ],
+      "h2": [
+        "A toolkit for the small jobs that matter.",
+        "Different tasks. One familiar toolkit.",
+        "Simple inputs. Results you can check.",
+        "Small tasks should not interrupt the whole day.",
+        "A useful tool for your next task."
+      ],
+      "mainExcerpt": "Home\nAbout\nA LITTLE LESS FRICTION\nEveryday work. A clearer way through.\n\nTool Fera brings practical browser utilities together, so a file to prepare, a number to check or a piece of text to tidy is easier to finish.\n\nWHAT TOOL FERA IS\nA toolkit for the small jobs that matter.\n\nCombine documents. Make an image fit. Turn printed text into something you can work with. Check a calculation or clean up JSON. Tool Fera cove",
+      "mainLinks": 12,
+      "robots": "index, follow",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "title": "About Tool Fera \u2014 Everyday Browser Utilities",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/contact/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/contact/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/contact/",
+      "h1": [
+        "A little help. A clear next step."
+      ],
+      "h2": [
+        "Current contact availability",
+        "Common problems, practical checks.",
+        "Looking for something else?",
+        "The tool page is your first guide."
+      ],
+      "mainExcerpt": "Home\nHelp & contact\nLET\u2019S GET YOU UNSTUCK\nA little help. A clear next step.\n\nStart with the tool\u2019s instructions, then use these checks for file errors, browser limits or an unexpected result.\n\nCurrent contact availability\n\nTool Fera currently has no public support email or submission form. This page provides self-help guidance; it does not send bug reports, feedback or tool suggestions.\n\nSTART HERE\nCommon problems, p",
+      "mainLinks": 9,
+      "robots": "noindex, follow",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "title": "Help & Contact | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/privacy-policy/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/privacy-policy/",
+      "canonical": "https://utilityhub.maftab7806.chatgpt.site/privacy-policy/",
+      "h1": [
+        "Privacy Policy"
+      ],
+      "h2": [
+        "On this page",
+        "Your content and your toolkit history are different.",
+        "Files and tool inputs",
+        "Favorites, recent tools and browser storage",
+        "Website delivery and technical requests",
+        "Accounts, cookies, analytics and advertising",
+        "Links and other services",
+        "Policy updates and privacy questions"
+      ],
+      "mainExcerpt": "Home\nPrivacy Policy\nCLEAR INFORMATION, PLAIN LANGUAGE\nPrivacy Policy\n\nThis policy describes the current Tool Fera application. It separates the content you process from the small list of tools your browser remembers and the requests used to deliver the website.\n\nLast updated \u00b7 4 October 2026\nOn this page\n01\nFiles and tool inputs\n02\nFavorites, recent tools and browser storage\n03\nWebsite delivery and technical requests",
+      "mainLinks": 14,
+      "robots": "index, follow",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "title": "Privacy Policy | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    },
+    {
+      "path": "/does-not-exist/",
+      "url": "https://utilityhub.maftab7806.chatgpt.site/does-not-exist/",
+      "h1": [
+        "Looks like this tool slipped away."
+      ],
+      "h2": [
+        "What would you like to do?"
+      ],
+      "mainExcerpt": "4\n4\nA SMALL DETOUR. SAME USEFUL TOOLS.\n404 \u00b7 PAGE NOT FOUND\nLooks like this tool slipped away.\n\nThis address does not lead to a page. It may have changed, or there may be a typo. Let\u2019s find the tool you came for.\n\nFind a tool\nGo home\nWhat would you like to do?\nSearch tools\n\nTry \u201ccompress PDF\u201d, \u201cresize image\u201d or \u201cformat JSON\u201d.\n\nPDF tools\nImage tools\nDeveloper tools\nAll collections",
+      "mainLinks": 6,
+      "robots": "noindex",
+      "schema": [],
+      "title": "Page not found | Tool Fera",
+      "viewport": 1363,
+      "width": 1348
+    }
+  ],
+  "workspaceChecks": [
+    {
+      "path": "/pdf-tools/pdf-compressor/",
+      "buttons": [
+        "",
+        "Compress PDF",
+        "Cancel & resetReset",
+        "",
+        "",
+        ""
+      ],
+      "h1": "PDF Compressor",
+      "howToY": 1172.546875,
+      "inputs": [
+        {
+          "id": "_r_0_",
+          "label": "Choose PDF file",
+          "type": "file"
+        },
+        {
+          "id": "compression-level",
+          "label": null,
+          "type": null
+        },
+        {
+          "id": "compression-method",
+          "label": null,
+          "type": null
+        }
+      ],
+      "mainTop": "Home\nPDF Tools\nPDF Compressor\nPDF Tools\nPDF Compressor\n\nMake a PDF lighter on your device with Recommended, Strong compression or Best quality. Compare actual original and compressed sizes; download is offered only when the result is meaningfully smaller.\n\nPDF Compressor\nOn-device processing\nTool controls\nDrop a PDF here\nPDF \u00b7 up to 20 MB \u00b7 files stay on your device\nBrowse files\nCompression level\nRecommended (default)\nStrong compression\nBest quality\n\nA balanced choice for everyday PDFs. Searchable text is kept in automatic mode.\n\nAdvanced settings\nCompress PDF\nReset\n\nAll processing stays on your device. Automatic mode optimizes plain scans as",
+      "preparing": false
+    },
+    {
+      "path": "/pdf-tools/pdf-to-word/",
+      "buttons": [
+        "",
+        "Convert to WordConverting\u2026Convert to Word",
+        "Cancel & resetReset",
+        "",
+        ""
+      ],
+      "h1": "PDF to Word",
+      "howToY": 1171.203125,
+      "inputs": [
+        {
+          "id": "_R_39cai_",
+          "label": "Choose PDF file",
+          "type": "file"
+        }
+      ],
+      "mainTop": "Home\nPDF Tools\nPDF to Word\nPDF Tools\nPDF to Word\n\nConvert selectable PDF text into normal editable Word paragraphs, headings and recoverable tables. Source page boundaries are protected as closely as practical, with localized images for complex diagrams.\n\nPDF to Word\nOn-device processing\nTool controls\nPreparing file picker\u2026\nPDF \u00b7 up to 20 MB and 40 pages \u00b7 no upload\nBrowse files\n1. Read PDF\n2. Check pages\n3. Create editable Word\n4. Download DOCX\n\nEditable Word with preserved page layout\nNative PDF text becomes normal paragraphs in Word\u2019s main document body, so selection and copying can continue across paragraphs and pages. Source page boundar",
+      "preparing": false
+    },
+    {
+      "path": "/image-tools/image-compressor/",
+      "buttons": [
+        "",
+        "Compress image",
+        "Cancel & resetReset",
+        "",
+        "",
+        ""
+      ],
+      "h1": "Image Compressor",
+      "howToY": 1400.6875,
+      "inputs": [
+        {
+          "id": "_R_39cai_",
+          "label": "Choose image file",
+          "type": "file"
+        },
+        {
+          "id": "image-max-width",
+          "label": null,
+          "type": "number"
+        },
+        {
+          "id": "image-format",
+          "label": null,
+          "type": null
+        },
+        {
+          "id": "",
+          "label": null,
+          "type": null
+        }
+      ],
+      "mainTop": "Home\nImage Tools\nImage Compressor\nImage Tools\nImage Compressor\n\nAdjust output format, quality and optional maximum width, then compare the original and compressed image. File size, bytes saved and percentage change are calculated from the actual output.\n\nImage Compressor\nOn-device processing\nTool controls\nPreparing file picker\u2026\nJPEG, PNG, WebP, AVIF, BMP or GIF \u00b7 up to 20 MB\nBrowse files\n\nPreparing the image processor\u2026\n\nAdvanced settings\nOutput format\nKeep original format\nAdvanced quality settings\n\nJPEG and BMP use white for transparency. PNG, WebP and AVIF can retain it. AVIF export appears only when this browser supports it.\n\nCompress image",
+      "preparing": false
+    },
+    {
+      "path": "/student-tools/percentage-calculator/",
+      "buttons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "h1": "Percentage Calculator",
+      "howToY": 825.609375,
+      "inputs": [],
+      "mainTop": "Home\nStudent Tools\nPercentage Calculator\nStudent Tools\nPercentage Calculator\n\nFind a percentage of a number or work out what percentage one value represents of another. Results update as you type, with the formula shown alongside your answer.\n\nPercentage Calculator\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nChoose the type of percentage calculation.\n02\nEnter your two numbers.\n03\nRead the answer and check the formula.\nChoose the base before calculating\n\nPercent of a number and one value as a percentage of another are inverse tasks. Select the mode that matches your question and check the displayed formula. A result without it",
+      "preparing": true
+    },
+    {
+      "path": "/developer-tools/json-formatter/",
+      "buttons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "h1": "JSON Formatter",
+      "howToY": 905.609375,
+      "inputs": [],
+      "mainTop": "Home\nDeveloper Tools\nJSON Formatter\nDeveloper Tools\nJSON Formatter\n\nCheck JSON syntax, add readable indentation or produce a compact version. Your input stays in your browser and is never sent to a formatting service.\n\nJSON Formatter\nOn-device processing\n\nPreparing your tool\u2026\n\nHow to use it\n01\nPaste valid JSON into the input editor.\n02\nChoose Format or Minify.\n03\nReview or copy the resulting JSON.\nSyntax validation is only the first check\n\nFormatting makes nested data readable; minifying removes unnecessary JSON whitespace. Neither operation validates a custom API schema or confirms that values have the right business meaning. Comments, unquo",
+      "preparing": true
+    },
+    {
+      "path": "/developer-tools/json-formatter/",
+      "controlsReady": true,
+      "button": "Format JSON"
+    },
+    {
+      "path": "/student-tools/percentage-calculator/",
+      "controlsReady": true,
+      "realInput": "15% of 200",
+      "resultText": "Home\nStudent Tools\nPercentage Calculator\nStudent Tools\nPercentage Calculator\n\nFind a percentage of a number or work out what percentage one value represents of another. Results update as you type, with the formula shown alongside your answer.\n\nPercentage Calculator\nOn-device processing\nTool controls\nWhat is A% of B?\nA is what % of B?\nPercentage (A %)\nNumber (B)\nYour result\n30\n\n15 \u00f7 100 \u00d7 200\n\nReset\nHow to use it\n01\nChoose the type of percentage calculation.\n02\nEnter your two numbers.\n03\nRead the answer and check the formula.\nChoose the base before calculating\n\nPercent of a number and one value as a percentage of another are inverse tasks. Select the mode that matches your question and check the displayed formula. A result without its base can be misleading, especially when comparing rates or successive discou"
+    }
+  ],
+  "additionalObserved": {
+    "homepage": "New title, unchanged usable layout and clean canonical observed",
+    "percentageGuide": "Tool-to-guide click rendered the new percentage article",
+    "jsonArticleToc": "Clicked contents link reached #protect-large-identifiers-and-duplicate-keys",
+    "qr": "Ready Link or text textarea, size selector and Generate QR code button observed",
+    "calculator": "15% of 200 returned 30"
+  },
+  "console": [
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:22:08.382Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:39:48.162Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:22.289Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:23.272Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:23.960Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:37.787Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:39.048Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:40.012Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:40.713Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:41.383Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:40:42.178Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:18.547Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:19.344Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:20.008Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:20.544Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:21.244Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:44.819Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.486Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.511Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.538Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.539Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.548Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.786Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.787Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:41:57.957Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:17.066Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:17.923Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:18.601Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:19.417Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:41.363Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:41.385Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:41.797Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:42.343Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:42.869Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:42:43.633Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    },
+    {
+      "level": "error",
+      "message": "Error sending browser metadata to extension: Object",
+      "timestamp": "2026-10-08T10:43:48.713Z",
+      "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+    }
+  ],
+  "limitations": [
+    "No physical-phone or mobile viewport emulation",
+    "No converter output-quality QA repeated",
+    "No Lighthouse or real-user Core Web Vitals",
+    "No external indexing or ranking measurement"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "word-character-count-unicode",
+  "title": "Why word and character counts differ between tools",
+  "seoTitle": "Word & Character Counts: Spaces, Unicode & Emoji",
+  "description": "Understand whitespace-based word counts, Unicode code points and emoji. Compare editor limits without assuming every application uses the same counting rule.",
+  "primary": "why word and character counts differ",
+  "secondary": [
+    "Unicode code points versus characters",
+    "whitespace word count"
+  ],
+  "longTail": [
+    "emoji counts as multiple characters",
+    "Word Counter differs from Microsoft Word"
+  ],
+  "intent": "Informational: why word and character counts differ",
+  "topic": "Text & productivity",
+  "category": "text-tools",
+  "relatedTools": [
+    "word-counter",
+    "character-counter",
+    "text-cleaner",
+    "remove-duplicate-lines"
+  ],
+  "relatedArticles": [
+    "fix-invalid-json",
+    "browser-tools-and-privacy"
+  ],
+  "published": "2026-10-08",
+  "intro": "Different tools can count the same text differently because they define a word or a character differently. Check the required rule before relying on a limit. A Unicode code point, a visible symbol and a byte are not always the same thing.",
+  "sections": [
+    {
+      "id": "a-word-count-is-a-rule-applied-to-text",
+      "title": "A word count is a rule applied to text",
+      "paragraphs": [
+        "Tool Fera’s [Word Counter](/text-tools/word-counter/) counts non-empty whitespace-separated tokens. Spaces, tabs and line breaks divide tokens. Under that rule, hello-world without surrounding spaces is one token, while hello world is two. Punctuation does not automatically create an additional word boundary.",
+        "Other editors can use linguistic rules, special handling for hyphens or different treatment of numbers. A different total does not by itself prove that either editor malfunctioned. If an assignment specifies a particular editor’s word count, that editor’s rule governs the submission. Tool Fera states its own rule so you can compare rather than assuming a universal count."
+      ]
+    },
+    {
+      "id": "characters-are-not-always-visible-symbols",
+      "title": "Characters are not always visible symbols",
+      "paragraphs": [
+        "Tool Fera counts Unicode code points and shows a separate count without whitespace. Many familiar letters occupy one code point, but a visible symbol can contain several. A letter with a combining accent can be represented by a base letter plus another code point; visually it may look like one character.",
+        "The emoji 👩‍💻 contains a woman code point, a joining code point and a laptop code point. It can appear as one symbol while contributing three code points to this count. The [Character Counter](/text-tools/character-counter/) is useful for inspecting the stated counting rule, but a platform may enforce its limit using a different definition."
+      ]
+    },
+    {
+      "id": "bytes-answer-a-different-question",
+      "title": "Bytes answer a different question",
+      "paragraphs": [
+        "An encoded file or network payload has a byte length. In UTF-8, different code points can take different numbers of bytes. A text that contains 100 code points is not guaranteed to occupy 100 bytes. That matters for API limits, encoded data and QR input bounds.",
+        "Do not use a visible character count to prove that a byte-limited field fits. Find out whether the receiving system specifies bytes, code points, code units or user-perceived characters. For data inside JSON or an encoded wrapper, the surrounding punctuation and encoding can also change total length. The [JSON guide](/blog/fix-invalid-json/) helps keep text content separate from serialized structure."
+      ]
+    },
+    {
+      "id": "spaces-and-line-endings-affect-comparisons",
+      "title": "Spaces and line endings affect comparisons",
+      "paragraphs": [
+        "A count including whitespace includes spaces and line-break code points. A count excluding whitespace omits those under the tool’s rule. Repeated spaces may not change a whitespace-separated word count, but they can increase the character count. Pasted text can contain tabs or non-obvious spacing from a PDF or website.",
+        "Some sources use different line-ending sequences. Text areas or editors may normalize those sequences when reading or displaying the text. Compare the same pasted content, not an older copy from another file. If a discrepancy appears only after copying, inspect line breaks and invisible spacing before changing the wording."
+      ]
+    },
+    {
+      "id": "reading-time-is-an-estimate-not-a-measurement",
+      "title": "Reading time is an estimate, not a measurement",
+      "paragraphs": [
+        "Tool Fera estimates reading time from a 200-words-per-minute assumption. It is a simple planning figure, not a timing test of your audience. Technical instructions, unfamiliar vocabulary and tables can take longer than a straightforward paragraph of the same word count.",
+        "Use reading time to compare drafts roughly, not to promise that every reader will finish in a particular number of minutes. A shorter text can be harder to understand if important explanations were removed. Editing for clarity should take priority over making a displayed reading-time number look impressive."
+      ]
+    },
+    {
+      "id": "clean-text-deliberately-before-recounting",
+      "title": "Clean text deliberately before recounting",
+      "paragraphs": [
+        "The [Text Cleaner](/text-tools/text-cleaner/) can tidy spaces and line breaks, but those changes can affect structure. Paragraph breaks carry meaning in an essay or transcript. Do not remove all line breaks just to reduce a count if the result becomes harder to follow.",
+        "[Remove Duplicate Lines](/text-tools/remove-duplicate-lines/) is a different operation. It retains the first matching line according to selected case and whitespace rules. A repeated line can be intentional, such as a chorus, a repeated form label or a list entry. Review the result before replacing the original. A cleaner output is not automatically a faithful copy."
+      ]
+    },
+    {
+      "id": "a-practical-way-to-reconcile-a-disputed-count",
+      "title": "A practical way to reconcile a disputed count",
+      "paragraphs": [
+        "Begin with a small excerpt that both tools can count. Include a hyphenated term, a number, a line break and an emoji if those appear in the real text. Compare each rule separately: words, characters including spaces and characters without spaces. This isolates differences more quickly than repeatedly pasting a long document.",
+        "Then use the count required by the destination and keep a little room below a strict limit if pasted formatting can change. Tool Fera processes text locally and stores only tool identifiers in favorites and history, not the text itself. The [browser privacy guide](/blog/browser-tools-and-privacy/) explains those boundaries and the difference between selecting data and transmitting it."
+      ],
+      "list": [
+        "Identify the receiving application’s counting rule.",
+        "Compare the exact same text and line breaks.",
+        "Check hyphens, invisible whitespace and emoji.",
+        "Review cleaned text before replacing the source."
+      ]
+    }
+  ],
+  "conclusion": "Treat a count as a labeled calculation: what it counts matters as much as the number. Choosing the right rule and checking a small excerpt will explain most disagreements without needlessly rewriting useful text.",
+  "sources": [
+    {
+      "title": "MDN: JavaScript strings and Unicode",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+    }
+  ]
+}

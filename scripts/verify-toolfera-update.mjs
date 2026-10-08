@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createRequire} from 'node:module';
+import {Worker as Thread} from 'node:worker_threads';
+import {generateUUIDs,convertColor} from '../tools/developer-utils.ts';
+import {adjustCrop} from '../tools/crop-selection.ts';
+import {validateCrop} from '../tools/image-processing.ts';
+import {finishAction,DOWNLOAD_VISUAL_MS,DOWNLOAD_DONE_MS} from '../tools/action-sequence.ts';
+import {runDownloadSequence} from '../tools/download-action.ts';
+const root=resolve(process.argv[2]||'/workspace/scratch/utilityhub-mobile-qa11');
+const uuids=generateUUIDs(100);assert.equal(new Set(uuids).size,100);assert.ok(uuids.every(id=>/^[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ab][\da-f]{3}-[\da-f]{12}$/.test(id)));
+for(const n of [0,101,1.2,NaN])assert.throws(()=>generateUUIDs(n));
+for(const [input,hex] of [['#f00','#ff0000'],['rgb(100% 0% 0%)','#ff0000'],['hsl(-120deg, 100%, 50%)','#0000ff'],['hsl(120 100% 50%)','#00ff00'],['#000','#000000'],['#fff','#ffffff'],['#abcd','#aabbccdd'],['rgba(47, 91, 255, .5)','#2f5bff80'],['hsl(227, 100%, 59%)','#2e5bff']])assert.equal(convertColor(input).hex,hex,input);
+for(const value of ['', '#ggg', 'rgb(256, 0, 0)', 'rgba(0,0,0,1.1)', 'hsl(0, 110%, 50%)','hsl(0,50,50)', 'var(--blue)','rgb(1,,2,3)','rgb(1 2 3 /)','rgba(1 2 3 .5)'])assert.throws(()=>convertColor(value),value);
+const c={x:100,y:50,width:200,height:100};assert.deepEqual(adjustCrop(640,400,c,1000,-1000,'move'),{x:440,y:0,width:200,height:100});assert.deepEqual(adjustCrop(640,400,c,15,25,'se'),{x:100,y:50,width:215,height:125});
+for(const handle of ['nw','ne','sw','se','move'])for(const [dx,dy] of [[-1000,-1000],[1000,1000],[2.3,-5.9]])validateCrop(640,400,adjustCrop(640,400,c,dx,dy,handle));
+globalThis.location={origin:'http://terminal.local:4173'};const url=URL.createObjectURL(new Blob(['real output'],{type:'text/plain'})),events=[],start=performance.now();
+const download=runDownloadSequence({href:url,signal:new AbortController().signal,duration:DOWNLOAD_VISUAL_MS,doneDuration:DOWNLOAD_DONE_MS,onDone:()=>events.push('done'),nextFrame:async()=>events.push('paint'),activate:()=>events.push('native')});
+await new Promise(r=>setTimeout(r,40));assert.deepEqual(events,[],'no immediate native download');await download;assert.deepEqual(events,['done','paint','native']);assert.ok(performance.now()-start>=DOWNLOAD_VISUAL_MS+DOWNLOAD_DONE_MS-10);
+URL.revokeObjectURL(url);await assert.rejects(()=>runDownloadSequence({href:url,signal:new AbortController().signal,duration:0,onDone:()=>assert.fail('expired file must not show Done'),nextFrame:async()=>{},activate:()=>assert.fail('expired file must not download')}),/This file is no longer available/);
+const aborted=new AbortController(),delay=finishAction(performance.now(),1800,aborted.signal);aborted.abort();await assert.rejects(()=>delay,{name:'AbortError'});const finished=performance.now();await finishAction(finished-3000,1800,new AbortController().signal);assert.ok(performance.now()-finished<50,'long processing does not get an extra delay');
+const require=createRequire(resolve(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES,'package.json')),canvas=require('@napi-rs/canvas');let liveBitmaps=0;
+globalThis.OffscreenCanvas=class{constructor(w,h){const c=canvas.createCanvas(w,h);c.convertToBlob=async({type,quality})=>new Blob([c.toBuffer(type,Math.round((quality??.8)*100))],{type});return c}};
+globalThis.createImageBitmap=async file=>{const image=await canvas.loadImage(new Uint8Array(await file.arrayBuffer()));liveBitmaps++;image.close=()=>liveBitmaps--;return image};
+const replies=[];globalThis.postMessage=data=>replies.push(data);await import('../tools/image.worker.ts');
+async function request(action,options={}){await globalThis.onmessage({data:{id:1,action,...options}});const data=replies.at(-1);if(data.error)throw new Error(data.error);return data.result}
+const source=new File([await readFile(root+'/landscape.jpg')],'landscape.jpg',{type:'image/jpeg'});await request('inspect',{file:source});
+for(const mime of ['image/png','image/jpeg','image/webp']){const output=await request('process',{settings:{width:640,height:400,mode:'fit',mime,quality:80}});assert.equal(output.blob.type,mime);const image=await canvas.loadImage(new Uint8Array(await output.blob.arrayBuffer()));assert.equal(image.width,640);assert.equal(image.height,400)}
+const cropped=await request('process',{settings:{width:200,height:100,mode:'stretch',mime:'image/png',quality:100,crop:c}});const cropImage=await canvas.loadImage(new Uint8Array(await cropped.blob.arrayBuffer()));assert.equal(cropImage.width,200);assert.equal(cropImage.height,100);await request('reset');assert.equal(liveBitmaps,0);
+const transparent=canvas.createCanvas(4,4);const alphaFile=new File([transparent.toBuffer('image/png')],'transparent.png',{type:'image/png'});await request('inspect',{file:alphaFile});const opaque=await request('process',{settings:{width:4,height:4,mode:'fit',mime:'image/jpeg',quality:100}});const pixel=canvas.createCanvas(4,4);pixel.getContext('2d').drawImage(await canvas.loadImage(new Uint8Array(await opaque.blob.arrayBuffer())),0,0);assert.deepEqual(Array.from(pixel.getContext('2d').getImageData(1,1,1,1).data),[255,255,255,255]);await request('reset');assert.equal(liveBitmaps,0);
+let liveWorkers=0;globalThis.location={origin:resolve('public')};globalThis.Worker=class{constructor(){this.thread=new Thread(resolve('node_modules/tesseract.js/src/worker-script/node/index.js'));liveWorkers++;this.thread.once('exit',()=>liveWorkers--);this.thread.on('message',data=>this.onmessage?.({data}));this.thread.on('error',error=>this.onerror?.(error))}postMessage(data,transfer){this.thread.postMessage(data,transfer)}terminate(){return this.thread.terminate()}};
+const {recognizeImage}=await import('../tools/image-ocr.ts');const messages=[],ocr=await recognizeImage(new Uint8Array(await readFile(root+'/scan-1.png')),new AbortController().signal,m=>messages.push(m));assert.match(ocr.text,/OCR verification page 1/);assert.match(ocr.text,/125\.50 USD/);assert.ok(messages.some(m=>m.startsWith('Reading English text')));
+const blankBytes=new Uint8Array(await alphaFile.arrayBuffer());await assert.rejects(()=>recognizeImage(blankBytes,new AbortController().signal,()=>{}),/No readable/);
+await new Promise(r=>setTimeout(r,100));assert.equal(liveWorkers,0);
+console.log(JSON.stringify({passed:true,uuidBatch:100,imageOCR:{characters:ocr.text.length,confidence:ocr.confidence},checks:['UUID v4 format, random batch uniqueness and count validation','HEX/RGB/HSL/alpha round trips and malformed/out-of-range values','crop movement and all resize boundaries','actual PNG/JPEG/WebP exports decoded at correct dimensions','crop output decoded and transparent PNG to JPEG white background','no immediate download; Done paint precedes native activation on the current animation timeline','unavailable download rejected, action cancellation and no extra wait for long work','real English image OCR and low-content rejection, OCR/bitmap cleanup']},null,2));

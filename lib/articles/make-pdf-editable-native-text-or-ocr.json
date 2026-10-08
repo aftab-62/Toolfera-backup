@@ -1,0 +1,92 @@
+{
+  "slug": "make-pdf-editable-native-text-or-ocr",
+  "title": "How to make a PDF editable: native text or OCR?",
+  "seoTitle": "Make a PDF Editable: Native Text, Word & OCR",
+  "description": "Choose PDF to Word for selectable text or OCR for scans. Understand editable DOCX output, table reconstruction and the layout checks that still matter.",
+  "primary": "how to make a PDF editable",
+  "secondary": [
+    "convert PDF to editable DOCX",
+    "PDF native text versus OCR"
+  ],
+  "longTail": [
+    "make a scanned PDF editable without mixing conversion paths",
+    "why PDF to Word changes formatting"
+  ],
+  "intent": "Informational: how to make a PDF editable",
+  "topic": "PDF & documents",
+  "category": "pdf-tools",
+  "relatedTools": [
+    "pdf-to-word",
+    "pdf-ocr",
+    "word-to-pdf"
+  ],
+  "relatedArticles": [
+    "scanned-vs-searchable-pdf",
+    "reduce-pdf-file-size-without-losing-quality"
+  ],
+  "published": "2026-10-08",
+  "intro": "First check whether the PDF contains usable text. Selectable text should go through native PDF-to-Word conversion. A scanned page needs text recognition instead. Choosing the right path protects the real text and avoids treating every document as a photograph.",
+  "sections": [
+    {
+      "id": "try-a-selection-and-copy-test-first",
+      "title": "Try a selection and copy test first",
+      "paragraphs": [
+        "Open the PDF in a viewer and drag across a sentence. Copy it into a plain text editor. Look for the same words in the same order, rather than simply checking whether a selection highlight appears. A scan with an old OCR layer may let you select text but copy mistakes. A PDF can also contain a mixture of native text pages and scanned pages.",
+        "Repeat the test on a body paragraph, a heading and one table cell. If only some pages work, identify which pages you actually need to edit. Do not assume a searchable cover means the entire document contains native text. The [scan identification guide](/blog/scanned-vs-searchable-pdf/) gives a more detailed check."
+      ]
+    },
+    {
+      "id": "why-a-pdf-is-not-already-a-word-document",
+      "title": "Why a PDF is not already a Word document",
+      "paragraphs": [
+        "PDF pages describe where visible content is drawn. A Word document describes editable paragraphs, runs, tables and sections that a word processor lays out. The source PDF may not record the paragraph boundaries or table cell relationships that would have existed in the original authoring file. A converter has to recover those relationships from the available text and geometry.",
+        "That is why “editable” and “identical” are different requirements. A screenshot placed on a Word page can look convincing but gives you no ordinary body text to edit. Conversely, editable text can need font substitutions or spacing adjustments. If you have the original DOCX, use it; conversion is a recovery workflow when the authoring file is unavailable."
+      ]
+    },
+    {
+      "id": "convert-selectable-text-without-ocr",
+      "title": "Convert selectable text without OCR",
+      "paragraphs": [
+        "The [PDF to Word tool](/pdf-tools/pdf-to-word/) uses the PDF’s native text and layout information. Ordinary text becomes Word body paragraphs, headings and runs. It does not replace the page with a full-page screenshot or run OCR to guess words that are already available. Recoverable tables become editable Word tables; localized images and complex diagram regions remain graphics.",
+        "Source page boundaries are protected as closely as practical, but the result is not an exact Microsoft Word layout reproduction. Missing font information, unusual columns or complicated drawings can still differ. Open the DOCX in your intended word processor, edit a sentence and check its surrounding spacing. Normal text should behave as editable text, not as separate positioned letters."
+      ]
+    },
+    {
+      "id": "use-the-separate-ocr-workflow-for-scans",
+      "title": "Use the separate OCR workflow for scans",
+      "paragraphs": [
+        "If the PDF is genuinely image-only, native extraction has no text objects to recover. Tool Fera’s converter directs you to [PDF OCR](/pdf-tools/pdf-ocr/) instead of silently mixing recognition into normal PDF-to-Word conversion. OCR recognizes printed English from page images and returns structured text that you can review, copy or export as TXT or DOCX.",
+        "Recognition can confuse a zero with a letter O, lose punctuation or misread small table values. Check names, amounts and identifiers against the scan. OCR output is editable, but it is not proof that every recognized word is correct. Tool Fera’s OCR export also does not add a searchable text layer back into the original PDF."
+      ]
+    },
+    {
+      "id": "check-paragraphs-tables-and-graphics-separately",
+      "title": "Check paragraphs, tables and graphics separately",
+      "paragraphs": [
+        "Start with a complete multi-line paragraph. Select it, copy it into another document and delete a few words. Then inspect a heading, a table with wrapped cells and a diagram. Correct table structure means each row keeps its logical cell associations; it is not enough that all the words exist somewhere in the DOCX.",
+        "Keep the source open beside the converted file. Check the first page, page boundaries, footers and any unusually empty pages. A diagram can remain an image while its caption and surrounding paragraphs remain editable. That is a sensible distinction: changing a chart’s underlying data is a different job from editing the report’s body text."
+      ],
+      "list": [
+        "Confirm ordinary text is selectable and editable.",
+        "Check row and column associations in tables.",
+        "Check logos, charts and localized vector diagrams.",
+        "Review page breaks and any font substitutions."
+      ]
+    },
+    {
+      "id": "finish-the-editing-workflow-without-losing-the-source",
+      "title": "Finish the editing workflow without losing the source",
+      "paragraphs": [
+        "Save the converted DOCX under a new name before making changes. If you plan substantial edits, allow Word to reflow the edited material and review the later pages again. Preserving the source page boundaries cannot guarantee an unchanged page count after you add new content. Avoid manually inserting large strings of spaces to force a heading back to its former location.",
+        "When the edits are complete, create a shareable copy with [Word to PDF](/pdf-tools/word-to-pdf/) or your word processor’s export command. Review that final PDF, not only the editable document. Keep both the original PDF and the edited DOCX so you can distinguish source material from your changes. For protected or signed documents, follow the owner’s permitted editing process; conversion does not preserve a digital signature’s validity."
+      ]
+    }
+  ],
+  "conclusion": "Choose native conversion for real PDF text and recognition only for scanned content. Then verify editability, table meaning and layout as separate checks. That gives you a useful Word document without pretending that a PDF contains all the structure of its original authoring file.",
+  "sources": [
+    {
+      "title": "Tool Fera native PDF-to-Word workflow",
+      "url": "/pdf-tools/pdf-to-word/"
+    }
+  ]
+}

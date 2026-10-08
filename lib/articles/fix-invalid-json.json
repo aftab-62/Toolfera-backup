@@ -1,0 +1,106 @@
+{
+  "slug": "fix-invalid-json",
+  "title": "How to fix invalid JSON without changing the data",
+  "seoTitle": "Fix Invalid JSON: Syntax, Formatting & Precision Checks",
+  "description": "Find common JSON syntax mistakes, then format safely. Check duplicate keys, large numeric identifiers and the difference between validation and schema rules.",
+  "primary": "how to fix invalid JSON",
+  "secondary": [
+    "JSON syntax error examples",
+    "JSON formatting versus validation"
+  ],
+  "longTail": [
+    "trailing comma JSON error",
+    "JSON formatter large integer precision loss"
+  ],
+  "intent": "Informational: how to fix invalid JSON",
+  "topic": "Developer",
+  "category": "developer-tools",
+  "relatedTools": [
+    "json-formatter",
+    "base64-encoder-decoder",
+    "url-encoder-decoder",
+    "uuid-generator"
+  ],
+  "relatedArticles": [
+    "base64-vs-url-encoding",
+    "word-character-count-unicode"
+  ],
+  "published": "2026-10-08",
+  "intro": "Fix syntax before formatting. JSON needs double-quoted keys and strings, correctly paired brackets and commas only between entries. Once it parses, check whether the values still mean what you intended: valid syntax does not guarantee a correct data model.",
+  "sections": [
+    {
+      "id": "separate-json-from-javascript-object-notation",
+      "title": "Separate JSON from JavaScript object notation",
+      "paragraphs": [
+        "A JavaScript object literal can allow unquoted property names, single-quoted strings or comments. JSON does not use those allowances. A response copied from a console may look like JSON while still needing the original serialized data. Do not repair it by blindly replacing every quote: an apostrophe inside a real string should not become a delimiter.",
+        "In JSON, strings and member names use double quotes. Values can be strings, numbers, booleans, null, arrays or objects. Functions, undefined, NaN and Infinity are not JSON values. If your application needs one of those concepts, decide on an explicit supported representation rather than merely making the formatter accept it."
+      ]
+    },
+    {
+      "id": "use-the-error-location-as-a-clue",
+      "title": "Use the error location as a clue",
+      "paragraphs": [
+        "Paste the original content into [JSON Formatter](/developer-tools/json-formatter/) and try validation or formatting. The error message points you toward a syntax problem, but the reported position may be where the parser noticed the problem rather than where it began. A missing quote can cause a later bracket to look wrong.",
+        "Check just before the reported location and inspect bracket pairs from the surrounding object or array. Fix one issue and validate again. Keep an untouched copy while working, especially if the data came from a system you need to debug. Removing a difficult field is not a syntax repair if the field was part of the intended payload."
+      ]
+    },
+    {
+      "id": "check-the-common-structural-mistakes",
+      "title": "Check the common structural mistakes",
+      "paragraphs": [
+        "A trailing comma after the last item is invalid JSON. Missing commas between adjacent items are also invalid. Use square brackets for arrays and braces for objects, and close them in the reverse order in which they opened. A double quote inside a string needs escaping rather than ending the string early.",
+        "The example below is valid. The value true is a boolean, not the string “true”; the identifier is deliberately a string. Formatting can make this structure easier to inspect, but it should not be used to guess which data types an API requires."
+      ],
+      "code": "{\"id\":\"9007199254740993\",\"active\":true,\"tags\":[\"pdf\",\"images\"],\"note\":\"Use a \\\"quoted\\\" label\"}",
+      "list": [
+        "Remove comments and trailing commas.",
+        "Quote member names and strings with double quotes.",
+        "Check missing commas and mismatched braces or brackets.",
+        "Escape quotation marks and control characters inside strings."
+      ]
+    },
+    {
+      "id": "valid-syntax-is-not-schema-validation",
+      "title": "Valid syntax is not schema validation",
+      "paragraphs": [
+        "An object can parse successfully and still have the wrong field names, missing required values or a string where an API expects a number. Tool Fera validates JSON syntax; it does not validate a custom application schema. Read the receiving API’s specification and compare the required shape with your object.",
+        "A syntactically valid array of two entries is not interchangeable with an object containing two named fields. Similarly, null and an omitted member can have different meanings. If you are building sample records, [UUID Generator](/developer-tools/uuid-generator/) can create version 4 identifiers, but it does not prove that those records meet a server’s rules."
+      ]
+    },
+    {
+      "id": "protect-large-identifiers-and-duplicate-keys",
+      "title": "Protect large identifiers and duplicate keys",
+      "paragraphs": [
+        "Tool Fera uses JavaScript JSON parsing. Numbers outside JavaScript’s safe integer range can lose precision during parsing and serialization. For example, a precision-sensitive identifier larger than 9,007,199,254,740,991 should not be assumed safe as an ordinary JavaScript number. Use a string if the data contract permits it, or a specialized lossless workflow.",
+        "Repeated object names are another risk. Parsing {\"status\":\"draft\",\"status\":\"final\"} with JSON.parse keeps the later value. A formatter built on that parser can therefore remove the earlier occurrence from its output. Tool Fera does not promise duplicate-key detection. If preserving an exact payload matters, inspect the original rather than replacing it with a reserialized version unchecked."
+      ]
+    },
+    {
+      "id": "decode-the-right-wrapper-before-validating",
+      "title": "Decode the right wrapper before validating",
+      "paragraphs": [
+        "Some systems carry JSON inside Base64 or inside a URL component. The encoded wrapper is not itself the JSON document. Decode it with the appropriate tool, then validate the resulting text. The [encoding guide](/blog/base64-vs-url-encoding/) distinguishes these two transformations and explains why neither is encryption.",
+        "Do not apply URL decoding to an entire JSON string merely because it contains a percent sign. A string value such as “50%” is legitimate data. Decode only the layer your system actually added. Similarly, Base64 characters in a field do not mean the entire document should be decoded as Base64."
+      ]
+    },
+    {
+      "id": "choose-formatted-or-minified-output-deliberately",
+      "title": "Choose formatted or minified output deliberately",
+      "paragraphs": [
+        "Formatted output adds readable indentation; minified output removes unnecessary JSON whitespace. Whitespace inside strings remains part of the data. Neither option repairs an incorrect value or certifies the payload’s business meaning. Compare the output with the original before replacing a configuration or sending a request.",
+        "The formatter processes your text locally, without sending it to an external formatting service. Keep credentials out of shared screenshots and copied bug reports even when processing is local. If a payload is unusually large or requires exact numeric or duplicate-key preservation, use a workflow suited to those requirements rather than assuming ordinary formatting is lossless for every input."
+      ]
+    }
+  ],
+  "conclusion": "Use the formatter to find syntax problems and improve readability, then make a separate check of data types, required fields and precision. That distinction prevents a neatly formatted object from being mistaken for a validated application payload.",
+  "sources": [
+    {
+      "title": "RFC 8259: JSON syntax and interoperability",
+      "url": "https://www.rfc-editor.org/rfc/rfc8259"
+    },
+    {
+      "title": "MDN JSON.parse reference",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"
+    }
+  ]
+}

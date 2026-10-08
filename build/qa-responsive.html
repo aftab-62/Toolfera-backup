@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Tool Fera responsive verification</title><style>body{margin:0;background:#dde5f0;font:14px system-ui}header{height:62px;display:flex;gap:12px;align-items:center;padding:0 16px;box-sizing:border-box}label{display:flex;gap:6px;align-items:center}button,input,select{font:inherit;padding:7px}iframe{display:block;margin:0 auto;border:0;background:#fff;height:900px;max-width:none}</style><header><label>Viewport <select id="width"><option>320</option><option>360</option><option>375</option><option selected>390</option><option>412</option><option>430</option><option>768</option><option>1024</option><option>1280</option><option>1440</option><option>1600</option></select></label><label>Build <select id="build"><option value="dev">Development</option><option value="prod">Production Worker</option></select></label><label>Route <input id="route" value="/"></label><button id="go">Open route</button><button id="reload">Reload frame</button></header><iframe id="site" title="Tool Fera test viewport" width="390" src="/"></iframe><script>const frame=document.querySelector('iframe');document.querySelector('#width').onchange=e=>frame.width=e.target.value;function open(){document.cookie='__toolfera_qa_runtime='+ (document.querySelector('#build').value==='prod'?'1':'0')+'; path=/; SameSite=Lax';frame.src=document.querySelector('#route').value;}document.querySelector('#go').onclick=open;document.querySelector('#build').onchange=open;document.querySelector('#reload').onclick=()=>frame.contentWindow.location.reload();</script><output id="download-timeline" style="position:fixed;left:8px;bottom:8px;max-width:300px;max-height:180px;overflow:auto;padding:8px;background:#eff4ff;border:1px solid #aec6ed;font:11px monospace;z-index:100000;pointer-events:none">Download event timing will appear here.</output><script>
+let downloadObservationCleanup;
+frame.addEventListener('load',()=>{
+ if(downloadObservationCleanup)downloadObservationCleanup();
+ const doc=frame.contentDocument;if(!doc)return;
+ const output=document.getElementById('download-timeline');let tracked=null,start=0,lastPhase='',events=[];
+ const record=(event,details={})=>{events.push({event,ms:Math.round(performance.now()-start),...details});output.textContent=JSON.stringify(events);};
+ const capture=event=>{const link=event.target.closest?.('a');if(!link)return;
+  if(link.classList.contains('dl-button')){tracked=link;start=performance.now();lastPhase='';events=[];record('click');}
+  else if(tracked&&link.hidden&&link.hasAttribute('download')&&link.href===tracked.href){record('browser-download-request',{phase:tracked.dataset.downloadPhase,doneOpacity:Number(getComputedStyle(tracked.querySelector('.download-done')).opacity)});}
+ };
+ const observer=new MutationObserver(()=>{if(!tracked||!tracked.isConnected)return;const phase=tracked.dataset.downloadPhase;if(phase&&phase!==lastPhase){lastPhase=phase;record(phase,{progress:Number(tracked.dataset.downloadProgress)});}});
+ doc.addEventListener('click',capture,true);observer.observe(doc.body,{subtree:true,attributes:true,attributeFilter:['data-download-phase','data-download-progress']});
+ downloadObservationCleanup=()=>{observer.disconnect();doc.removeEventListener('click',capture,true)};
+});
+</script></html>

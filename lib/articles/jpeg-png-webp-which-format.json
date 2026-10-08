@@ -1,0 +1,124 @@
+{
+  "slug": "jpeg-png-webp-which-format",
+  "title": "JPEG, PNG or WebP: choose the format for the job",
+  "seoTitle": "JPEG vs PNG vs WebP: Photos, Transparency & File Size",
+  "description": "Choose an image format by content and destination. Compare photos, text, transparency and browser support without assuming one format is always smallest.",
+  "primary": "JPEG vs PNG vs WebP",
+  "secondary": [
+    "image format for photos versus screenshots",
+    "PNG transparency and JPEG"
+  ],
+  "longTail": [
+    "does JPG to PNG improve quality",
+    "when to use WebP instead of JPG"
+  ],
+  "intent": "Informational: JPEG vs PNG vs WebP",
+  "topic": "Images",
+  "category": "image-tools",
+  "relatedTools": [
+    "image-converter",
+    "png-to-jpg",
+    "jpg-to-png",
+    "webp-converter"
+  ],
+  "relatedArticles": [
+    "image-dimensions-vs-file-size",
+    "jpg-png-to-pdf-page-size-margins"
+  ],
+  "published": "2026-10-08",
+  "intro": "Use JPEG for a photograph when broad compatibility matters and transparency is unnecessary. Use PNG when lossless edges or transparency matter more than size. Try WebP when the destination accepts it and you can compare the actual result. There is no single smallest format for every image.",
+  "sections": [
+    {
+      "id": "begin-with-the-content-and-the-destination",
+      "title": "Begin with the content and the destination",
+      "paragraphs": [
+        "A photograph, a screenshot of small text and a transparent logo have different needs. A photograph can often tolerate carefully chosen lossy compression. A screenshot can expose artifacts around letters. A logo may need transparent pixels so it fits different backgrounds. Decide what must survive before choosing a file extension.",
+        "Also check the destination. An upload form that requests JPG will not necessarily accept WebP even if your browser displays it. A print workflow may ask for specific dimensions or a different source format. Changing an extension does not convert the image’s encoding. Use a real [Image Converter](/image-tools/image-converter/) and inspect the saved file."
+      ]
+    },
+    {
+      "id": "jpeg-is-useful-for-photos-but-has-trade-offs",
+      "title": "JPEG is useful for photos but has trade-offs",
+      "paragraphs": [
+        "JPEG commonly uses lossy compression to represent continuous-tone images efficiently. Lower quality can produce blocks, halos or smudged detail. The quality number is an encoder setting, not a percentage of the original detail that remains. The same number in two applications need not yield the same output.",
+        "JPEG does not preserve transparency. Tool Fera fills transparent areas with white when making a JPEG copy, so preview the edges of logos and icons. Repeatedly saving a JPEG through lossy encoding can add artifacts. Keep a high-quality source and create the delivery copy from that source instead of converting the last compressed version again."
+      ]
+    },
+    {
+      "id": "png-is-useful-for-sharp-edges-and-transparency",
+      "title": "PNG is useful for sharp edges and transparency",
+      "paragraphs": [
+        "PNG supports lossless image storage and an alpha channel. It is a useful choice for interface screenshots, diagrams with text and graphics that need transparency. A large photograph saved as PNG can still be much larger than a reasonable JPEG copy. Lossless does not mean small, and it does not mean the source contains more detail.",
+        "Converting a JPEG to PNG cannot recover detail that was previously discarded. The [JPG to PNG tool](/image-tools/jpg-to-png/) keeps a lossless copy of the decoded image at its current dimensions; it does not restore the camera original. Choose it because you need a PNG-compatible workflow, not because a new extension improves an existing photograph."
+      ]
+    },
+    {
+      "id": "webp-is-an-option-to-test-rather-than-a-universal-rule",
+      "title": "WebP is an option to test rather than a universal rule",
+      "paragraphs": [
+        "WebP supports lossy and lossless coding as well as transparency. It can be useful for web delivery when the receiving site or application accepts the format. Actual savings depend on the image and the chosen encoding. A photo, a flat illustration and a transparent logo may respond differently.",
+        "Tool Fera’s [WebP Converter](/image-tools/webp-converter/) lets you create a still-image copy and compare its size. Animated input is not preserved as an animation in this workflow. If your destination needs animated WebP or GIF, keep the original and use a workflow that explicitly supports animation. A smaller still frame is not a replacement for an animation."
+      ]
+    },
+    {
+      "id": "use-a-small-decision-table",
+      "title": "Use a small decision table",
+      "paragraphs": [
+        "Choose a starting format, then test it at the dimensions you will actually use. The table gives practical starting points rather than strict rules. A specific portal’s accepted file types take priority over a general recommendation.",
+        "For a mixed image, such as a photograph with tiny overlaid labels, inspect both the photo and the lettering. One acceptable region does not prove the whole image is acceptable. If reducing dimensions is also necessary, do that deliberately; the [dimensions and file-size guide](/blog/image-dimensions-vs-file-size/) separates those two choices."
+      ],
+      "table": {
+        "headers": [
+          "Content or requirement",
+          "A useful starting point",
+          "What to check"
+        ],
+        "rows": [
+          [
+            "Photograph, no transparency",
+            "JPEG",
+            "Artifacts and accepted file type"
+          ],
+          [
+            "Screenshot or text-heavy diagram",
+            "PNG",
+            "Sharp letters and actual bytes"
+          ],
+          [
+            "Transparent logo",
+            "PNG or WebP",
+            "Alpha edges on the intended background"
+          ],
+          [
+            "Web delivery that accepts WebP",
+            "Test WebP",
+            "Visual comparison and real savings"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "compare-the-output-at-its-intended-size",
+      "title": "Compare the output at its intended size",
+      "paragraphs": [
+        "Preview the converted image at normal display size, then zoom into the difficult areas: eyes, small lettering, gradients and transparent boundaries. Compare actual byte sizes at the same dimensions. Otherwise a “smaller format” comparison might really be a lower-resolution comparison.",
+        "The [PNG to JPG tool](/image-tools/png-to-jpg/) is appropriate when you want a JPEG copy with adjustable quality and accept a white background where the PNG was transparent. If the output is larger than the source, keep the smaller suitable original. File format changes can increase size; a successful conversion is not necessarily a successful compression."
+      ]
+    },
+    {
+      "id": "keep-an-original-and-a-delivery-copy",
+      "title": "Keep an original and a delivery copy",
+      "paragraphs": [
+        "Use clear filenames so the editable or highest-quality source is not overwritten by a delivery version. Tool Fera creates a separate local result. Its image pipeline does not preserve metadata or animation, and browser support controls which input decoders and output encoders are available. AVIF export, for example, is offered only after an actual browser capability check.",
+        "If you are preparing a document, choose page layout separately from image format. Combining a good PNG or JPEG into a PDF does not make the text in that image editable. The [JPG and PNG to PDF guide](/blog/jpg-png-to-pdf-page-size-margins/) explains how to protect margins and keep photographed content readable."
+      ]
+    }
+  ],
+  "conclusion": "Pick a format that preserves the properties you need, then judge the saved result. The most useful image is accepted by its destination, readable at its intended size and no larger than necessary; the file extension alone cannot establish any of those things.",
+  "sources": [
+    {
+      "title": "MDN image formats reference",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
+    }
+  ]
+}

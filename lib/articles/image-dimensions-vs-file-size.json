@@ -1,0 +1,100 @@
+{
+  "slug": "image-dimensions-vs-file-size",
+  "title": "Image dimensions versus file size: pixels are not megabytes",
+  "seoTitle": "Image Dimensions vs File Size: Resize or Compress?",
+  "description": "Understand pixels, bytes, aspect ratio and compression. Choose resizing or quality changes for a real upload requirement and compare the final image.",
+  "primary": "image dimensions vs file size",
+  "secondary": [
+    "image pixels versus megabytes",
+    "resize image versus compress image"
+  ],
+  "longTail": [
+    "image correct dimensions but too large",
+    "reduce photo bytes without stretching image"
+  ],
+  "intent": "Informational: image dimensions vs file size",
+  "topic": "Images",
+  "category": "image-tools",
+  "relatedTools": [
+    "image-resizer",
+    "image-compressor",
+    "image-cropper"
+  ],
+  "relatedArticles": [
+    "jpeg-png-webp-which-format",
+    "jpg-png-to-pdf-page-size-margins"
+  ],
+  "published": "2026-10-08",
+  "intro": "Dimensions describe the pixel grid: for example, 1600 × 900 pixels. File size describes how many bytes store that image. Resize when the requirement is a pixel limit; compress or change format when the requirement is a byte limit. Some destinations require both.",
+  "sections": [
+    {
+      "id": "read-the-requirement-before-editing",
+      "title": "Read the requirement before editing",
+      "paragraphs": [
+        "A form may say “maximum 2 MB,” “exactly 600 × 600 pixels,” or both. Those are separate constraints. An image can fit the byte limit while having the wrong dimensions, or have the right dimensions while still being too large. Write down the accepted format as well, because a small WebP is not useful if the form only accepts JPG.",
+        "A displayed MB value may be rounded, and sites can use different interpretations of megabytes. Leave a little room below a strict limit instead of aiming at the rounded boundary. Check the actual exported file in the destination after preparing it. Do not assume a filename containing “small” confirms the requirement."
+      ]
+    },
+    {
+      "id": "pixels-determine-the-available-detail",
+      "title": "Pixels determine the available detail",
+      "paragraphs": [
+        "A 4000 × 3000 image contains 12 million pixels. Resizing it to 2000 × 1500 gives 3 million pixels: halving both dimensions leaves one quarter of the pixel count. That does not guarantee the encoded file will be exactly one quarter of the bytes, because encoding and image content also matter.",
+        "Upscaling adds pixels but cannot recreate detail that was not captured. It can make an image physically larger on screen, but small source text may remain soft. For a photograph of a document, start from a readable original rather than expecting a resizer to repair blur. Keep the highest-quality source for future use."
+      ]
+    },
+    {
+      "id": "compression-changes-storage-not-necessarily-dimensions",
+      "title": "Compression changes storage, not necessarily dimensions",
+      "paragraphs": [
+        "At fixed dimensions, a lossy encoder can store a different approximation of the image with fewer bytes. A quality setting affects that approximation. It is not a percentage of visual quality and is not comparable across every application. Lower settings may be fine for a photograph but harm small text and thin diagram lines.",
+        "A format change can also change byte size while leaving the pixel grid unchanged. The [JPEG, PNG and WebP guide](/blog/jpeg-png-webp-which-format/) explains why content and transparency affect that choice. A conversion can produce a larger file, so compare the real sizes rather than assuming every new encoding is an optimization."
+      ]
+    },
+    {
+      "id": "keep-the-aspect-ratio-unless-distortion-is-intended",
+      "title": "Keep the aspect ratio unless distortion is intended",
+      "paragraphs": [
+        "Aspect ratio is width divided by height. A 1600 × 900 image has a 16:9 ratio. Scaling it proportionally to width 800 gives height 450. Changing it to 800 × 800 without cropping stretches the image, which can distort faces, circles and lettering.",
+        "The [Image Resizer](/image-tools/image-resizer/) offers an aspect-ratio lock and Fit, Fill or Stretch choices. Fit keeps proportions; Fill crops to occupy the chosen frame; Stretch can distort the original. If the destination needs a square headshot, crop the relevant square region with [Image Cropper](/image-tools/image-cropper/) rather than squeezing a landscape photograph."
+      ]
+    },
+    {
+      "id": "a-worked-upload-example",
+      "title": "A worked upload example",
+      "paragraphs": [
+        "Suppose a portal accepts JPG, a maximum width of 1200 pixels and a maximum file size of 1 MB. Your source is 4000 × 3000 pixels. Resize proportionally to 1200 × 900 first, then create a JPEG delivery copy and compare its size. If it is still too large, reduce quality carefully and inspect the difficult areas.",
+        "These numbers are an example requirement, not a universal recommended image size or a promised compression result. If the portal instead needs exactly 1200 × 1200, a crop or a fitted canvas may be necessary. A smaller byte count cannot solve a shape mismatch. Choose the layout deliberately before judging compression."
+      ],
+      "list": [
+        "Confirm accepted format, pixel dimensions and byte limit.",
+        "Crop only when the required frame needs it.",
+        "Resize from the original with the intended proportions.",
+        "Compare quality and actual output size before submission."
+      ]
+    },
+    {
+      "id": "compare-quality-where-it-matters",
+      "title": "Compare quality where it matters",
+      "paragraphs": [
+        "Use [Image Compressor](/image-tools/image-compressor/) to adjust format, quality or maximum width and compare the output. Readability is the important test for screenshots and photographed forms. For photos, inspect faces and smooth gradients. For logos, check transparent edges on the background where the image will appear.",
+        "Tool Fera processes the selected image on your device and creates a separate result. Browser memory can still limit large images, particularly on phones. The pipeline does not preserve animation or metadata. If those properties are required, keep the original and use a workflow designed to preserve them."
+      ]
+    },
+    {
+      "id": "do-not-confuse-print-resolution-with-new-detail",
+      "title": "Do not confuse print resolution with new detail",
+      "paragraphs": [
+        "A print density value relates pixel dimensions to physical size. Changing a DPI label alone does not add genuine source detail. A 1200-pixel-wide image contains the same pixel grid regardless of a metadata label. The printer, document layout and intended physical size determine whether that grid is sufficient.",
+        "When putting images into PDF pages, inspect the resulting document at a reading size and a closer zoom. A fitting choice can add whitespace; a filling choice can cut off edges. Use the [image-to-PDF layout checklist](/blog/jpg-png-to-pdf-page-size-margins/) to avoid treating page size, pixel size and bytes as the same setting."
+      ]
+    }
+  ],
+  "conclusion": "Solve the requirement in the right order: frame, pixel dimensions, format, then bytes. Keep the original and compare the delivery copy. That prevents accidental distortion and makes it clear whether a useful saving came from resizing, compression or both.",
+  "sources": [
+    {
+      "title": "MDN image formats and compression properties",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "baselineDate": "2026-10-04T17:16:09.247Z",
+  "finalDate": "2026-10-07T13:55:37.530Z",
+  "method": "Emitted byte sizes and static import closures. Raw and separately compressed gzip bytes; shared chunks counted once. Not observed network transfer or CWV.",
+  "baseline": {
+    "homepageJS": 428139,
+    "homepageGzip": 133313,
+    "css": 152472,
+    "cssGzip": 30202,
+    "wordRoute": {
+      "raw": 474043,
+      "gzip": 151819
+    }
+  },
+  "final": {
+    "homepageJS": 428201,
+    "homepageGzip": 133458,
+    "css": 138292,
+    "cssGzip": 28086,
+    "wordRoute": {
+      "raw": 455792,
+      "gzip": 144695
+    }
+  },
+  "routeRegression": {
+    "date": "2026-10-07T13:50:17.451Z",
+    "scope": "Built Worker route/HTML/static artifact regression, not browser interaction, mobile visual or conversion fidelity QA",
+    "passed": true,
+    "errors": [],
+    "routeCount": 61,
+    "implementedTools": 46,
+    "internalDestinations": 61,
+    "notFoundChecks": 4,
+    "sitemapUrls": 60,
+    "schemaBlocks": 107,
+    "schemaTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebApplication",
+      "WebSite"
+    ],
+    "referencedAssets": 24,
+    "requiredAssets": 14,
+    "relativeChunkReferences": 317
+  },
+  "accessibility": {
+    "date": "2026-10-07",
+    "scope": "Rendered HTML labels and compiled CSS; not a full accessibility/browser audit",
+    "controlsChecked": 22,
+    "sliderThumbsChecked": 3,
+    "unlabelledControls": [],
+    "compiledCSS": {
+      "nativeReducedMotionRules": true,
+      "noFullMotionCSSOverride": true,
+      "coarsePointerTouchRules": true,
+      "toolMotionSoftFeedback": true
+    }
+  },
+  "affectedSliderRoutes": {
+    "date": "2026-10-07T13:56:41.190Z",
+    "passed": true,
+    "pages": [
+      {
+        "path": "/image-tools/image-compressor/",
+        "status": 200,
+        "namedSliders": 1
+      },
+      {
+        "path": "/generators/password-generator/",
+        "status": 200,
+        "namedSliders": 1
+      },
+      {
+        "path": "/pdf-tools/pdf-to-jpg/",
+        "status": 200,
+        "namedSliders": 1
+      }
+    ]
+  },
+  "notMeasured": [
+    "Lighthouse",
+    "field Core Web Vitals",
+    "LCP",
+    "INP",
+    "CLS",
+    "mobile device performance",
+    "navigation milliseconds"
+  ]
+}

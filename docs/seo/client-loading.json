@@ -1,0 +1,99 @@
+{
+  "initialStaticGraph": {
+    "rawBytes": 429205,
+    "gzipBytes": 133341,
+    "chunks": [
+      {
+        "file": "index-mkbocdcE.js",
+        "rawBytes": 195386,
+        "gzipBytes": 56285
+      },
+      {
+        "file": "rolldown-runtime-C60lm6uB.js",
+        "rawBytes": 694,
+        "gzipBytes": 422
+      },
+      {
+        "file": "framework-D_rUT4EX.js",
+        "rawBytes": 190152,
+        "gzipBytes": 59092
+      },
+      {
+        "file": "navigation-errors-By4dF-Cc.js",
+        "rawBytes": 2085,
+        "gzipBytes": 984
+      },
+      {
+        "file": "search-CCLtR-ju.js",
+        "rawBytes": 6906,
+        "gzipBytes": 2834
+      },
+      {
+        "file": "createLucideIcon-CLApvFWr.js",
+        "rawBytes": 558,
+        "gzipBytes": 378
+      },
+      {
+        "file": "Icon-Bo9jbUr1.js",
+        "rawBytes": 1082,
+        "gzipBytes": 655
+      },
+      {
+        "file": "icon-J6CPivDx.js",
+        "rawBytes": 3540,
+        "gzipBytes": 1438
+      },
+      {
+        "file": "sparkles-BcoCXB1b.js",
+        "rawBytes": 1094,
+        "gzipBytes": 493
+      },
+      {
+        "file": "lock-keyhole-Cwx4m1c8.js",
+        "rawBytes": 471,
+        "gzipBytes": 308
+      },
+      {
+        "file": "x-DWhg4rR2.js",
+        "rawBytes": 154,
+        "gzipBytes": 152
+      },
+      {
+        "file": "tool-definitions-DH_Nfaul.js",
+        "rawBytes": 6556,
+        "gzipBytes": 2312
+      },
+      {
+        "file": "layout-segment-context-DqG6MTVs.js",
+        "rawBytes": 534,
+        "gzipBytes": 366
+      },
+      {
+        "file": "header-6ZIF_FJ7.js",
+        "rawBytes": 14463,
+        "gzipBytes": 4842
+      },
+      {
+        "file": "chevron-down-ThbBbEET.js",
+        "rawBytes": 128,
+        "gzipBytes": 141
+      },
+      {
+        "file": "saved-tools-store-qYnZC5Zp.js",
+        "rawBytes": 2278,
+        "gzipBytes": 1172
+      },
+      {
+        "file": "saved-tools-BX6dXRGH.js",
+        "rawBytes": 2018,
+        "gzipBytes": 870
+      },
+      {
+        "file": "hero-phrases-DMgdl-vQ.js",
+        "rawBytes": 1106,
+        "gzipBytes": 597
+      }
+    ]
+  },
+  "note": "Sum of raw and separately gzip-compressed static chunks. Shared chunks are counted once. Not an observed network payload, Lighthouse or Core Web Vitals measurement."
+}

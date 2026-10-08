@@ -1,0 +1,11 @@
+export type PDFRun={text:string;size:number;bold?:boolean;italic?:boolean;underline?:boolean;color?:string;fontFamily?:'sans'|'serif'|'mono';fitWidth?:number;spacing?:number};
+export type Paragraph={type:'paragraph';runs:PDFRun[];align:'left'|'center'|'right'|'justify';before:number;after:number;indent:number;line:number;pageBreak?:boolean;lineRule?:'auto'|'exact'|'atLeast';size?:number;rightIndent?:number;firstLine?:number;keepNext?:boolean;keepLines?:boolean;tabs?:{position:number;align:'left'|'center'|'right'}[]};
+export type Picture={type:'image';bytes:Uint8Array;width:number;height:number;mime:'image/png'|'image/jpeg';position?:{x:number;y:number;horizontal:'page'|'margin';vertical:'page'|'margin'}};
+export type Border={width:number;color:string};
+export type CellMargins={left:number;right:number;top:number;bottom:number};
+export type Table={type:'table';widths:number[];indent?:number;rows:{cells:{paragraphs:Paragraph[];images?:Picture[];span:number;margins?:CellMargins;borders?:Partial<Record<'top'|'bottom'|'left'|'right',Border>>}[];header:boolean;minHeight?:number;exactHeight?:boolean;cantSplit?:boolean}[]};
+export type PageLayout={width:number;height:number;left:number;right:number;top:number;bottom:number;headerDistance?:number;footerDistance?:number;headers?:Paragraph[];footers?:Paragraph[];firstHeaders?:Paragraph[];firstFooters?:Paragraph[]};
+export type Frame={type:'frame';x:number;y:number;width:number;height:number;horizontal:'page'|'margin';vertical:'page'|'margin';blocks:WordPDFBlock[]};
+export type Rule={type:'rule';x1:number;y1:number;x2:number;y2:number;width:number;color:string};
+export type WordPDFBlock=Paragraph|Picture|Table|Frame|Rule|{type:'break';source?:'explicit'|'saved'}|{type:'section';layout:PageLayout;start:'initial'|'nextPage'|'continuous'|'oddPage'|'evenPage'};
+export type WordPDFModel={blocks:WordPDFBlock[];width:number;height:number;left:number;right:number;top:number;bottom:number;warnings:string[];source?:'docx'};

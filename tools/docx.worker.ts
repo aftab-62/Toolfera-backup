@@ -1,0 +1,4 @@
+import {reconstructWord} from './pdf-word-layout.ts';
+import {packageDOCX} from './docx-package.ts';
+const scope=globalThis as unknown as {onmessage:((event:MessageEvent)=>void)|null;postMessage:(data:unknown)=>void};
+scope.onmessage=({data})=>{try{if(data.action==='analyze'){scope.postMessage({progress:'Analyzing document structure…'});scope.postMessage({result:reconstructWord(data.pages,data.warnings)})}else if(data.action==='build'){scope.postMessage({progress:'Building Word document…'});scope.postMessage({result:packageDOCX(data.document)})}else throw new Error('Choose a supported Word operation.')}catch(error){const message=error instanceof Error?error.message:'';scope.postMessage({error:/^(Choose |This document|This PDF|The Word)/.test(message)?message:'Unable to reconstruct this PDF. Its structure may be unsupported. Try a simpler text-based document.'})}};

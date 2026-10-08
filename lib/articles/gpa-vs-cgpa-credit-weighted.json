@@ -1,0 +1,124 @@
+{
+  "slug": "gpa-vs-cgpa-credit-weighted",
+  "title": "GPA versus CGPA: calculate the credit-weighted result",
+  "seoTitle": "GPA vs CGPA: Credit-Weighted Formula & Examples",
+  "description": "Calculate semester and cumulative GPA with credits. Follow worked examples, avoid averaging unequal semesters and check institution-specific grade rules.",
+  "primary": "GPA vs CGPA calculation with credits",
+  "secondary": [
+    "weighted GPA formula",
+    "combine semester GPAs"
+  ],
+  "longTail": [
+    "why average semester GPA differs from CGPA",
+    "calculate CGPA with unequal semester credits"
+  ],
+  "intent": "Informational: GPA vs CGPA calculation with credits",
+  "topic": "Student",
+  "category": "student-tools",
+  "relatedTools": [
+    "gpa-calculator",
+    "cgpa-calculator",
+    "marks-calculator",
+    "university-merit-calculator"
+  ],
+  "relatedArticles": [
+    "percentage-vs-percentage-points",
+    "attendance-percentage-target-classes"
+  ],
+  "published": "2026-10-08",
+  "intro": "GPA summarizes a set of courses, commonly one semester. CGPA combines the included study across semesters. Both need credit weighting: a course or semester with more counted credits contributes more. A simple average works only when the relevant weights are equal.",
+  "sections": [
+    {
+      "id": "start-with-grade-points-not-raw-percentages",
+      "title": "Start with grade points, not raw percentages",
+      "paragraphs": [
+        "Grade points are the numerical values your institution assigns to course grades. Raw marks and grade points are not interchangeable. A score of 80 does not automatically mean a particular point value everywhere. Get the actual grade-point table and inclusion rules from your institution before entering course results.",
+        "Tool Fera accepts numerical grade points on scales up to 10, including a 4.0 scale. That flexibility is not an official grade conversion. It lets you enter the values that apply to your courses. Do not mix a 4-point semester with a 10-point semester and expect the average to have a meaningful scale."
+      ]
+    },
+    {
+      "id": "calculate-semester-gpa-with-course-credits",
+      "title": "Calculate semester GPA with course credits",
+      "paragraphs": [
+        "For each included course, multiply credits by grade points. Add those weighted points and divide by the total included credits. Suppose three courses have 3 credits at 3.7 points, 4 credits at 3.0 points and 2 credits at 4.0 points. Their contributions are 11.1, 12 and 8, giving 31.1 weighted points over 9 credits.",
+        "The GPA is 31.1 ÷ 9, or approximately 3.456 before your institution’s display rounding. The four-credit course contributes more than the two-credit course. Use the [GPA Calculator](/student-tools/gpa-calculator/) to enter each course separately and check the total credits against your transcript."
+      ],
+      "table": {
+        "headers": [
+          "Course",
+          "Credits",
+          "Grade points",
+          "Weighted points"
+        ],
+        "rows": [
+          [
+            "A",
+            "3",
+            "3.7",
+            "11.1"
+          ],
+          [
+            "B",
+            "4",
+            "3.0",
+            "12.0"
+          ],
+          [
+            "C",
+            "2",
+            "4.0",
+            "8.0"
+          ],
+          [
+            "Total",
+            "9",
+            "—",
+            "31.1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "combine-semesters-by-their-included-credits",
+      "title": "Combine semesters by their included credits",
+      "paragraphs": [
+        "Suppose one semester has GPA 3.8 across 12 credits and another has GPA 3.0 across 18 credits. Multiply 3.8 × 12 and 3.0 × 18, then divide their sum by 30 credits. The result is 99.6 ÷ 30 = 3.32. The simple average, 3.4, is different because it incorrectly gives the two semesters equal weight.",
+        "The [CGPA Calculator](/student-tools/cgpa-calculator/) uses this credit-weighted method. Enter the credits that actually count in the GPA policy, not every item that appears on a transcript. An institution may exclude some non-credit or pass/fail entries. Rounded semester GPAs can also introduce a small difference from a registrar’s calculation using original course-level points."
+      ]
+    },
+    {
+      "id": "do-not-double-count-the-previous-cumulative-result",
+      "title": "Do not double-count the previous cumulative result",
+      "paragraphs": [
+        "A previous CGPA and its total credits summarize earlier study. They should not be included alongside all the same earlier semester GPAs, because that counts the same courses twice. Choose one complete representation: all included semesters, or a previous cumulative result with its credits plus only the new study.",
+        "For example, a previous 3.20 over 60 credits and a new 3.80 over 15 credits give (3.20 × 60 + 3.80 × 15) ÷ 75 = 3.32. That is a worked arithmetic example, not a prediction of an official transcript. Check repeated-course rules before deciding which credits and points belong in those totals."
+      ]
+    },
+    {
+      "id": "repeats-withdrawals-and-exclusions-are-policy-questions",
+      "title": "Repeats, withdrawals and exclusions are policy questions",
+      "paragraphs": [
+        "Some institutions replace a repeated course grade; others count more than one attempt or apply a different rule. Withdrawals, incomplete results and pass/fail courses can also affect inclusion. A calculator cannot infer that policy from the grade number alone. Read the current academic regulations and use their counted credits and points.",
+        "Do not round every course contribution prematurely. Keep available precision through the weighted sum, then apply the required final rounding rule. If your result differs from an official record, check inputs and exclusions first. More decimal places on an online answer do not make it more authoritative than the institution’s prescribed calculation."
+      ]
+    },
+    {
+      "id": "keep-marks-admission-aggregates-and-gpa-separate",
+      "title": "Keep marks, admission aggregates and GPA separate",
+      "paragraphs": [
+        "Marks percentage is obtained marks divided by total marks, multiplied by 100. An admission aggregate combines specified components under an institution’s weights. GPA summarizes grade points weighted by course credits. These calculations answer different questions; one should not be substituted for another simply because each produces a number.",
+        "Use [Marks Calculator](/student-tools/marks-calculator/) for marks and target scores, or [University Merit Calculator](/student-tools/university-merit-calculator/) with the current admission formula you have been given. There is no universal official CGPA-to-percentage formula in Tool Fera. The [percentage guide](/blog/percentage-vs-percentage-points/) explains the arithmetic without inventing an academic conversion."
+      ]
+    },
+    {
+      "id": "a-short-check-before-you-rely-on-the-result",
+      "title": "A short check before you rely on the result",
+      "paragraphs": [
+        "Reconcile the course count, included credit total and grade-point scale with your record. Look for accidental zeros, duplicated rows and a semester credit total entered where a single course’s credits belong. A decimal result can look plausible even when one of these inputs is wrong.",
+        "Tool Fera calculates in the current page; it does not store your grades in recent-tool history. Keep your own notes if you need to explain the calculation later. For an application or appeal, provide the institution’s official transcript or prescribed calculation rather than describing a personal online estimate as an official academic result."
+      ]
+    }
+  ],
+  "conclusion": "Credit weighting is the central difference between a dependable calculation and a misleading average. Use the same scale, include the right attempts and avoid counting past study twice. Then compare your estimate with the rules that govern the actual academic record.",
+  "sources": []
+}

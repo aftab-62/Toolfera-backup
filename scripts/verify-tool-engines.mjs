@@ -1,0 +1,37 @@
+import assert from 'node:assert/strict';
+import {PDFDocument} from 'pdf-lib';
+import {dimensions,validateCrop,encodeBMP} from '../tools/image-processing.ts';
+import {parsePageSelection} from '../tools/pdf-pages.ts';
+assert.deepEqual(dimensions(640,400,1280,720,'fit'),{width:1152,height:720,drawWidth:1152,drawHeight:720});
+assert.deepEqual(dimensions(640,400,120,120,'fill'),{width:120,height:120,drawWidth:192,drawHeight:120});
+assert.deepEqual(dimensions(640,400,120,120,'stretch'),{width:120,height:120,drawWidth:120,drawHeight:120});
+assert.throws(()=>dimensions(640,400,0,120,'fit'));
+assert.throws(()=>dimensions(640,400,5000,5000,'stretch'));
+assert.deepEqual(parsePageSelection('3, 1-2',3),[2,0,1]);
+for(const value of ['0','4','3-1','1,1','one',''])assert.throws(()=>parsePageSelection(value,3));
+const bmp=encodeBMP(new Uint8ClampedArray([255,0,0,255,0,255,0,255,0,0,255,255,255,255,255,255]),2,2);
+const bytes=new Uint8Array(await bmp.arrayBuffer());assert.equal(bmp.type,'image/bmp');assert.equal(String.fromCharCode(...bytes.slice(0,2)),'BM');assert.equal(new DataView(bytes.buffer).getUint32(2,true),70);assert.deepEqual(Array.from(bytes.slice(54,60)),[255,0,0,255,255,255]);
+assert.deepEqual(validateCrop(640,400,{x:100,y:50,width:200,height:100}),{x:100,y:50,width:200,height:100});assert.throws(()=>validateCrop(640,400,{x:500,y:0,width:200,height:100}));
+const messages=[];globalThis.postMessage=data=>messages.push(data);await import('../tools/pdf.worker.ts');
+const files=[];for(const pages of [3,2]){const d=await PDFDocument.create();for(let i=0;i<pages;i++)d.addPage([400+i,500]);files.push(new File([await d.save()],`fixture-${pages}.pdf`,{type:'application/pdf'}))}
+await globalThis.onmessage({data:{id:1,action:'inspect',files}});assert.deepEqual(messages.at(-1).result.counts,[3,2]);
+await globalThis.onmessage({data:{id:2,action:'merge',files}});const merge=messages.at(-1).result;assert.equal(merge.pages,5);const loaded=await PDFDocument.load(await merge.blob.arrayBuffer());assert.equal(loaded.getPageCount(),5);assert.deepEqual(loaded.getPages().map(p=>p.getWidth()),[400,401,402,400,401]);
+await globalThis.onmessage({data:{id:3,action:'split',files:[files[0]],pages:'3,1-2'}});const split=messages.at(-1).result;assert.equal(split.pages,3);const extracted=await PDFDocument.load(await split.blob.arrayBuffer());assert.deepEqual(extracted.getPages().map(p=>p.getWidth()),[402,400,401]);
+await globalThis.onmessage({data:{id:4,action:'split',files:[files[0]],pages:'9'}});assert.match(messages.at(-1).error,/between 1 and 3/);
+const run=async(action,options={})=>{await globalThis.onmessage({data:{id:100,action,files:[files[0]],...options}});return messages.at(-1)};
+let result=await run('rotate',{pages:'1,3',angle:90});let doc=await PDFDocument.load(await result.result.blob.arrayBuffer());assert.deepEqual(doc.getPages().map(p=>p.getRotation().angle),[90,0,90]);
+result=await run('delete',{pages:'2'});doc=await PDFDocument.load(await result.result.blob.arrayBuffer());assert.deepEqual(doc.getPages().map(p=>p.getWidth()),[400,402]);
+assert.match((await run('delete',{pages:'1-3'})).error,/Keep at least one/);
+result=await run('reorder',{pages:'3,1-2'});doc=await PDFDocument.load(await result.result.blob.arrayBuffer());assert.deepEqual(doc.getPages().map(p=>p.getWidth()),[402,400,401]);assert.match((await run('reorder',{pages:'1-2'})).error,/every page/);
+result=await run('compress');doc=await PDFDocument.load(await result.result.blob.arrayBuffer());assert.deepEqual(doc.getPages().map(p=>p.getWidth()),[400,401,402]);
+const png=new File([Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl6sS8AAAAASUVORK5CYII=','base64')],'one.png',{type:'image/png'});
+result=await run('images',{files:[png],pageSize:'a4',margin:18});doc=await PDFDocument.load(await result.result.blob.arrayBuffer());assert.equal(doc.getPageCount(),1);assert.equal(doc.getPage(0).getWidth(),595.28);assert.ok(result.result.blob.size>300);
+result=await run('zip',{files:[png]});const {unzipSync}=await import('fflate');assert.deepEqual(Buffer.from(unzipSync(new Uint8Array(await result.result.blob.arrayBuffer()))['one.png']),Buffer.from(await png.arrayBuffer()));
+const {journeyFuelCost}=await import('../tools/math.ts');const us=journeyFuelCost(100,25,4,'mi','mpg','gal',2);assert.ok(Math.abs(us.litres-15.141647136)<1e-9);assert.equal(us.cost,16);assert.equal(us.costPerPerson,8);const imperial=journeyFuelCost(100,25,4,'mi','mpg-imp','gal-imp');assert.ok(Math.abs(imperial.litres-18.18436)<1e-9);assert.ok(Math.abs(imperial.cost-16)<1e-9);assert.equal(journeyFuelCost(100,5,2,'km','L/100km','L').cost,10);
+const {calendarAge,discountedPrice}=await import('../tools/everyday-math.ts');assert.deepEqual(calendarAge('2000-02-29','2025-02-28'),{years:25,months:0,days:0,totalDays:9131});assert.deepEqual(calendarAge('2024-01-31','2024-02-29'),{years:0,months:1,days:0,totalDays:29});assert.throws(()=>calendarAge('2025-02-29','2026-01-01'));assert.throws(()=>calendarAge('2027-01-01','2026-01-01'));assert.deepEqual(discountedPrice(200,12.5),{saved:25,final:175});
+const {transformText}=await import('../tools/text-transforms.ts');const unicode='Hello دنیا 👋';assert.equal(transformText(transformText(unicode,'base64-encode'),'base64-decode'),unicode);assert.equal(transformText('hello WORLD. second SENTENCE!','sentence'),'Hello world. Second sentence!');assert.equal(transformText(transformText('a&b/ دنیا','url-encode'),'url-decode'),'a&b/ دنیا');assert.throws(()=>transformText('%%','url-decode'));assert.throws(()=>transformText('/w==','base64-decode'));
+await import('../tools/text.worker.ts');await globalThis.onmessage({data:{id:5,action:'json',text:'{"b":2,"a":[1,true]}',minify:false}});assert.equal(messages.at(-1).result,'{\n  "b": 2,\n  "a": [\n    1,\n    true\n  ]\n}');
+await globalThis.onmessage({data:{id:6,action:'json',text:'bad'}});assert.ok(messages.at(-1).error);
+await globalThis.onmessage({data:{id:7,action:'count',text:'hello world '.repeat(10000)}});assert.equal(messages.at(-1).result.words,20000);
+const QRCode=(await import('qrcode')).default;const {PNG}=await import('pngjs');const jsQR=(await import('jsqr')).default;for(const content of ['https://example.com/utilityhub-qa','Hello دنیا 👋']){const png=PNG.sync.read(await QRCode.toBuffer(content,{width:512,margin:4,errorCorrectionLevel:'M',color:{dark:'#15223aff',light:'#ffffffff'}}));const decoded=jsQR(new Uint8ClampedArray(png.data),png.width,png.height);assert.equal(decoded?.data,content)}
+console.log(JSON.stringify({passed:true,checks:['fit/fill/stretch dimensions','image limits','BMP header and pixel ordering','PDF range validation','real PDF worker merge/extract, rotation/deletion/reorder and lossless output','image PDF embedding and ZIP bytes','US/Imperial fuel conversions','leap-day/calendar boundaries and discount math','Unicode Base64/URL round trips and invalid input','JSON worker formatting/errors','large text worker counts','QR PNG independently decoded for a URL and Unicode text']},null,2));

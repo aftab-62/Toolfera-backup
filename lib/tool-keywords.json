@@ -1,0 +1,508 @@
+{
+  "pdf-compressor": {
+    "primary": "compress PDF online",
+    "secondary": [
+      "reduce PDF file size",
+      "PDF compression levels"
+    ],
+    "longTail": [
+      "compress scanned PDF without losing readable text",
+      "PDF already optimized cannot reduce size"
+    ]
+  },
+  "pdf-merger": {
+    "primary": "merge PDF files",
+    "secondary": [
+      "combine PDF documents",
+      "PDF file order"
+    ],
+    "longTail": [
+      "combine PDFs in the right order",
+      "merge PDFs without file upload"
+    ]
+  },
+  "pdf-splitter": {
+    "primary": "split PDF pages",
+    "secondary": [
+      "extract PDF page range",
+      "PDF excerpt"
+    ],
+    "longTail": [
+      "extract selected PDF pages into one file",
+      "split PDF in a custom selection order"
+    ]
+  },
+  "pdf-to-jpg": {
+    "primary": "PDF to JPG converter",
+    "secondary": [
+      "PDF to PNG",
+      "export PDF page images"
+    ],
+    "longTail": [
+      "convert selected PDF pages to images",
+      "PDF page image resolution"
+    ]
+  },
+  "jpg-to-pdf": {
+    "primary": "JPG to PDF converter",
+    "secondary": [
+      "PNG to PDF",
+      "combine images into PDF"
+    ],
+    "longTail": [
+      "JPG PNG to PDF with page margins",
+      "fit image to A4 or Letter PDF"
+    ]
+  },
+  "pdf-to-word": {
+    "primary": "PDF to Word converter",
+    "secondary": [
+      "editable DOCX from PDF",
+      "native PDF text conversion"
+    ],
+    "longTail": [
+      "convert selectable PDF to normal editable Word text",
+      "PDF to Word without OCR"
+    ]
+  },
+  "pdf-ocr": {
+    "primary": "PDF OCR online",
+    "secondary": [
+      "scanned PDF to text",
+      "PDF text recognition"
+    ],
+    "longTail": [
+      "extract English printed text from scanned PDF",
+      "scanned PDF to editable DOCX locally"
+    ]
+  },
+  "word-to-pdf": {
+    "primary": "Word to PDF converter",
+    "secondary": [
+      "DOCX to PDF",
+      "browser document conversion"
+    ],
+    "longTail": [
+      "DOCX to PDF with explicit page breaks",
+      "convert DOCX without upload or OCR"
+    ]
+  },
+  "rotate-pdf": {
+    "primary": "rotate PDF pages",
+    "secondary": [
+      "PDF page orientation",
+      "turn PDF page"
+    ],
+    "longTail": [
+      "rotate selected PDF pages by 90 degrees",
+      "rotate PDF without flattening text"
+    ]
+  },
+  "delete-pdf-pages": {
+    "primary": "delete PDF pages",
+    "secondary": [
+      "remove PDF page ranges",
+      "PDF page removal"
+    ],
+    "longTail": [
+      "remove unwanted pages from a PDF copy",
+      "delete duplicate PDF page"
+    ]
+  },
+  "reorder-pdf-pages": {
+    "primary": "reorder PDF pages",
+    "secondary": [
+      "arrange PDF page sequence",
+      "PDF page order"
+    ],
+    "longTail": [
+      "reorder every PDF page exactly once",
+      "reverse a PDF page sequence"
+    ]
+  },
+  "image-compressor": {
+    "primary": "image compressor",
+    "secondary": [
+      "reduce image file size",
+      "JPEG image compression"
+    ],
+    "longTail": [
+      "compress image for upload byte limit",
+      "compare actual image size savings"
+    ]
+  },
+  "image-resizer": {
+    "primary": "image resizer",
+    "secondary": [
+      "resize image pixels",
+      "image aspect ratio"
+    ],
+    "longTail": [
+      "resize width and height without stretching",
+      "fit fill and stretch image difference"
+    ]
+  },
+  "image-converter": {
+    "primary": "image format converter",
+    "secondary": [
+      "convert image format",
+      "browser image conversion"
+    ],
+    "longTail": [
+      "convert image with transparency preserved",
+      "choose supported image output format"
+    ]
+  },
+  "image-cropper": {
+    "primary": "image cropper",
+    "secondary": [
+      "crop image pixels",
+      "crop photo"
+    ],
+    "longTail": [
+      "crop image with exact coordinates",
+      "crop a square image without stretching"
+    ]
+  },
+  "jpg-to-png": {
+    "primary": "JPG to PNG converter",
+    "secondary": [
+      "JPEG to PNG",
+      "lossless PNG copy"
+    ],
+    "longTail": [
+      "convert JPG to PNG without changing dimensions",
+      "does JPG to PNG restore quality"
+    ]
+  },
+  "png-to-jpg": {
+    "primary": "PNG to JPG converter",
+    "secondary": [
+      "PNG to JPEG",
+      "JPEG quality conversion"
+    ],
+    "longTail": [
+      "convert transparent PNG to JPG with white background",
+      "PNG to JPG real file size"
+    ]
+  },
+  "webp-converter": {
+    "primary": "WebP converter",
+    "secondary": [
+      "image to WebP",
+      "convert JPG PNG WebP"
+    ],
+    "longTail": [
+      "create WebP still image with transparency",
+      "compare WebP quality and file size"
+    ]
+  },
+  "image-to-text": {
+    "primary": "image to text OCR",
+    "secondary": [
+      "JPG PNG text recognition",
+      "image transcription"
+    ],
+    "longTail": [
+      "extract English paragraphs from image locally",
+      "image OCR to TXT or editable Word"
+    ]
+  },
+  "gpa-calculator": {
+    "primary": "GPA calculator",
+    "secondary": [
+      "semester GPA",
+      "credit-weighted grades"
+    ],
+    "longTail": [
+      "calculate GPA with course credits and grade points",
+      "GPA calculator custom grading scale"
+    ]
+  },
+  "cgpa-calculator": {
+    "primary": "CGPA calculator",
+    "secondary": [
+      "cumulative GPA",
+      "semester credit weighting"
+    ],
+    "longTail": [
+      "combine semester GPAs with unequal credits",
+      "calculate CGPA without averaging semesters equally"
+    ]
+  },
+  "percentage-calculator": {
+    "primary": "percentage calculator",
+    "secondary": [
+      "percent of a number",
+      "one value as percentage"
+    ],
+    "longTail": [
+      "calculate obtained marks as percentage",
+      "find 15 percent of 200"
+    ]
+  },
+  "marks-calculator": {
+    "primary": "marks calculator",
+    "secondary": [
+      "marks percentage",
+      "remaining marks target"
+    ],
+    "longTail": [
+      "score needed in final assessment to reach target",
+      "marks target beyond remaining score"
+    ]
+  },
+  "attendance-calculator": {
+    "primary": "attendance calculator",
+    "secondary": [
+      "attendance percentage",
+      "attendance target"
+    ],
+    "longTail": [
+      "classes needed to reach 75 percent attendance",
+      "future classes I can miss while above target"
+    ]
+  },
+  "university-merit-calculator": {
+    "primary": "university merit calculator",
+    "secondary": [
+      "weighted admission aggregate",
+      "custom merit weights"
+    ],
+    "longTail": [
+      "calculate admission aggregate with university weights",
+      "weighted marks components for merit"
+    ]
+  },
+  "fuel-cost-calculator": {
+    "primary": "fuel cost calculator",
+    "secondary": [
+      "trip fuel estimate",
+      "journey cost split"
+    ],
+    "longTail": [
+      "calculate fuel cost with US or Imperial MPG",
+      "trip cost using own fuel price and units"
+    ]
+  },
+  "age-calculator": {
+    "primary": "age calculator",
+    "secondary": [
+      "calendar age",
+      "age as of date"
+    ],
+    "longTail": [
+      "age in years months and days at cutoff date",
+      "calendar date age without timezone offset"
+    ]
+  },
+  "loan-emi-calculator": {
+    "primary": "loan EMI calculator",
+    "secondary": [
+      "monthly loan payment",
+      "total loan interest"
+    ],
+    "longTail": [
+      "fixed monthly payment with zero interest rate",
+      "loan estimate excluding fees and insurance"
+    ]
+  },
+  "savings-calculator": {
+    "primary": "savings calculator",
+    "secondary": [
+      "monthly savings projection",
+      "deposits and growth"
+    ],
+    "longTail": [
+      "savings with end-of-month deposits",
+      "compare contributions with estimated growth"
+    ]
+  },
+  "profit-calculator": {
+    "primary": "profit calculator",
+    "secondary": [
+      "profit margin",
+      "cost markup"
+    ],
+    "longTail": [
+      "difference between profit margin and markup",
+      "profit percentage with zero revenue or cost"
+    ]
+  },
+  "discount-calculator": {
+    "primary": "discount calculator",
+    "secondary": [
+      "sale price",
+      "amount saved"
+    ],
+    "longTail": [
+      "final price after a percentage discount",
+      "discount amount before taxes and fees"
+    ]
+  },
+  "salary-calculator": {
+    "primary": "salary calculator",
+    "secondary": [
+      "gross pay conversion",
+      "hourly annual salary"
+    ],
+    "longTail": [
+      "convert hourly pay to annual gross salary",
+      "salary periods with custom working weeks"
+    ]
+  },
+  "word-counter": {
+    "primary": "word counter",
+    "secondary": [
+      "count words",
+      "estimated reading time"
+    ],
+    "longTail": [
+      "whitespace word count and Unicode characters",
+      "why word counts differ between editors"
+    ]
+  },
+  "character-counter": {
+    "primary": "character counter",
+    "secondary": [
+      "count characters without spaces",
+      "Unicode text count"
+    ],
+    "longTail": [
+      "emoji counted as multiple code points",
+      "character count including line breaks"
+    ]
+  },
+  "case-converter": {
+    "primary": "text case converter",
+    "secondary": [
+      "uppercase lowercase",
+      "title sentence case"
+    ],
+    "longTail": [
+      "convert text case and review acronyms",
+      "change casing without replacing source text"
+    ]
+  },
+  "remove-duplicate-lines": {
+    "primary": "remove duplicate lines",
+    "secondary": [
+      "deduplicate text",
+      "unique text lines"
+    ],
+    "longTail": [
+      "remove duplicate lines keeping first order",
+      "case-sensitive duplicate line comparison"
+    ]
+  },
+  "text-cleaner": {
+    "primary": "text cleaner",
+    "secondary": [
+      "clean whitespace",
+      "tidy pasted text"
+    ],
+    "longTail": [
+      "remove extra spaces while preserving paragraphs",
+      "clean copied text line breaks locally"
+    ]
+  },
+  "json-formatter": {
+    "primary": "JSON formatter",
+    "secondary": [
+      "JSON validator",
+      "JSON minifier"
+    ],
+    "longTail": [
+      "fix JSON syntax with trailing comma",
+      "format JSON with large integer precision warning"
+    ]
+  },
+  "base64-encoder-decoder": {
+    "primary": "Base64 encoder decoder",
+    "secondary": [
+      "UTF-8 Base64",
+      "decode text Base64"
+    ],
+    "longTail": [
+      "Base64 encode emoji and Unicode text",
+      "Base64 is encoding not encryption"
+    ]
+  },
+  "url-encoder-decoder": {
+    "primary": "URL encoder decoder",
+    "secondary": [
+      "percent encode component",
+      "decode URL value"
+    ],
+    "longTail": [
+      "encode query value without escaping whole URL",
+      "URL decoding plus sign not space"
+    ]
+  },
+  "uuid-generator": {
+    "primary": "UUID generator",
+    "secondary": [
+      "UUID v4",
+      "random identifiers"
+    ],
+    "longTail": [
+      "generate multiple UUID v4 in browser",
+      "copy cryptographic random UUID identifiers"
+    ]
+  },
+  "color-converter": {
+    "primary": "color converter",
+    "secondary": [
+      "HEX RGB HSL",
+      "alpha color conversion"
+    ],
+    "longTail": [
+      "convert HEX RGB HSL with transparency",
+      "why alpha color conversion rounds"
+    ]
+  },
+  "qr-code-generator": {
+    "primary": "QR code generator",
+    "secondary": [
+      "static QR code",
+      "QR PNG SVG"
+    ],
+    "longTail": [
+      "create QR code without tracking redirect",
+      "download and test QR code for print"
+    ]
+  },
+  "password-generator": {
+    "primary": "password generator",
+    "secondary": [
+      "random password",
+      "cryptographic password"
+    ],
+    "longTail": [
+      "generate unique password with chosen character groups",
+      "browser password generator without storage"
+    ]
+  },
+  "random-number-generator": {
+    "primary": "random number generator",
+    "secondary": [
+      "random whole numbers",
+      "unique random values"
+    ],
+    "longTail": [
+      "generate numbers without repeats in a range",
+      "cryptographic random integers locally"
+    ]
+  },
+  "invoice-generator": {
+    "primary": "invoice generator",
+    "secondary": [
+      "PDF invoice",
+      "line item totals"
+    ],
+    "longTail": [
+      "create invoice PDF without stored account",
+      "invoice discount applied before entered tax"
+    ]
+  }
+}

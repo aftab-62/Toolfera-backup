@@ -1,0 +1,101 @@
+{
+  "slug": "combine-pdf-files-in-the-right-order",
+  "title": "How to combine PDF files in the right order",
+  "seoTitle": "Combine PDF Files: Order, Page Checks & Safe Merging",
+  "description": "Plan a merged PDF, verify page order and avoid duplicate attachments. Learn how splitting, reordering and compression fit into a local merge workflow.",
+  "primary": "how to combine PDF files in the right order",
+  "secondary": [
+    "merge PDF page order",
+    "combine PDF attachments"
+  ],
+  "longTail": [
+    "merge PDFs without duplicate pages",
+    "PDF merge form and signature limitations"
+  ],
+  "intent": "Informational: how to combine PDF files in the right order",
+  "topic": "PDF & documents",
+  "category": "pdf-tools",
+  "relatedTools": [
+    "pdf-merger",
+    "reorder-pdf-pages",
+    "pdf-splitter",
+    "pdf-compressor"
+  ],
+  "relatedArticles": [
+    "reduce-pdf-file-size-without-losing-quality",
+    "jpg-png-to-pdf-page-size-margins"
+  ],
+  "published": "2026-10-08",
+  "intro": "A good merge begins with a page plan, not the Combine button. Put the documents in the intended order, remove unnecessary pages and review the finished PDF from beginning to end. Merging joins page content; it does not guarantee that every interactive feature from the source survives.",
+  "sections": [
+    {
+      "id": "write-a-short-page-plan-before-merging",
+      "title": "Write a short page plan before merging",
+      "paragraphs": [
+        "List the files and the role of each one: cover, main report, appendix, supporting evidence or receipt. Give each document a clear filename so you can distinguish draft and final copies. If a portal asks for a specific sequence, use that sequence instead of relying on alphabetical order.",
+        "Check the source page counts. A report with 8 pages and an appendix with 3 should give 11 pages if you include both in full. That simple expectation makes accidental duplicates easier to spot. The count is a check, not proof that the right documents were selected: an older 8-page draft could still produce the expected total."
+      ]
+    },
+    {
+      "id": "separate-file-order-from-page-order",
+      "title": "Separate file order from page order",
+      "paragraphs": [
+        "File order controls which document comes first in a merge. Page order controls the sequence inside a document. Dragging two files into the right order cannot fix a source PDF whose own pages are reversed. Resolve obvious orientation and ordering problems before making the final combined file.",
+        "Use [Reorder PDF Pages](/pdf-tools/reorder-pdf-pages/) if one document needs a different sequence. That tool expects every page exactly once, which protects you from silently omitting a page while arranging the order. If you only need an excerpt, use [PDF Splitter](/pdf-tools/pdf-splitter/) instead; extraction and reordering are different tasks."
+      ]
+    },
+    {
+      "id": "merge-the-prepared-documents-locally",
+      "title": "Merge the prepared documents locally",
+      "paragraphs": [
+        "Open [PDF Merger](/pdf-tools/pdf-merger/), choose the source files and inspect their displayed page counts. Arrange them in your planned order, then create the merged copy. Tool Fera processes the files in a browser worker rather than uploading the documents to a remote PDF API. The originals remain unchanged.",
+        "The current tool accepts 2–10 PDFs, up to 20 MB per file and 40 MB in total, with a 500-page processing bound. These limits protect browser memory; they are not a promise that every phone can comfortably process a file at the maximum. For a large submission, close other heavy tabs and keep the source documents until you have checked the downloaded result."
+      ]
+    },
+    {
+      "id": "convert-photographs-before-adding-them",
+      "title": "Convert photographs before adding them",
+      "paragraphs": [
+        "A JPG or PNG attachment needs to become PDF pages before it can join a PDF merge. Use [JPG & PNG to PDF](/pdf-tools/jpg-to-pdf/) to choose image order and page layout. Fit keeps the complete image; Fill can crop edges to occupy the page. For photographed certificates and receipts, cropping can remove content that matters.",
+        "Open that image-based PDF first. Confirm that the page is upright and small print is readable. It is still an image document, not an automatically searchable transcription. If recognition is needed, use a separate OCR workflow. The [image-to-PDF layout guide](/blog/jpg-png-to-pdf-page-size-margins/) explains margins and image dimensions."
+      ]
+    },
+    {
+      "id": "check-features-that-merging-may-not-preserve",
+      "title": "Check features that merging may not preserve",
+      "paragraphs": [
+        "Page copying preserves visible page content, but document-level features need separate care. Interactive forms, bookmarks and digital signatures are not guaranteed to carry over. A signed source can lose signature validity when the document is rewritten. Do not describe a merged copy as an untouched signed original.",
+        "If an organization needs a digitally signed file or active form, ask whether a merged copy is accepted. Keep the source as a separate attachment when required. Tool Fera does not remove PDF passwords; use an unencrypted file that you are authorized to process. A successfully opened PDF is not evidence that all its interactive behavior still works."
+      ]
+    },
+    {
+      "id": "review-the-result-in-a-useful-sequence",
+      "title": "Review the result in a useful sequence",
+      "paragraphs": [
+        "Inspect the beginning and end of each joined document, not only the first and last pages of the whole output. These junctions reveal missing appendices, repeated covers and unexpected blank pages. Read a few page numbers and verify that their sequence matches the document plan.",
+        "Compare page count, orientation and important graphics. Check the transition from a portrait report to a landscape table, and inspect any intentionally blank page. If a page was included accidentally, extract a corrected selection or remove the unwanted page; do not assume the recipient will infer which pages to ignore."
+      ],
+      "list": [
+        "Confirm the file sequence against your page plan.",
+        "Review every document junction.",
+        "Check orientation, page numbers and appendices.",
+        "Keep signed originals separately when required."
+      ]
+    },
+    {
+      "id": "only-then-decide-whether-to-compress",
+      "title": "Only then decide whether to compress",
+      "paragraphs": [
+        "Measure the final combined size against the submission requirement. If it is too large, first ask whether every page is necessary. A carefully selected excerpt can be more useful than a heavily degraded full document. When the full file is required, use [PDF Compressor](/pdf-tools/pdf-compressor/) and compare real savings with the original merged copy.",
+        "Review the compressed output again, especially scanned attachments and small table labels. Compression may not reduce a well optimized file. The [quality checklist](/blog/reduce-pdf-file-size-without-losing-quality/) helps decide whether a smaller copy still serves the recipient. Use a descriptive final filename and retain the uncompressed merged copy so later corrections do not start from an already degraded document."
+      ]
+    }
+  ],
+  "conclusion": "The merge is finished when the recipient can follow the intended sequence and all required pages remain readable. A page plan, junction review and separate feature checks are more dependable than trusting the final page count alone.",
+  "sources": [
+    {
+      "title": "Tool Fera PDF Merger limits",
+      "url": "/pdf-tools/pdf-merger/"
+    }
+  ]
+}

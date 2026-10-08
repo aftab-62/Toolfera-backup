@@ -1,0 +1,114 @@
+{
+  "slug": "percentage-vs-percentage-points",
+  "title": "Percentages and percentage points: choose the right comparison",
+  "seoTitle": "Percent vs Percentage Points: Formulas & Worked Examples",
+  "description": "Distinguish percent of a number, ratios and relative change. Use worked examples for marks, discounts and profit without confusing percentage points.",
+  "primary": "percentage vs percentage points",
+  "secondary": [
+    "relative percentage change",
+    "profit margin versus markup"
+  ],
+  "longTail": [
+    "20 percent to 25 percent percentage point difference",
+    "why two successive discounts do not add"
+  ],
+  "intent": "Informational: percentage vs percentage points",
+  "topic": "Calculators",
+  "category": "finance-tools",
+  "relatedTools": [
+    "percentage-calculator",
+    "discount-calculator",
+    "profit-calculator",
+    "marks-calculator"
+  ],
+  "relatedArticles": [
+    "gpa-vs-cgpa-credit-weighted",
+    "attendance-percentage-target-classes"
+  ],
+  "published": "2026-10-08",
+  "intro": "A percentage describes a proportion relative to a base. A percentage-point change subtracts two percentages. If a rate rises from 20% to 25%, that is 5 percentage points and a 25% relative increase—not a 5% relative increase. Always identify the base before calculating.",
+  "sections": [
+    {
+      "id": "percent-of-a-number-and-one-value-as-a-percentage",
+      "title": "Percent of a number and one value as a percentage",
+      "paragraphs": [
+        "To find p percent of a number B, calculate p ÷ 100 × B. For example, 15% of 200 is 30. To find what percentage A is of B, calculate A ÷ B × 100. For example, 30 out of 200 is 15%. These are reverse views of the same relationship when the same base is used.",
+        "The [Percentage Calculator](/student-tools/percentage-calculator/) provides those two tasks. Choose the intended mode before entering values. A denominator of zero does not define a ratio percentage. Empty fields should not be read as genuine zeros, and a placeholder example is not a value you have entered."
+      ]
+    },
+    {
+      "id": "why-percentage-points-exist",
+      "title": "Why percentage points exist",
+      "paragraphs": [
+        "When two values are already percentages, their direct difference is expressed in percentage points. Attendance increasing from 70% to 80% is a rise of 10 percentage points. That describes the new share compared with the old share without applying another relative base.",
+        "If you want the relative increase, use the old percentage as the base: (80 − 70) ÷ 70 × 100, approximately 14.29%. The two descriptions answer different questions and neither should quietly replace the other. A chart label that only says “up 10%” can be ambiguous unless it explains whether the change is relative or in points."
+      ]
+    },
+    {
+      "id": "relative-change-depends-on-the-starting-value",
+      "title": "Relative change depends on the starting value",
+      "paragraphs": [
+        "Relative change is (new − old) ÷ old × 100. Going from 80 to 100 is a 25% increase; going from 100 back to 80 is a 20% decrease. The same difference of 20 has different relative sizes because the starting bases differ.",
+        "A relative change from zero is undefined under this formula. If a count rises from 0 to 10, state the absolute change rather than inventing a percentage increase. For signed quantities, percentages can also be hard to interpret. Give the raw values and the chosen base so the result is understandable."
+      ],
+      "table": {
+        "headers": [
+          "Change",
+          "Absolute difference",
+          "Relative change"
+        ],
+        "rows": [
+          [
+            "80 → 100",
+            "+20",
+            "+25% of 80"
+          ],
+          [
+            "100 → 80",
+            "−20",
+            "−20% of 100"
+          ],
+          [
+            "20% → 25%",
+            "+5 percentage points",
+            "+25% of the old rate"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "discounts-apply-to-the-current-price",
+      "title": "Discounts apply to the current price",
+      "paragraphs": [
+        "A 20% discount on 250 saves 50 and gives a final price of 200, before additional taxes or fees. The [Discount Calculator](/finance-tools/discount-calculator/) shows both the saving and the final price. Check whether a quoted sale price already includes the discount before applying it again.",
+        "Successive discounts are usually applied to the remaining price. A 20% discount followed by a 10% discount on 250 gives 250 × 0.8 × 0.9 = 180, a total reduction of 28%. Adding 20 and 10 to claim a 30% discount uses the wrong base for the second step. Read the actual promotion’s terms if a different rule is specified."
+      ]
+    },
+    {
+      "id": "margin-and-markup-use-different-denominators",
+      "title": "Margin and markup use different denominators",
+      "paragraphs": [
+        "If revenue is 150 and cost is 100, profit is 50. Profit margin is profit ÷ revenue × 100, approximately 33.33%. Markup is profit ÷ cost × 100, or 50%. The same profit therefore produces different percentages because the bases differ.",
+        "Use [Profit Calculator](/finance-tools/profit-calculator/) to compare the two labels explicitly. A zero denominator leaves the associated percentage undefined; it should not be displayed as a reliable 0%. A mathematical profit estimate is not a complete accounting result if taxes, fees or other costs were omitted from the entered figures."
+      ]
+    },
+    {
+      "id": "apply-the-same-care-to-marks-and-attendance",
+      "title": "Apply the same care to marks and attendance",
+      "paragraphs": [
+        "For 72 marks out of 90, the ratio is 72 ÷ 90 × 100 = 80%. Enter obtained marks and possible marks in the correct order. If assessment components have different weights, an ordinary marks total may not be the institution’s weighted final grade. Use the stated grading policy rather than assuming every point has equal importance.",
+        "Attendance is attended sessions divided by conducted sessions. Adding a future attended class increases both values, so a target-attendance question cannot be solved by simply adding a fixed percentage. The [attendance target guide](/blog/attendance-percentage-target-classes/) walks through that changing denominator. Credit-weighted grades are another distinct task covered in [GPA versus CGPA](/blog/gpa-vs-cgpa-credit-weighted/)."
+      ]
+    },
+    {
+      "id": "write-the-result-with-its-meaning",
+      "title": "Write the result with its meaning",
+      "paragraphs": [
+        "A useful answer identifies the quantity, unit, base and any rounding. “30” could mean money saved, marks, a percentage or a number of sessions. “30% of the original 200” or “30 currency units saved” is easier to check. Do not round a chain of calculations more often than necessary.",
+        "When copying a result into a report, include the original values and formula if the distinction matters. If the result looks surprising, reverse-check it: multiply the base by the proposed percentage and see whether you recover the part. This does not replace checking the chosen base, but it catches many mode and input mistakes."
+      ]
+    }
+  ],
+  "conclusion": "Before any percentage calculation, ask “percentage of what?” Then name the result precisely: a share, a relative change, a percentage-point difference, a discount, a margin or a markup. The formula becomes much simpler once the denominator is clear.",
+  "sources": []
+}

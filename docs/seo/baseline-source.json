@@ -1,0 +1,2317 @@
+{
+  "tools": [
+    {
+      "id": "pdf-compressor",
+      "slug": "pdf-compressor",
+      "name": "PDF Compressor",
+      "category": "pdf-tools",
+      "description": "Compress a PDF and compare the actual savings.",
+      "kind": "pdf-compress",
+      "icon": "pdf",
+      "keywords": [
+        "pdf compressor",
+        "pdf compressor",
+        "compress pdf",
+        "reduce pdf size"
+      ],
+      "intro": "Make a PDF lighter on your device with Recommended, Strong compression or Best quality. Compare actual original and compressed sizes; download is offered only when the result is meaningfully smaller.",
+      "steps": [
+        "Choose an unencrypted PDF up to 20 MB.",
+        "Keep Recommended or choose Strong compression / Best quality, then select Compress PDF.",
+        "Compare Original, Compressed and Saved values, review the PDF and download the smaller file."
+      ],
+      "help": "Automatic compression first optimizes PDF structure without rasterizing text. Plain scanned documents can be recompressed using the selected quality level; text, forms, links, outlines and vector content are protected from automatic page-image conversion. If a tested copy is not smaller, the tool may try a more compact scan configuration and keeps the best result. Changes below 1% or 256 bytes are treated as negligible. An equal or larger copy is never offered as compressed output. Advanced settings retain structural-only optimization and an explicit image-copy option with resolution and JPEG quality controls. Image-copy mode removes selectable text, links, forms and accessibility tags. Scan rendering is limited to 40 pages, 6 million pixels per page and 60 million pixels total; structural optimization supports 500 pages. Password-protected PDFs are unsupported, and digital-signature validity is not preserved. Originals stay unchanged.",
+      "faq": [
+        {
+          "question": "Which compression level should I choose?",
+          "answer": "Recommended balances size and quality. Strong compression targets smaller scanned files; Best quality uses a lighter reduction. Normal use does not require resolution or JPEG settings."
+        },
+        {
+          "question": "Will every PDF become smaller?",
+          "answer": "No. Already optimized PDFs may have no meaningful reduction. Larger or nearly identical copies are discarded; the tool tells you to keep the original."
+        },
+        {
+          "question": "Does compression remove searchable text?",
+          "answer": "Automatic mode retains text and document features. The explicit image-copy option under Advanced settings replaces all pages with pictures and removes text search and selection."
+        }
+      ],
+      "related": [
+        "pdf-merger",
+        "pdf-to-jpg",
+        "pdf-splitter"
+      ],
+      "url": "/pdf-tools/pdf-compressor/",
+      "seo": {
+        "primary": "compress PDF",
+        "title": "Compress PDF Online — Reduce File Size",
+        "description": "Reduce PDF file size with simple compression levels. Compare original size and savings, and download only a meaningfully smaller result. Files stay on-device.",
+        "next": [
+          {
+            "id": "pdf-splitter",
+            "reason": "Need only a few pages? Extract them before compressing."
+          },
+          {
+            "id": "pdf-merger",
+            "reason": "Combine related files before making the final document smaller."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pdf-merger",
+      "slug": "pdf-merger",
+      "name": "PDF Merger",
+      "category": "pdf-tools",
+      "description": "Bring multiple PDFs into one document.",
+      "kind": "pdf",
+      "icon": "pdf",
+      "keywords": [
+        "pdf merger",
+        "pdf merger",
+        "merge pdf",
+        "combine pdfs"
+      ],
+      "intro": "Combine two or more PDFs into one document locally. Check page counts, reorder the files and download a merged PDF without a paid API or server upload.",
+      "steps": [
+        "Choose two to ten unencrypted PDFs, up to 20 MB each and 40 MB total.",
+        "Use the up/down controls to set document order.",
+        "Merge the PDFs, check the output page count and download the new document."
+      ],
+      "help": "Pages are copied in document order with pdf-lib running in a background worker. The output is limited to 500 pages. Original files remain unchanged. Interactive forms, bookmarks and digital signatures may not carry over to the new PDF. Password-protected documents are rejected. Review the downloaded pages before using the result. This operation combines files; it does not promise smaller file sizes.",
+      "faq": [
+        {
+          "question": "Are my PDFs uploaded?",
+          "answer": "No. The merger processes them in a worker on your device. The processing library is downloaded only for PDF tools."
+        },
+        {
+          "question": "Can I change file order?",
+          "answer": "Yes. After choosing files, use the up/down controls beside each document. Pages inside each source document remain in their original order."
+        },
+        {
+          "question": "Will forms and digital signatures remain valid?",
+          "answer": "This tool copies page content and does not guarantee interactive forms or bookmarks. Creating a new PDF does not preserve digital-signature validity. Review the output."
+        }
+      ],
+      "related": [
+        "pdf-splitter",
+        "reorder-pdf-pages",
+        "pdf-compressor"
+      ],
+      "url": "/pdf-tools/pdf-merger/",
+      "seo": {
+        "primary": "merge PDF",
+        "title": "Merge PDF Files — Combine Documents in Order",
+        "description": "Combine multiple PDFs into one document. Check page counts, choose file order and download a merged PDF with local browser processing."
+      }
+    },
+    {
+      "id": "pdf-splitter",
+      "slug": "pdf-splitter",
+      "name": "PDF Splitter",
+      "category": "pdf-tools",
+      "description": "Extract the pages you actually need.",
+      "kind": "pdf",
+      "icon": "pdf",
+      "keywords": [
+        "pdf splitter",
+        "pdf splitter",
+        "split pdf",
+        "extract pdf pages"
+      ],
+      "intro": "Extract selected PDF pages into one new document. Choose individual pages or ranges, control their order and download the result, with processing on your device.",
+      "steps": [
+        "Choose an unencrypted PDF up to 20 MB.",
+        "Enter pages or ranges, such as 1, 3-5, 8.",
+        "Extract the selection and download the resulting PDF."
+      ],
+      "help": "Page numbers start at 1. Ranges must run in ascending order, but separate selections can be arranged in your preferred order, such as 5, 1-3. Duplicate or out-of-range pages are rejected. The selected pages become one PDF; this version does not create a ZIP of separate documents. Input and output are limited to 500 pages. Interactive forms, bookmarks and digital signatures may not carry over. Password-protected PDFs are unsupported.",
+      "faq": [
+        {
+          "question": "Does this make one PDF or many?",
+          "answer": "It makes one PDF containing the selected pages in the order entered. Repeat the operation for another selection if you need separate documents."
+        },
+        {
+          "question": "Can I reorder pages while extracting?",
+          "answer": "Yes. For example, 5, 1-3 places page 5 first, followed by pages 1, 2 and 3."
+        },
+        {
+          "question": "Can I extract pages from a protected PDF?",
+          "answer": "No. Use an unencrypted document you are authorized to process. This tool does not remove passwords."
+        }
+      ],
+      "related": [
+        "pdf-merger",
+        "delete-pdf-pages",
+        "reorder-pdf-pages"
+      ],
+      "url": "/pdf-tools/pdf-splitter/",
+      "seo": {
+        "primary": "split PDF",
+        "title": "Split PDF — Extract Selected Pages",
+        "description": "Extract individual pages or page ranges into a new PDF. Set the selection order and keep your original document unchanged. Processing stays in your browser."
+      }
+    },
+    {
+      "id": "pdf-to-jpg",
+      "slug": "pdf-to-jpg",
+      "name": "PDF to PNG/JPG",
+      "category": "pdf-tools",
+      "description": "Export PDF pages as JPG or PNG images.",
+      "kind": "pdf-images-out",
+      "icon": "pdf",
+      "keywords": [
+        "pdf to png/jpg",
+        "pdf to jpg",
+        "pdf to images",
+        "pdf to png",
+        "pdf to jpg",
+        "pdf to jpeg"
+      ],
+      "intro": "Export selected PDF pages as JPG or PNG files locally. Choose resolution, preview actual page images, and download them individually or together in a ZIP.",
+      "steps": [
+        "Choose an unencrypted PDF up to 20 MB.",
+        "Select pages or ranges, image format and resolution.",
+        "Convert, review the previews and download the images or ZIP."
+      ],
+      "help": "Leave the page selection empty to export all pages, or enter a selection such as 1, 3-5. Pages are rendered with PDF.js at 96, 144 or 192 DPI. JPG uses adjustable lossy quality; PNG is lossless and can be larger. Output has a white background. Rendering is limited to 40 pages, 6 million pixels per page, 60 million pixels total and 40 MB of images. Image files do not retain interactive PDF links, forms or selectable text.",
+      "faq": [
+        {
+          "question": "Can I export PNG instead of JPG?",
+          "answer": "Yes. Choose PNG in the image-format selector. Each page is also available as an individual download."
+        },
+        {
+          "question": "Why is a high-resolution conversion rejected?",
+          "answer": "Rendering uses device memory. Choose a lower resolution or fewer pages to stay within the stated pixel and output limits."
+        }
+      ],
+      "related": [
+        "jpg-to-pdf",
+        "pdf-compressor",
+        "image-compressor"
+      ],
+      "url": "/pdf-tools/pdf-to-jpg/",
+      "seo": {
+        "primary": "PDF to JPG or PNG",
+        "title": "PDF to JPG or PNG — Export Page Images",
+        "description": "Turn PDF pages into PNG or JPG images on your device. Choose the pages and resolution, then download the rendered images without a file upload.",
+        "next": [
+          {
+            "id": "image-resizer",
+            "reason": "Change exported image dimensions for a specific pixel limit."
+          },
+          {
+            "id": "image-compressor",
+            "reason": "Compare a smaller image copy before sharing it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "jpg-to-pdf",
+      "slug": "jpg-to-pdf",
+      "name": "PNG/JPG to PDF",
+      "category": "pdf-tools",
+      "description": "Combine JPG and PNG images into a PDF.",
+      "kind": "pdf-images-in",
+      "icon": "pdf",
+      "keywords": [
+        "png/jpg to pdf",
+        "jpg to pdf",
+        "images to pdf",
+        "png to pdf",
+        "jpg to pdf",
+        "jpeg to pdf"
+      ],
+      "intro": "Combine JPG and PNG images into one PDF without uploading them. Set their order, page size, orientation, fitting and margins, then download a document with one image per page.",
+      "steps": [
+        "Choose up to 20 JPG or PNG images, at most 20 MB each and 40 MB total.",
+        "Drag the images or use the arrow controls to set order, then choose page size, orientation, fitting and margins.",
+        "Create the PDF, check its page count and download."
+      ],
+      "help": "Auto Image Size uses 0.75 PDF points per pixel plus margins. Choose Auto, Portrait or Landscape orientation for image-size, A4 or Letter pages. Fit keeps the whole image inside the margins; Fill crops the edges to cover that area. Both preserve aspect ratio. JPEG data is embedded; PNG supports transparency. There is no OCR or selectable text. Each input is limited to 20 million pixels and the combined selection to 60 million pixels. Original images remain unchanged.",
+      "faq": [
+        {
+          "question": "Can I mix JPG and PNG files?",
+          "answer": "Yes. Both formats can be combined in one document, with one image on each page."
+        },
+        {
+          "question": "Will the image be cropped?",
+          "answer": "Fit preserves the whole image and may leave white space. Fill preserves proportions but crops edges to cover the page area."
+        }
+      ],
+      "related": [
+        "pdf-to-jpg",
+        "pdf-merger",
+        "image-converter"
+      ],
+      "url": "/pdf-tools/jpg-to-pdf/",
+      "seo": {
+        "primary": "JPG and PNG to PDF",
+        "title": "JPG & PNG to PDF — Combine Your Images",
+        "description": "Combine JPG and PNG images into a PDF in your chosen order. Set page layout, inspect the result and download the document without uploading your files.",
+        "next": [
+          {
+            "id": "image-cropper",
+            "reason": "Trim unwanted borders before combining your images."
+          },
+          {
+            "id": "pdf-merger",
+            "reason": "Combine the resulting PDF with another document."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pdf-to-word",
+      "slug": "pdf-to-word",
+      "name": "PDF to Word",
+      "category": "pdf-tools",
+      "description": "Convert PDF text into editable Word with preserved page layout.",
+      "kind": "pdf-word",
+      "icon": "pdf",
+      "keywords": [
+        "pdf to word",
+        "pdf to word",
+        "pdf to docx",
+        "convert pdf to word",
+        "editable pdf to word"
+      ],
+      "intro": "Convert selectable PDF text into editable Word paragraphs, headings and recoverable tables while preserving source page sizes, page boundaries and positions. Complex diagrams remain localized images.",
+      "steps": [
+        "Choose an unencrypted text-based PDF up to 20 MB and 40 pages. Scanned PDFs belong in the separate PDF OCR tool.",
+        "Select Convert to Word. Native text, layout and drawing information are analyzed locally; real page progress appears below the button.",
+        "Download the editable DOCX and review page layout, tables and any font substitutions in your Word editor."
+      ],
+      "help": "Editable Word conversion is the only mode. Native PDF text is grouped into lines and paragraphs using physical coordinates, font sizes and styles. Editable Word text containers retain line breaks, indentation and intentional blank space; source pages receive explicit section boundaries with matching dimensions. Recoverable ruled tables become real Word tables with editable cell text. Embedded images and complex vector regions such as architecture diagrams and charts are preserved as localized high-resolution images, with surrounding text remaining editable. Complete pages are never inserted as screenshots. Headers, footers and saved page numbers retain their source positions as editable text rather than recalculated fields. This is not the Microsoft Word layout engine: font substitution, uncommon writing directions, borderless/merged tables, complex overlapping artwork and major edits to fixed text containers can change appearance. Rotated text and oversized or overly complex pages are rejected with a useful message. Scanned/image-only pages are directed to the separate OCR workflow; OCR is never loaded or invoked here. Limits are 20 MB input, 40 pages, 200,000 native text characters, 22 inches per page side and 40 MB output. Files stay on your device; the PDF engine loads only when needed.",
+      "faq": [
+        {
+          "question": "Can I edit the text in the Word document?",
+          "answer": "Yes. Selectable PDF text becomes genuine Word paragraphs in positioned text containers. Recoverable ruled tables have editable cells. Images and complex diagrams remain images."
+        },
+        {
+          "question": "Are architecture diagrams and charts preserved?",
+          "answer": "Complex vector drawing regions are rendered locally at high resolution and placed in their original area. The entire page is not rasterized, and the surrounding text remains editable."
+        },
+        {
+          "question": "Will text move from one source page into another?",
+          "answer": "Each source page receives an explicit Word section boundary and matching physical dimensions. Original positions and blank space are retained. Large edits or differences between Word editors can still affect fixed text containers."
+        },
+        {
+          "question": "Does this use OCR for a normal PDF?",
+          "answer": "No. Only native PDF text and drawing information are used. Scanned/image-only PDFs show a message directing you to the separate PDF OCR tool."
+        },
+        {
+          "question": "Will the result match every PDF perfectly?",
+          "answer": "No. PDF and Word use different layout models. Review font substitutions, complex tables and unusual graphics before sharing the result."
+        },
+        {
+          "question": "Are documents uploaded?",
+          "answer": "No. PDF analysis, localized graphic rendering and DOCX packaging run locally on your device."
+        }
+      ],
+      "related": [
+        "word-to-pdf",
+        "pdf-ocr",
+        "pdf-compressor",
+        "pdf-splitter",
+        "pdf-to-jpg"
+      ],
+      "url": "/pdf-tools/pdf-to-word/",
+      "seo": {
+        "primary": "PDF to editable Word",
+        "title": "PDF to Word — Editable DOCX from Native PDF Text",
+        "description": "Convert selectable PDF text into editable Word text, retaining page boundaries, recoverable tables and diagrams. No OCR. Complex layouts may need adjustment.",
+        "next": [
+          {
+            "id": "pdf-ocr",
+            "reason": "Scanned pages have no native text to convert. Use recognition for editable text."
+          },
+          {
+            "id": "word-to-pdf",
+            "reason": "After editing your DOCX, create a PDF copy to share."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pdf-ocr",
+      "slug": "pdf-ocr",
+      "name": "PDF OCR",
+      "category": "pdf-tools",
+      "description": "Extract structured English text from scanned PDF pages.",
+      "kind": "pdf-ocr",
+      "icon": "pdf",
+      "keywords": [
+        "pdf ocr",
+        "pdf ocr",
+        "scanned pdf",
+        "scan to text",
+        "pdf ocr",
+        "recognize pdf"
+      ],
+      "intro": "Extract structured English text from a scanned PDF on your device. Recognize pages one at a time, review paragraphs and readable table rows, then copy text or download TXT and editable DOCX.",
+      "steps": [
+        "Choose an unencrypted scanned PDF. Mobile supports 5 pages / 5 MB; desktop supports 10 pages / 10 MB.",
+        "Select Extract text to load the local English OCR engine. Real page and recognition progress appear below the button.",
+        "Review names, numbers and reading order, then copy or download structured text or Word output."
+      ],
+      "help": "PDF OCR is separate from native PDF to Word. Pages are rendered sequentially with bounded image sizes. Preparation can upscale small text, correct clearly sideways text, normalize low contrast and let the engine correct small skew. Clear pages avoid destructive thresholding. Recognized word and line boxes are grouped into paragraphs, heading size hierarchy, lists, readable aligned rows and column-first reading order. Only recognized content is included. Complex forms, irregular tables, handwriting, non-English scripts, ambiguous orientation and poor scans remain limited; check every important number. Each recognized page remains a corresponding DOCX section. Only engine and English language assets are downloaded; your files are never uploaded. Cancel terminates the worker, and temporary page canvases are released after each page.",
+      "faq": [
+        {
+          "question": "When should I use PDF OCR?",
+          "answer": "Use it for image-only scans without selectable text. For a normal PDF with real text, use PDF to Word to preserve its native text and font information."
+        },
+        {
+          "question": "Can I download an editable Word document?",
+          "answer": "Yes. Reconstructed paragraphs, lists and simple aligned tables are packaged into a DOCX. Review recognition mistakes and complex layouts."
+        },
+        {
+          "question": "Which languages and limits are supported?",
+          "answer": "English printed text. Mobile supports 5 pages / 5 MB; desktop supports 10 pages / 10 MB. Split larger documents first."
+        },
+        {
+          "question": "Does the OCR engine load during normal conversion?",
+          "answer": "No. It initializes only after you explicitly select Extract text in an OCR tool. Native PDF to Word and Word to PDF never invoke OCR."
+        }
+      ],
+      "related": [
+        "pdf-to-word",
+        "image-to-text",
+        "pdf-splitter",
+        "word-to-pdf"
+      ],
+      "url": "/pdf-tools/pdf-ocr/",
+      "seo": {
+        "primary": "scanned PDF to text",
+        "title": "PDF OCR — Extract Text from Scanned Pages",
+        "description": "Recognize English printed text in scanned PDF pages locally. Review structured paragraphs, then copy or export TXT and editable DOCX.",
+        "next": [
+          {
+            "id": "pdf-to-word",
+            "reason": "Already selectable text? Convert the native text without OCR."
+          },
+          {
+            "id": "image-to-text",
+            "reason": "Recognize a single JPG or PNG scan instead."
+          }
+        ]
+      }
+    },
+    {
+      "id": "word-to-pdf",
+      "slug": "word-to-pdf",
+      "name": "Word to PDF",
+      "category": "pdf-tools",
+      "description": "Create a PDF from a DOCX with selectable text.",
+      "kind": "word-pdf",
+      "icon": "pdf",
+      "keywords": [
+        "word to pdf",
+        "word to pdf",
+        "docx to pdf",
+        "convert word to pdf",
+        "word document"
+      ],
+      "intro": "Convert a DOCX into a PDF with selectable text using its actual paragraphs, runs, styles, tables and images. Preserve explicit page breaks, saved page boundaries and section margins without OCR.",
+      "steps": [
+        "Choose a DOCX up to 20 MB. Save older DOC files as DOCX first.",
+        "Wait for local preparation and review the supported structure and limitations.",
+        "Convert to PDF, then check page breaks, spacing and font substitutions before downloading."
+      ],
+      "help": "DOCX is parsed directly as Office Open XML. Page breaks within runs, page-break-before paragraph styles, saved last-rendered-page-break markers and next/odd/even section boundaries are respected. Section-specific sizes and margins, intentional empty paragraphs, exact/minimum line spacing, paragraph spacing and indentation are retained. Basic keep-next/keep-lines, alignments, bold/italic/underlined runs, colors, lists, tables, PNG/JPEG images, saved header/footer text and page/margin-anchored image offsets are supported. Content is not packed into earlier pages across saved boundaries. Liberation Sans fonts are embedded; this is not the Microsoft Word layout engine, so pagination without saved boundaries, custom fonts, multi-column sections, complex header/footer drawings, merged/nested tables, tracked edits and unusual floating objects can differ. Dynamic fields use saved text rather than recalculation. No OCR or page screenshot conversion is involved. Limits: 20 MB input, 32 MB expanded archive, 200,000 body text characters, 100 output pages and 40 MB PDF output. No file upload or conversion service is used.",
+      "faq": [
+        {
+          "question": "Does Word to PDF ever use OCR?",
+          "answer": "No. DOCX already contains structured text and images. It is parsed and rendered natively, without recognition."
+        },
+        {
+          "question": "Will page 2 move into blank space on page 1?",
+          "answer": "Explicit page/section breaks and saved page-boundary markers prevent that. Intentional empty paragraphs and spacing are preserved. Documents lacking saved pagination can still wrap differently because browser-side font metrics differ from Microsoft Word."
+        },
+        {
+          "question": "Are headers and footers supported?",
+          "answer": "Simple saved paragraph text, alignment and first-page variants are supported. Dynamic fields are not recalculated, and complex drawings/tables in headers or footers need review."
+        },
+        {
+          "question": "Are older DOC files supported?",
+          "answer": "No. Save them as DOCX in a compatible editor first."
+        }
+      ],
+      "related": [
+        "pdf-to-word",
+        "pdf-ocr",
+        "pdf-merger",
+        "pdf-compressor"
+      ],
+      "url": "/pdf-tools/word-to-pdf/",
+      "seo": {
+        "primary": "DOCX to PDF",
+        "title": "Word to PDF — Convert DOCX with Page Breaks",
+        "description": "Convert DOCX to PDF on your device. Preserve explicit page breaks, margins, text, tables and images where supported. No OCR or document upload.",
+        "next": [
+          {
+            "id": "pdf-compressor",
+            "reason": "Check whether the exported PDF can be made smaller."
+          },
+          {
+            "id": "pdf-merger",
+            "reason": "Combine the finished document with another PDF."
+          }
+        ]
+      }
+    },
+    {
+      "id": "rotate-pdf",
+      "slug": "rotate-pdf",
+      "name": "Rotate PDF",
+      "category": "pdf-tools",
+      "description": "Turn selected pages the right way up.",
+      "kind": "pdf",
+      "icon": "pdf",
+      "keywords": [
+        "rotate pdf",
+        "rotate pdf",
+        "rotate pages"
+      ],
+      "intro": "Rotate selected PDF pages by 90, 180 or 270 degrees clockwise. Keep the original document and download a separate rotated copy.",
+      "steps": [
+        "Choose an unencrypted PDF up to 20 MB and 500 pages.",
+        "Enter the pages to rotate and choose a clockwise angle.",
+        "Rotate and review the downloaded copy."
+      ],
+      "help": "Page numbers start at 1. Enter individual pages and ranges, such as 1, 3-5. Rotation is added to each page’s existing orientation; page content is not turned into images. Editing a PDF invalidates its digital signatures. Review page orientation after downloading.",
+      "faq": [
+        {
+          "question": "Can I rotate only one page?",
+          "answer": "Yes. Enter that page’s number instead of a range."
+        },
+        {
+          "question": "Does rotation change image quality?",
+          "answer": "No rasterization is performed. This operation adjusts PDF page rotation."
+        }
+      ],
+      "related": [
+        "reorder-pdf-pages",
+        "delete-pdf-pages",
+        "pdf-splitter"
+      ],
+      "url": "/pdf-tools/rotate-pdf/",
+      "seo": {
+        "primary": "rotate PDF pages",
+        "title": "Rotate PDF Pages — Choose Pages and Angle",
+        "description": "Rotate selected PDF pages by 90, 180 or 270 degrees. Create a separate copy without rasterizing page content or uploading your document."
+      }
+    },
+    {
+      "id": "delete-pdf-pages",
+      "slug": "delete-pdf-pages",
+      "name": "Delete PDF Pages",
+      "category": "pdf-tools",
+      "description": "Remove unwanted pages from a document.",
+      "kind": "pdf",
+      "icon": "pdf",
+      "keywords": [
+        "delete pdf pages",
+        "delete pdf pages"
+      ],
+      "intro": "Remove unwanted pages from a PDF and download the remaining pages in their original order. Processing happens in a worker on your device.",
+      "steps": [
+        "Choose an unencrypted PDF up to 20 MB and 500 pages.",
+        "Enter the page numbers or ranges to remove.",
+        "Create the remaining document, check its page count and download."
+      ],
+      "help": "For example, 2, 5-7 removes pages 2, 5, 6 and 7. At least one page must remain. Duplicate and out-of-range page numbers are rejected. Pages are copied into a new PDF; interactive forms, bookmarks and digital signatures may not carry over. Check the result before sharing.",
+      "faq": [
+        {
+          "question": "Are my original pages deleted permanently?",
+          "answer": "No. Your source file is unchanged. The tool creates a separate PDF containing the remaining pages."
+        }
+      ],
+      "related": [
+        "pdf-splitter",
+        "reorder-pdf-pages",
+        "pdf-merger"
+      ],
+      "url": "/pdf-tools/delete-pdf-pages/",
+      "seo": {
+        "primary": "delete PDF pages",
+        "title": "Delete PDF Pages — Keep Only What You Need",
+        "description": "Remove selected PDF pages or ranges and save the remaining document. Your original stays unchanged, with processing in a browser worker."
+      }
+    },
+    {
+      "id": "reorder-pdf-pages",
+      "slug": "reorder-pdf-pages",
+      "name": "Reorder PDF Pages",
+      "category": "pdf-tools",
+      "description": "Arrange every page in your preferred order.",
+      "kind": "pdf",
+      "icon": "pdf",
+      "keywords": [
+        "reorder pdf pages",
+        "reorder pdf pages"
+      ],
+      "intro": "Arrange every page of a PDF in the order you need. Enter an explicit page sequence and create a separate reordered document locally.",
+      "steps": [
+        "Choose an unencrypted PDF up to 20 MB and 500 pages.",
+        "Enter every page exactly once in the required order, for example 3, 1-2.",
+        "Create the document, review its order and download."
+      ],
+      "help": "Ranges run in ascending order within each range, but separate selections can be rearranged. A three-page document can use 3, 1-2 to put page 3 first. Missing, duplicate and out-of-range pages are rejected. To keep only some pages, use PDF Splitter instead. Page copying may omit forms and bookmarks, and digital signatures are not preserved.",
+      "faq": [
+        {
+          "question": "Can I leave out a page?",
+          "answer": "Reorder requires all pages exactly once. Use PDF Splitter to extract a subset or Delete PDF Pages to remove pages."
+        }
+      ],
+      "related": [
+        "pdf-splitter",
+        "delete-pdf-pages",
+        "rotate-pdf"
+      ],
+      "url": "/pdf-tools/reorder-pdf-pages/",
+      "seo": {
+        "primary": "reorder PDF pages",
+        "title": "Reorder PDF Pages — Set an Exact Page Sequence",
+        "description": "Arrange every page of a PDF in your chosen order. Enter individual pages or ranges and download a separate document processed locally."
+      }
+    },
+    {
+      "id": "image-compressor",
+      "slug": "image-compressor",
+      "name": "Image Compressor",
+      "category": "image-tools",
+      "description": "Compress, compare and download a lighter image.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "image compressor",
+        "image compressor",
+        "compress photo",
+        "reduce image size"
+      ],
+      "intro": "Adjust output format, quality and optional maximum width, then compare the original and compressed image. File size, bytes saved and percentage change are calculated from the actual output.",
+      "steps": [
+        "Choose an image and review its original size and dimensions.",
+        "Choose an output format, adjust quality where available, and optionally limit width.",
+        "Compress, compare the two previews and actual sizes, then download the result."
+      ],
+      "help": "JPEG, WebP and supported AVIF encoders use adjustable lossy quality. PNG is lossless; reducing dimensions or changing format may be needed to reduce size. BMP is uncompressed and is generally unsuitable for smaller downloads. The compressor never upscales an image. Some optimized originals become larger after processing; the result shows this clearly. Maximum output is 16 million pixels and 8,000 pixels per side. Metadata and animation are not preserved.",
+      "faq": [
+        {
+          "question": "Does every image become smaller?",
+          "answer": "No. Already optimized files may become larger. The savings panel uses the original and output byte counts, and flags a larger result."
+        },
+        {
+          "question": "Why is there no PNG quality slider?",
+          "answer": "The browser PNG encoder does not use the lossy quality setting. Reduce dimensions or try JPEG/WebP when suitable."
+        },
+        {
+          "question": "Where is compression performed?",
+          "answer": "On your device, using a background worker and OffscreenCanvas where supported. A smaller compatibility fallback supports older browsers. Files are not uploaded."
+        }
+      ],
+      "related": [
+        "image-resizer",
+        "image-converter",
+        "jpg-to-pdf"
+      ],
+      "url": "/image-tools/image-compressor/",
+      "seo": {
+        "primary": "compress image",
+        "title": "Image Compressor — Compare Real File Size Savings",
+        "description": "Compress an image with format, quality and maximum-width controls. Compare actual sizes and previews before downloading. Image contents stay on your device.",
+        "next": [
+          {
+            "id": "image-resizer",
+            "reason": "Use dimensions when the requirement is a pixel limit, rather than a byte limit."
+          },
+          {
+            "id": "jpg-to-pdf",
+            "reason": "Combine JPG or PNG images into a document."
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-resizer",
+      "slug": "image-resizer",
+      "name": "Image Resizer",
+      "category": "image-tools",
+      "description": "Set dimensions, choose a format and resize precisely.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "image resizer",
+        "image resizer",
+        "resize image",
+        "photo dimensions"
+      ],
+      "intro": "Resize an image with width and height controls, an aspect-ratio lock and useful presets. Choose Fit, Fill or Stretch, then export a supported format without uploading your file.",
+      "steps": [
+        "Choose an image and check its original dimensions, format and size.",
+        "Set a preset or width and height. Use the aspect lock or choose Fit, Fill or Stretch.",
+        "Select the output format and quality, resize, review the preview and download."
+      ],
+      "help": "Fit preserves proportions inside a bounding box. Fill crops from the center to match both dimensions. Stretch changes proportions. Presets set a bounding box; Fit may produce smaller dimensions to preserve the original ratio. Output is limited to 16 million pixels and 8,000 pixels per side; input is limited to 20 MB and 40 million pixels. A compatibility fallback is limited to 4 million pixels. JPEG and BMP fill transparent areas with white. Metadata and animation are not retained. Enlarging cannot restore missing detail.",
+      "faq": [
+        {
+          "question": "How does aspect-ratio locking work?",
+          "answer": "When locked, changing width recalculates height and changing height recalculates width. Unlock it to enter an independent bounding box, or use Fill and Stretch for exact output dimensions."
+        },
+        {
+          "question": "Why does Fit differ from a preset size?",
+          "answer": "A preset defines a bounding box. Fit keeps the original proportions inside it. Choose Fill for exact dimensions with center cropping, or Stretch if distortion is acceptable."
+        },
+        {
+          "question": "Can I keep transparency?",
+          "answer": "Yes, select PNG or a supported WebP/AVIF output. JPEG and BMP use a white background."
+        }
+      ],
+      "related": [
+        "image-compressor",
+        "image-cropper",
+        "image-converter"
+      ],
+      "url": "/image-tools/image-resizer/",
+      "seo": {
+        "primary": "resize image dimensions",
+        "title": "Image Resizer — Set Width, Height and Aspect Ratio",
+        "description": "Resize images in pixels with an aspect-ratio lock, presets and Fit, Fill or Stretch options. Preview and download a locally processed image.",
+        "next": [
+          {
+            "id": "image-compressor",
+            "reason": "Reduce file size after setting the required dimensions."
+          },
+          {
+            "id": "image-cropper",
+            "reason": "Select a specific region rather than resizing the entire image."
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-converter",
+      "slug": "image-converter",
+      "name": "Image Converter",
+      "category": "image-tools",
+      "description": "Convert between supported image formats locally.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "image converter",
+        "image converter",
+        "convert image",
+        "jpg to png",
+        "png to webp",
+        "jpeg",
+        "avif",
+        "bmp"
+      ],
+      "intro": "Convert a supported image to JPEG, PNG, WebP, BMP or browser-supported AVIF. One shared on-device engine handles your format selection and creates an actual downloadable file.",
+      "steps": [
+        "Choose an image and check the original format and dimensions.",
+        "Select a supported output format and adjust quality where meaningful.",
+        "Convert, compare the original and result, and download the new file."
+      ],
+      "help": "Supported inputs are JPEG, PNG, WebP, AVIF, BMP and GIF when the browser can decode them. GIF uses its first frame; animated export is not supported. AVIF output is shown only after an actual encoder check. PNG/WebP/AVIF can retain transparency; JPEG and 24-bit BMP use white. BMP output is uncompressed and often much larger. The converter preserves dimensions but strips metadata. Files must be at most 20 MB; output is capped at 16 million pixels and 8,000 pixels per side. Use the Image Resizer first for a larger image. HEIC/HEIF and TIFF/TIF require additional decoders and are not accepted in this version.",
+      "faq": [
+        {
+          "question": "Can I convert JPG to PNG or PNG to WebP?",
+          "answer": "Yes. Upload the supported source image and choose PNG or a browser-supported WebP output. JPEG and JPG refer to the same format."
+        },
+        {
+          "question": "Can I convert HEIC, TIFF or animated GIFs?",
+          "answer": "HEIC and TIFF are not supported. GIF input is decoded as a still first frame, and its animation is not preserved."
+        },
+        {
+          "question": "Why is AVIF not listed in my browser?",
+          "answer": "Decoding AVIF and encoding it are different capabilities. The tool offers AVIF output only if a small real encoding test returns an AVIF file."
+        }
+      ],
+      "related": [
+        "jpg-to-png",
+        "png-to-jpg",
+        "webp-converter"
+      ],
+      "url": "/image-tools/image-converter/",
+      "seo": {
+        "primary": "convert image format",
+        "title": "Image Converter — JPG, PNG, WebP, BMP & AVIF",
+        "description": "Convert supported images to JPG, PNG, WebP or BMP, with AVIF export when your browser supports it. Compare the real output before downloading.",
+        "next": [
+          {
+            "id": "jpg-to-png",
+            "reason": "Use PNG for a lossless copy; it cannot restore detail lost in a JPG."
+          },
+          {
+            "id": "png-to-jpg",
+            "reason": "Use JPEG for photographs when transparency is not needed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-cropper",
+      "slug": "image-cropper",
+      "name": "Image Cropper",
+      "category": "image-tools",
+      "description": "Select precise pixels and export a cropped image.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "image cropper",
+        "image cropper",
+        "crop photo",
+        "crop image"
+      ],
+      "intro": "Choose the exact portion of an image to keep using a draggable selection, resize handles or precise pixel coordinates. Export the crop in a supported image format on your device.",
+      "steps": [
+        "Choose an image and review its original dimensions.",
+        "Drag or resize the crop selection, choose a preset, or enter precise original-image pixel coordinates.",
+        "Check the highlighted selection, choose the format, crop and download."
+      ],
+      "help": "Drag the selection to move it, or drag a corner to resize it. Focus the handles and use arrow keys for one-pixel steps or Shift for ten. Left and top start at zero. The selected rectangle must stay inside the source image and use whole-number pixels. Presets create a centered square, 16:9 or 4:3 selection. Cropping keeps the selected pixels without padding or resizing. Input is limited to 20 MB and 40 million pixels; output to 16 million pixels and 8,000 pixels per side. JPEG/BMP fill transparency with white. Metadata and animation are not retained.",
+      "faq": [
+        {
+          "question": "Does cropping resize the image?",
+          "answer": "No. Output dimensions match your crop width and height. Use Image Resizer for a different final size."
+        },
+        {
+          "question": "Can I keep a transparent background?",
+          "answer": "Choose PNG or a supported WebP/AVIF output. JPEG and BMP do not support transparency."
+        }
+      ],
+      "related": [
+        "image-resizer",
+        "image-compressor",
+        "image-converter"
+      ],
+      "url": "/image-tools/image-cropper/",
+      "seo": {
+        "primary": "crop image",
+        "title": "Image Cropper — Drag or Enter Exact Pixel Bounds",
+        "description": "Crop an image using a draggable selection, presets or precise pixel coordinates. Keep the selected area and export a supported format locally."
+      }
+    },
+    {
+      "id": "jpg-to-png",
+      "slug": "jpg-to-png",
+      "name": "JPG to PNG",
+      "category": "image-tools",
+      "description": "Convert photographs to PNG format.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "jpg to png",
+        "jpg to png"
+      ],
+      "intro": "Convert a JPG photograph into a PNG on your device. This focused converter starts with PNG selected and keeps the original dimensions, with a real preview and download.",
+      "steps": [
+        "Choose a JPG or another supported image up to 20 MB.",
+        "Keep PNG selected; review the original dimensions and preview.",
+        "Convert the image, compare the actual file size and download the PNG."
+      ],
+      "help": "PNG uses lossless encoding, but converting an already compressed JPEG does not recover detail lost earlier. Photographs often become larger as PNG. The source background stays opaque; this conversion cannot remove a background or create transparency. The shared image engine keeps dimensions and exports real PNG bytes. Metadata and animation are not retained. Output is limited to 16 million pixels and 8,000 pixels per side.",
+      "faq": [
+        {
+          "question": "Will a PNG improve the quality of my JPG?",
+          "answer": "No. PNG avoids further lossy encoding, but cannot restore detail already discarded by JPEG."
+        },
+        {
+          "question": "Does JPG to PNG make the background transparent?",
+          "answer": "No. The original background remains part of the image. This tool changes the file format."
+        }
+      ],
+      "related": [
+        "png-to-jpg",
+        "image-converter",
+        "image-resizer",
+        "image-compressor"
+      ],
+      "url": "/image-tools/jpg-to-png/",
+      "seo": {
+        "primary": "JPG to PNG",
+        "title": "JPG to PNG — Convert Without Changing Dimensions",
+        "description": "Create a PNG copy of a JPG image in your browser. Keep the dimensions and inspect the result. Conversion cannot restore detail already lost in JPEG."
+      }
+    },
+    {
+      "id": "png-to-jpg",
+      "slug": "png-to-jpg",
+      "name": "PNG to JPG",
+      "category": "image-tools",
+      "description": "Make a JPEG from your PNG image.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "png to jpg",
+        "png to jpg"
+      ],
+      "intro": "Create a JPEG copy of a PNG image locally. Adjust JPEG quality, keep the image dimensions and compare the real output before downloading.",
+      "steps": [
+        "Choose a PNG or another supported image up to 20 MB.",
+        "Keep JPEG selected and choose the quality you need.",
+        "Convert, review the preview and byte count, then download the JPG."
+      ],
+      "help": "JPEG is often smaller for photographs and uses lossy compression. It is less suitable for crisp diagrams and text. PNG transparency is filled with white because JPEG cannot store alpha transparency. A higher quality setting usually gives a larger file; no specific saving is promised. Original files are unchanged. Metadata and animation are not preserved. Input is limited to 40 million pixels; output to 16 million pixels and 8,000 pixels per side.",
+      "faq": [
+        {
+          "question": "What happens to transparent PNG areas?",
+          "answer": "They are composited onto a white background in the JPEG output."
+        },
+        {
+          "question": "Will every PNG become smaller?",
+          "answer": "No. Size depends on the image and quality setting. Compare the actual byte counts before choosing the result."
+        }
+      ],
+      "related": [
+        "jpg-to-png",
+        "webp-converter",
+        "image-compressor",
+        "image-converter"
+      ],
+      "url": "/image-tools/png-to-jpg/",
+      "seo": {
+        "primary": "PNG to JPG",
+        "title": "PNG to JPG — Choose JPEG Quality",
+        "description": "Convert PNG to JPG with adjustable quality and a real file-size comparison. Transparent areas become white. Your source image remains unchanged."
+      }
+    },
+    {
+      "id": "webp-converter",
+      "slug": "webp-converter",
+      "name": "WebP Converter",
+      "category": "image-tools",
+      "description": "Switch images to a modern web format.",
+      "kind": "image",
+      "icon": "image",
+      "keywords": [
+        "webp converter",
+        "webp converter"
+      ],
+      "intro": "Convert an image to WebP with a quality setting and real size comparison. WebP is selected initially, with processing and previews kept on your device.",
+      "steps": [
+        "Choose a supported image up to 20 MB.",
+        "Keep WebP selected and set its quality.",
+        "Convert, inspect the preview and download the WebP copy."
+      ],
+      "help": "WebP supports transparency and lossy encoding for photographs. Smaller output depends on the source and quality; the tool reports actual bytes. Browser support is checked by creating a real encoded file. If your browser cannot export WebP, use another offered format in Image Converter. Input GIF uses the first frame, and animation and metadata are not retained. Output is limited to 16 million pixels and 8,000 pixels per side.",
+      "faq": [
+        {
+          "question": "Can WebP keep transparency?",
+          "answer": "Yes. Supported WebP export preserves image transparency."
+        },
+        {
+          "question": "Can this convert an animated GIF into animated WebP?",
+          "answer": "No. This version exports a single image frame; it does not preserve animation."
+        }
+      ],
+      "related": [
+        "image-converter",
+        "png-to-jpg",
+        "image-compressor",
+        "image-resizer"
+      ],
+      "url": "/image-tools/webp-converter/",
+      "seo": {
+        "primary": "image to WebP",
+        "title": "WebP Converter — Create a WebP Image",
+        "description": "Convert supported images to WebP, adjust quality and compare actual sizes. Transparency is supported; animated input produces a single still frame."
+      }
+    },
+    {
+      "id": "image-to-text",
+      "slug": "image-to-text",
+      "name": "Image to Text OCR",
+      "category": "image-tools",
+      "description": "Extract readable text from an image.",
+      "kind": "image-ocr",
+      "icon": "image",
+      "keywords": [
+        "image to text ocr",
+        "image to text"
+      ],
+      "intro": "Extract English printed text from a PNG or JPEG image using OCR on your device. Review the recognized words, copy them or download structured TXT and editable DOCX.",
+      "steps": [
+        "Choose a clear, upright PNG or JPEG containing English text.",
+        "Select Extract text; the local OCR engine loads on demand and shows real recognition progress.",
+        "Check spelling, numbers and reading order, then copy or download TXT or Word output."
+      ],
+      "help": "OCR recognizes shapes rather than reading an original text layer. Photos, small fonts, tilted pages and handwriting can cause mistakes. English is the supported recognition language in this version. Mobile input limits are 5 MB and 12 million pixels; desktop limits are 10 MB and 20 million pixels. Prepared images are capped at 1.8 million OCR pixels on mobile or 3 million on desktop. Small text can be upscaled, clearly sideways text corrected and low contrast normalized. Already-clear pages avoid hard binarization. Word/line boxes reconstruct paragraph groups, column-first reading order and simple aligned tables; complex layouts still need review. The pinned Tesseract engine and English language asset load only when you start recognition. Cancel or reset terminates the worker. No file is uploaded, no account is needed, and unreadable images do not produce an empty successful result.",
+      "faq": [
+        {
+          "question": "Which OCR languages are supported?",
+          "answer": "English printed text is supported. Other scripts and mixed-language pages may be recognized incorrectly."
+        },
+        {
+          "question": "Are images sent to an OCR service?",
+          "answer": "No. Image preparation and recognition run locally. The browser downloads the OCR engine and English language data only when requested."
+        },
+        {
+          "question": "Can OCR read handwriting or guarantee correct numbers?",
+          "answer": "No. Clear printed text works best. Review names, numbers and punctuation carefully."
+        }
+      ],
+      "related": [
+        "image-cropper",
+        "image-resizer",
+        "pdf-ocr",
+        "pdf-to-word",
+        "word-counter"
+      ],
+      "url": "/image-tools/image-to-text/",
+      "seo": {
+        "primary": "image to text OCR",
+        "title": "Image to Text OCR — Read English Printed Text",
+        "description": "Extract English printed text from a JPG or PNG on your device. Review paragraph structure, copy text or download TXT and editable Word output.",
+        "next": [
+          {
+            "id": "pdf-ocr",
+            "reason": "Recognize scanned PDF pages without exporting them as separate images first."
+          },
+          {
+            "id": "text-cleaner",
+            "reason": "Tidy recognized whitespace after checking the OCR text."
+          }
+        ]
+      }
+    },
+    {
+      "id": "gpa-calculator",
+      "slug": "gpa-calculator",
+      "name": "GPA Calculator",
+      "category": "student-tools",
+      "description": "Calculate your credit-weighted semester GPA.",
+      "kind": "gpa",
+      "icon": "student",
+      "keywords": [
+        "gpa calculator",
+        "gpa calculator"
+      ],
+      "intro": "Calculate a semester GPA using each course’s credit hours and grade points. Enter the points from your university’s grading scale for an accurate weighted calculation.",
+      "steps": [
+        "Enter the credits and grade points for each course.",
+        "Add a row for every course in the semester.",
+        "Read your weighted GPA and total credits."
+      ],
+      "help": "GPA = sum of (course credits × grade points) ÷ total credits. A three-credit course carries more weight than a one-credit course. This calculator accepts points from 0 to 10; use your institution’s actual scale.",
+      "faq": [
+        {
+          "question": "Does it support a 4.0 scale?",
+          "answer": "Yes. Enter your actual grade points between 0 and 4. The calculator also accepts other scales up to 10."
+        },
+        {
+          "question": "Are all courses weighted equally?",
+          "answer": "No. Every grade is weighted by the credit hours you enter. Use your institution’s policy for repeated or excluded courses."
+        }
+      ],
+      "related": [
+        "cgpa-calculator",
+        "percentage-calculator",
+        "university-merit-calculator"
+      ],
+      "url": "/student-tools/gpa-calculator/",
+      "seo": {
+        "primary": "credit-weighted GPA",
+        "title": "GPA Calculator — Weight Grades by Course Credits",
+        "description": "Calculate semester GPA from course credits and your institution’s grade points. See total credits and the weighted result on scales up to 10.",
+        "next": [
+          {
+            "id": "cgpa-calculator",
+            "reason": "Combine completed semesters using their total credits."
+          },
+          {
+            "id": "marks-calculator",
+            "reason": "Check marks and target scores separately from grade points."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cgpa-calculator",
+      "slug": "cgpa-calculator",
+      "name": "CGPA Calculator",
+      "category": "student-tools",
+      "description": "See your overall academic progress.",
+      "kind": "cgpa",
+      "icon": "student",
+      "keywords": [
+        "cgpa calculator",
+        "cgpa calculator"
+      ],
+      "intro": "Combine semester GPAs into a cumulative GPA, weighted by the credits completed in each semester. No account or saved academic record is required.",
+      "steps": [
+        "Enter each semester’s GPA and completed credits.",
+        "Add all semesters you want to include.",
+        "Review your CGPA and the total credits."
+      ],
+      "help": "CGPA = sum of (semester GPA × semester credits) ÷ total credits. Averaging semester GPAs without weighting is only correct when every semester has the same number of credits. Your institution may treat repeats differently.",
+      "faq": [
+        {
+          "question": "Can I just average my semester GPAs?",
+          "answer": "Only if every semester has equal credits. This calculator weights each semester by its credit total."
+        },
+        {
+          "question": "Does this keep my grades?",
+          "answer": "No. Grade inputs stay in the current page’s memory. Recent-tool history stores only the tool identifier."
+        }
+      ],
+      "related": [
+        "gpa-calculator",
+        "percentage-calculator",
+        "attendance-calculator"
+      ],
+      "url": "/student-tools/cgpa-calculator/",
+      "seo": {
+        "primary": "cumulative GPA",
+        "title": "CGPA Calculator — Combine Semester GPAs",
+        "description": "Calculate cumulative GPA using semester GPAs and completed credits. Avoid an unweighted average and check your university’s repeat-course rules."
+      }
+    },
+    {
+      "id": "percentage-calculator",
+      "slug": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "category": "student-tools",
+      "description": "Quick answers for everyday percentages.",
+      "kind": "percentage",
+      "icon": "student",
+      "keywords": [
+        "percentage calculator",
+        "percentage calculator",
+        "percent",
+        "marks percentage"
+      ],
+      "intro": "Find a percentage of a number or work out what percentage one value represents of another. Results update as you type, with the formula shown alongside your answer.",
+      "steps": [
+        "Choose the type of percentage calculation.",
+        "Enter your two numbers.",
+        "Read the answer and check the formula."
+      ],
+      "help": "For example, 15% of 200 is 30. To find marks as a percentage, divide obtained marks by total marks and multiply by 100. A denominator of zero does not have a defined percentage.",
+      "faq": [
+        {
+          "question": "Can I calculate my marks percentage?",
+          "answer": "Yes. Choose “A is what % of B”, enter your obtained marks as A and your total marks as B."
+        },
+        {
+          "question": "Can I use decimals or negative values?",
+          "answer": "Yes. The calculator accepts finite decimal and negative values. Division by zero is rejected."
+        }
+      ],
+      "related": [
+        "marks-calculator",
+        "discount-calculator",
+        "profit-calculator"
+      ],
+      "url": "/student-tools/percentage-calculator/",
+      "seo": {
+        "primary": "calculate percentage",
+        "title": "Percentage Calculator — Percent of a Number & Ratio",
+        "description": "Find a percentage of a number or what percentage one value is of another. Results update as you type, with the calculation shown.",
+        "next": [
+          {
+            "id": "marks-calculator",
+            "reason": "Find the score needed in remaining assessments."
+          },
+          {
+            "id": "discount-calculator",
+            "reason": "See both savings and a final discounted price."
+          }
+        ]
+      }
+    },
+    {
+      "id": "marks-calculator",
+      "slug": "marks-calculator",
+      "name": "Marks Calculator",
+      "category": "student-tools",
+      "description": "Work out totals and target marks.",
+      "kind": "marks",
+      "icon": "student",
+      "keywords": [
+        "marks calculator",
+        "marks calculator"
+      ],
+      "intro": "Check your marks percentage and the score needed from remaining assessments to reach a target. Enter obtained marks, completed totals and the marks still available.",
+      "steps": [
+        "Replace the example obtained and completed marks with your results.",
+        "Enter the remaining marks and your target overall percentage.",
+        "Read your current percentage and the marks still needed."
+      ],
+      "help": "Current percentage is obtained marks divided by completed total, multiplied by 100. Target marks use the completed and remaining totals together. A target can be unreachable even when your current score is good; the result says so explicitly. Decimals are accepted. The estimate assumes all marks use the same weighting, and does not apply grade boundaries or rounding rules.",
+      "faq": [
+        {
+          "question": "Can I find what I need in a final exam?",
+          "answer": "Yes. Enter marks obtained so far, the completed total and the marks available in the final. Set your target overall percentage."
+        },
+        {
+          "question": "Does this predict my letter grade?",
+          "answer": "No. Letter-grade thresholds and assessment weights vary. Use the rules from your institution."
+        }
+      ],
+      "related": [
+        "percentage-calculator",
+        "gpa-calculator",
+        "attendance-calculator"
+      ],
+      "url": "/student-tools/marks-calculator/",
+      "seo": {
+        "primary": "marks percentage and target score",
+        "title": "Marks Calculator — Percentage & Target Score",
+        "description": "Check your marks percentage and calculate the score needed in remaining assessments to reach a target. Enter your own marks and assessment totals."
+      }
+    },
+    {
+      "id": "attendance-calculator",
+      "slug": "attendance-calculator",
+      "name": "Attendance Calculator",
+      "category": "student-tools",
+      "description": "Stay on top of your attendance target.",
+      "kind": "attendance",
+      "icon": "student",
+      "keywords": [
+        "attendance calculator",
+        "attendance calculator"
+      ],
+      "intro": "Calculate attendance from classes attended and held. See how many consecutive future classes you need to attend to reach your chosen target, or how many you can miss while keeping it.",
+      "steps": [
+        "Enter whole numbers of classes attended and held.",
+        "Choose the attendance percentage you need.",
+        "Review the current percentage and future-class estimate."
+      ],
+      "help": "Attendance equals attended divided by held, multiplied by 100. Future-class estimates add each new class to both counts and round the required number upward. Allowed absences add classes only to the held count and round downward. Once you have missed a class, exactly 100% attendance cannot be restored by a finite number of additional classes. The estimate excludes cancelled classes, excused absences and institution-specific policies.",
+      "faq": [
+        {
+          "question": "Does it assume I attend all future classes?",
+          "answer": "Yes. The catch-up estimate assumes every additional class is attended."
+        },
+        {
+          "question": "Why can I not recover 100% attendance?",
+          "answer": "A previously missed class remains in the total. Your percentage can approach 100% but cannot equal it with a finite number of new classes."
+        }
+      ],
+      "related": [
+        "marks-calculator",
+        "percentage-calculator",
+        "gpa-calculator"
+      ],
+      "url": "/student-tools/attendance-calculator/",
+      "seo": {
+        "primary": "attendance percentage",
+        "title": "Attendance Calculator — Classes Needed for a Target",
+        "description": "Calculate attendance percentage and the future classes needed to reach a target. See how many classes you can miss while keeping your required percentage."
+      }
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "slug": "fuel-cost-calculator",
+      "name": "Fuel Cost Calculator",
+      "category": "finance-tools",
+      "description": "Estimate journey costs in your own units.",
+      "kind": "fuel",
+      "icon": "finance",
+      "keywords": [
+        "fuel cost calculator",
+        "fuel cost calculator",
+        "petrol",
+        "diesel",
+        "fuel price"
+      ],
+      "intro": "Estimate fuel usage and cost for a journey. Choose distance and efficiency units, enter your fuel price and currency, and optionally split the cost between travellers.",
+      "steps": [
+        "Choose your distance, efficiency and price units.",
+        "Enter the trip distance, vehicle efficiency and your own fuel price.",
+        "Review fuel needed, total cost and the optional cost per person."
+      ],
+      "help": "Choose a country for sensible currency and unit defaults; currency can be overridden. Country changes clear numeric inputs to avoid reinterpreting them in new units. Fuel needed is multiplied by the price per litre, US gallon or Imperial gallon. One US gallon is 3.785411784 litres and one Imperial gallon is 4.54609 litres; one mile is 1.609344 kilometres. Include both directions for a return trip. Traffic, weather and driving conditions can change actual consumption. Tolls and parking are not included.",
+      "faq": [
+        {
+          "question": "Does it fetch current fuel prices?",
+          "answer": "No. Enter the price you want to use. The calculator does not assume a current market rate."
+        },
+        {
+          "question": "Which gallon is used for MPG?",
+          "answer": "Separate US and Imperial options are labeled explicitly. A US gallon is 3.785411784 litres; an Imperial gallon is 4.54609 litres. Select the convention your vehicle figures use."
+        },
+        {
+          "question": "Can I split the journey cost?",
+          "answer": "Yes. Enter the number of people to show an equal share of the fuel cost."
+        }
+      ],
+      "related": [
+        "percentage-calculator",
+        "discount-calculator",
+        "age-calculator"
+      ],
+      "url": "/finance-tools/fuel-cost-calculator/",
+      "seo": {
+        "primary": "journey fuel cost",
+        "title": "Fuel Cost Calculator — Trip Cost in Your Units",
+        "description": "Estimate journey fuel usage and cost using your own fuel price. Choose km, miles, litres or US/Imperial gallons and optionally split the cost."
+      }
+    },
+    {
+      "id": "university-merit-calculator",
+      "slug": "university-merit-calculator",
+      "name": "University Merit Calculator",
+      "category": "student-tools",
+      "description": "Explore admission aggregate calculations.",
+      "kind": "merit",
+      "icon": "student",
+      "keywords": [
+        "university merit calculator",
+        "university merit calculator"
+      ],
+      "intro": "Calculate a custom weighted admission aggregate using your own component scores and percentages. Replace the example weights with your institution’s published formula.",
+      "steps": [
+        "Enter the obtained and total marks for each component.",
+        "Set component weights so they add up to 100%; add or remove rows if needed.",
+        "Read the weighted aggregate and check it against the official formula."
+      ],
+      "help": "Each component contributes obtained marks divided by total marks, multiplied by its weight. The contributions add into a final percentage. Up to ten components are supported. The example School, College and Admission Test rows are illustrative, not the rules of a specific university. This tool does not apply eligibility requirements, quotas, bonus marks, conversion policies or changing admission thresholds.",
+      "faq": [
+        {
+          "question": "Are the default weights official?",
+          "answer": "No. They are examples. Enter the current formula from the university you are applying to."
+        },
+        {
+          "question": "Does the result guarantee admission?",
+          "answer": "No. It calculates an aggregate only. Eligibility and selection depend on the institution’s rules."
+        }
+      ],
+      "related": [
+        "marks-calculator",
+        "percentage-calculator",
+        "cgpa-calculator"
+      ],
+      "url": "/student-tools/university-merit-calculator/",
+      "seo": {
+        "primary": "weighted admission aggregate",
+        "title": "University Merit Calculator — Custom Admission Weights",
+        "description": "Calculate an admission aggregate from your marks and chosen component weights. Enter the current formula from your university; example weights are not official."
+      }
+    },
+    {
+      "id": "age-calculator",
+      "slug": "age-calculator",
+      "name": "Age Calculator",
+      "category": "finance-tools",
+      "description": "Calculate age between two calendar dates.",
+      "kind": "age",
+      "icon": "finance",
+      "keywords": [
+        "age calculator",
+        "age calculator",
+        "birthday",
+        "date of birth"
+      ],
+      "intro": "Calculate calendar age in years, months and days between a birth date and an as-of date. Also see the number of elapsed days.",
+      "steps": [
+        "Enter the birth date.",
+        "Choose the date to calculate age on; today is selected initially.",
+        "Read the calendar age and elapsed-day total."
+      ],
+      "help": "The calculation uses Gregorian calendar dates without time-of-day or time-zone offsets. An anniversary on a missing day is clamped to the last day of that month; February 29 uses February 28 in a non-leap year. Elapsed days do not include the start date. Future birth dates relative to the as-of date are rejected. This is a date calculation, not a legal determination of age.",
+      "faq": [
+        {
+          "question": "Can I calculate age on a past date?",
+          "answer": "Yes. Set the as-of date to any valid date on or after the birth date."
+        },
+        {
+          "question": "How are leap-day birthdays handled?",
+          "answer": "In a non-leap year, the calendar anniversary is treated as February 28. Legal rules may differ."
+        }
+      ],
+      "related": [
+        "percentage-calculator",
+        "discount-calculator",
+        "fuel-cost-calculator"
+      ],
+      "url": "/finance-tools/age-calculator/",
+      "seo": {
+        "primary": "calendar age",
+        "title": "Age Calculator — Years, Months and Days",
+        "description": "Calculate age between a birth date and an as-of date. See years, months, days and elapsed days using calendar dates without time-zone offsets."
+      }
+    },
+    {
+      "id": "loan-emi-calculator",
+      "slug": "loan-emi-calculator",
+      "name": "Loan / EMI Calculator",
+      "category": "finance-tools",
+      "description": "Estimate regular loan repayments.",
+      "kind": "loan",
+      "icon": "finance",
+      "keywords": [
+        "loan / emi calculator",
+        "loan emi calculator"
+      ],
+      "intro": "Estimate a fixed monthly loan payment from an amount, annual interest rate and term. See the total repayment and interest using your own inputs.",
+      "steps": [
+        "Enter the loan amount and annual nominal rate.",
+        "Enter a whole number of repayment months and select a display currency.",
+        "Review the monthly payment, total repayment and interest."
+      ],
+      "help": "The monthly rate is the annual rate divided by twelve. Payments follow the standard equal-payment amortization formula; a zero-interest loan divides the principal evenly over the term. Terms from one to 1,200 months are accepted. This estimate assumes a fixed rate and monthly payments at the end of each period. Fees, insurance, taxes, early repayments and lender-specific rounding are excluded. Currency selection changes the display, not an exchange rate.",
+      "faq": [
+        {
+          "question": "Can I calculate an interest-free loan?",
+          "answer": "Yes. Set the annual rate to zero and the amount is divided across the chosen months."
+        },
+        {
+          "question": "Does it include lender fees?",
+          "answer": "No. Entered principal and interest are used; fees and other charges must be assessed separately."
+        }
+      ],
+      "related": [
+        "savings-calculator",
+        "salary-calculator",
+        "percentage-calculator"
+      ],
+      "url": "/finance-tools/loan-emi-calculator/",
+      "seo": {
+        "primary": "monthly loan payment",
+        "title": "Loan / EMI Calculator — Monthly Payment Estimate",
+        "description": "Estimate fixed monthly loan payments, total repayment and interest from your amount, annual rate and term. Fees, insurance and taxes are excluded."
+      }
+    },
+    {
+      "id": "savings-calculator",
+      "slug": "savings-calculator",
+      "name": "Savings Calculator",
+      "category": "finance-tools",
+      "description": "Project your savings over time.",
+      "kind": "savings",
+      "icon": "finance",
+      "keywords": [
+        "savings calculator",
+        "savings calculator"
+      ],
+      "intro": "Project savings with an initial balance, monthly contributions and a constant annual return. Compare your contributions with the projected growth.",
+      "steps": [
+        "Enter the starting balance and monthly contribution.",
+        "Choose a nominal annual return and a whole number of years.",
+        "Review the projected balance, deposits and growth."
+      ],
+      "help": "Returns compound monthly at the annual nominal rate divided by twelve. Monthly contributions are added at the end of each month. A zero return simply adds all contributions to the initial balance. The projection accepts one to 100 years and rejects totals beyond safe numerical limits. Constant returns are an assumption, not a forecast; market variation, fees, taxes and inflation are excluded.",
+      "faq": [
+        {
+          "question": "When are monthly contributions added?",
+          "answer": "At the end of each month, after that month’s growth."
+        },
+        {
+          "question": "Is the projection a promised return?",
+          "answer": "No. It is a mathematical estimate using a constant rate supplied by you."
+        }
+      ],
+      "related": [
+        "loan-emi-calculator",
+        "profit-calculator",
+        "salary-calculator"
+      ],
+      "url": "/finance-tools/savings-calculator/",
+      "seo": {
+        "primary": "savings projection",
+        "title": "Savings Calculator — Deposits and Monthly Growth",
+        "description": "Project savings from an initial balance, monthly deposits and a constant return. Compare contributions with growth; results are estimates, not promised returns."
+      }
+    },
+    {
+      "id": "profit-calculator",
+      "slug": "profit-calculator",
+      "name": "Profit Calculator",
+      "category": "finance-tools",
+      "description": "Calculate profit and profit margin.",
+      "kind": "profit",
+      "icon": "finance",
+      "keywords": [
+        "profit calculator",
+        "profit calculator"
+      ],
+      "intro": "Calculate profit or loss from revenue and total cost. Compare profit margin on revenue with markup on cost.",
+      "steps": [
+        "Enter revenue and total cost in the same currency.",
+        "Choose a currency label if helpful.",
+        "Read the profit or loss, margin and markup."
+      ],
+      "help": "Profit is revenue minus cost. Margin divides profit by revenue; markup divides it by cost. A zero denominator is shown as not defined instead of an infinite percentage. Losses are supported. Include all relevant costs in your input; the tool does not infer expenses, taxes or accounting rules. Results display two decimal places and are numerical aids.",
+      "faq": [
+        {
+          "question": "Are margin and markup the same?",
+          "answer": "No. Margin is measured against revenue, while markup is measured against cost."
+        },
+        {
+          "question": "Can I calculate a loss?",
+          "answer": "Yes. Revenue below cost produces a negative profit and negative percentages when defined."
+        }
+      ],
+      "related": [
+        "discount-calculator",
+        "percentage-calculator",
+        "invoice-generator"
+      ],
+      "url": "/finance-tools/profit-calculator/",
+      "seo": {
+        "primary": "profit margin and markup",
+        "title": "Profit Calculator — Margin, Markup and Loss",
+        "description": "Calculate profit or loss from revenue and cost. Compare margin on revenue with markup on cost, with undefined zero-denominator results clearly identified."
+      }
+    },
+    {
+      "id": "discount-calculator",
+      "slug": "discount-calculator",
+      "name": "Discount Calculator",
+      "category": "finance-tools",
+      "description": "Find the price after a discount.",
+      "kind": "discount",
+      "icon": "finance",
+      "keywords": [
+        "discount calculator",
+        "discount calculator"
+      ],
+      "intro": "Find the savings and final price after a percentage discount. Results update as you enter the original price and discount rate.",
+      "steps": [
+        "Enter the original price in your chosen currency.",
+        "Enter a discount from 0 to 100 percent.",
+        "Read the amount saved and the final price."
+      ],
+      "help": "Savings equal original price × discount ÷ 100. Final price equals original price minus savings. All values use the same units or currency you entered; no exchange conversion is performed. Display rounds to two decimal places. Taxes, fees, delivery costs and sequential discounts are not included.",
+      "faq": [
+        {
+          "question": "Can I enter a decimal discount?",
+          "answer": "Yes. A rate such as 12.5% is supported."
+        },
+        {
+          "question": "Does this include sales tax?",
+          "answer": "No. It calculates a single percentage reduction before any additional fees or taxes."
+        }
+      ],
+      "related": [
+        "percentage-calculator",
+        "fuel-cost-calculator",
+        "age-calculator"
+      ],
+      "url": "/finance-tools/discount-calculator/",
+      "seo": {
+        "primary": "discounted price",
+        "title": "Discount Calculator — Savings and Final Price",
+        "description": "Find the amount saved and final price after a percentage discount. Enter an original price and discount rate; taxes and added fees are not included."
+      }
+    },
+    {
+      "id": "salary-calculator",
+      "slug": "salary-calculator",
+      "name": "Salary Calculator",
+      "category": "finance-tools",
+      "description": "Compare monthly and annual earnings.",
+      "kind": "salary",
+      "icon": "finance",
+      "keywords": [
+        "salary calculator",
+        "salary calculator"
+      ],
+      "intro": "Convert hourly, daily, weekly, monthly or annual gross pay into comparable amounts. Set the working hours and paid weeks that match your schedule.",
+      "steps": [
+        "Enter an amount and choose its pay period.",
+        "Set working hours per week and paid weeks per year.",
+        "Read the annual, monthly, weekly and hourly equivalents."
+      ],
+      "help": "Hourly pay is multiplied by working hours and paid weeks to produce annual pay. Daily pay assumes five working days per week. Weekly pay uses the entered paid weeks; monthly pay uses twelve months. Annual amounts are divided by the relevant hours, weeks or months for equivalent figures. No tax, benefit, deduction, holiday-pay or overtime policy is applied. Currency changes the label only.",
+      "faq": [
+        {
+          "question": "Is this take-home pay?",
+          "answer": "No. It converts gross amounts before deductions."
+        },
+        {
+          "question": "Can I account for unpaid weeks?",
+          "answer": "Yes. Reduce paid weeks per year to match your schedule."
+        }
+      ],
+      "related": [
+        "loan-emi-calculator",
+        "savings-calculator",
+        "profit-calculator"
+      ],
+      "url": "/finance-tools/salary-calculator/",
+      "seo": {
+        "primary": "gross salary conversion",
+        "title": "Salary Calculator — Compare Gross Pay Periods",
+        "description": "Convert hourly, daily, weekly, monthly and annual gross pay using your working schedule. Compare pay periods before taxes, benefits or deductions."
+      }
+    },
+    {
+      "id": "word-counter",
+      "slug": "word-counter",
+      "name": "Word Counter",
+      "category": "text-tools",
+      "description": "Count words, characters and reading time.",
+      "kind": "word",
+      "icon": "text",
+      "keywords": [
+        "word counter",
+        "word counter",
+        "character counter",
+        "text count"
+      ],
+      "intro": "Paste or type your text to see its word count, character count and estimated reading time. Everything is counted locally as you type.",
+      "steps": [
+        "Paste or type text into the editor.",
+        "Review the live word and character counts.",
+        "Edit your text or clear the editor to start again."
+      ],
+      "help": "Words are counted as non-empty whitespace-separated tokens. Characters include spaces and are counted by Unicode code point. Reading time assumes 200 words per minute. Counts can differ from applications with other word-boundary rules.",
+      "faq": [
+        {
+          "question": "Does the character count include spaces?",
+          "answer": "Yes. A separate count also shows characters without whitespace."
+        },
+        {
+          "question": "Is my writing uploaded?",
+          "answer": "No. Your text is counted inside the browser and is not stored by this tool."
+        }
+      ],
+      "related": [
+        "character-counter",
+        "case-converter",
+        "text-cleaner"
+      ],
+      "url": "/text-tools/word-counter/",
+      "seo": {
+        "primary": "count words",
+        "title": "Word Counter — Words, Characters and Reading Time",
+        "description": "Count words, Unicode characters and estimated reading time as you type. Text stays in the browser, with counting rules explained for comparison."
+      }
+    },
+    {
+      "id": "character-counter",
+      "slug": "character-counter",
+      "name": "Character Counter",
+      "category": "text-tools",
+      "description": "Check character limits at a glance.",
+      "kind": "word",
+      "icon": "text",
+      "keywords": [
+        "character counter",
+        "character counter",
+        "count characters",
+        "text length"
+      ],
+      "intro": "Count Unicode characters with and without whitespace. Paste your text to check a character limit; word count and reading time are also shown.",
+      "steps": [
+        "Paste or type your text.",
+        "Check the character total and the count without whitespace.",
+        "Edit your text or clear the editor to start again."
+      ],
+      "help": "Words are counted as non-empty whitespace-separated tokens. Characters include spaces and are counted by Unicode code point. Reading time assumes 200 words per minute. Counts can differ from applications with other word-boundary rules.",
+      "faq": [
+        {
+          "question": "Does the character count include spaces?",
+          "answer": "Yes. A separate count also shows characters without whitespace."
+        },
+        {
+          "question": "Is my writing uploaded?",
+          "answer": "No. Your text is counted inside the browser and is not stored by this tool."
+        }
+      ],
+      "related": [
+        "word-counter",
+        "case-converter",
+        "text-cleaner"
+      ],
+      "url": "/text-tools/character-counter/",
+      "seo": {
+        "primary": "count characters",
+        "title": "Character Counter — With and Without Whitespace",
+        "description": "Check Unicode character totals with and without whitespace. Word count is also shown; complex emoji may contain multiple code points."
+      }
+    },
+    {
+      "id": "case-converter",
+      "slug": "case-converter",
+      "name": "Case Converter",
+      "category": "text-tools",
+      "description": "Switch between common text cases.",
+      "kind": "case",
+      "icon": "text",
+      "keywords": [
+        "case converter",
+        "case converter"
+      ],
+      "intro": "Convert text to uppercase, lowercase, title case or sentence case locally. Copy the result without changing your original input.",
+      "steps": [
+        "Paste your text and choose the desired case.",
+        "Select Convert text.",
+        "Review and copy the result."
+      ],
+      "help": "Uppercase and lowercase use JavaScript Unicode casing. Title case capitalizes a letter after a non-letter/non-number boundary. Sentence case capitalizes the first letter and a letter after sentence punctuation followed by whitespace. These are mechanical rules, not grammatical or language-specific editing. Acronyms, names and abbreviations may need manual correction. Input is limited to two million characters.",
+      "faq": [
+        {
+          "question": "Will it preserve acronyms and proper names?",
+          "answer": "Not automatically. Review names, acronyms and abbreviations after converting."
+        }
+      ],
+      "related": [
+        "word-counter",
+        "character-counter",
+        "json-formatter"
+      ],
+      "url": "/text-tools/case-converter/",
+      "seo": {
+        "primary": "convert text case",
+        "title": "Case Converter — Upper, Lower, Title & Sentence Case",
+        "description": "Change text to uppercase, lowercase, title case or sentence case. Keep the original input, review names and acronyms, then copy the converted text."
+      }
+    },
+    {
+      "id": "remove-duplicate-lines",
+      "slug": "remove-duplicate-lines",
+      "name": "Remove Duplicate Lines",
+      "category": "text-tools",
+      "description": "Keep one copy of each unique line.",
+      "kind": "duplicates",
+      "icon": "text",
+      "keywords": [
+        "remove duplicate lines",
+        "remove duplicate lines"
+      ],
+      "intro": "Keep one copy of each unique text line while preserving the first occurrence and original order. Choose whether to trim spaces, ignore case or remove blank lines.",
+      "steps": [
+        "Paste up to 200,000 characters, with one item per line.",
+        "Choose whitespace, case and empty-line options.",
+        "Remove duplicates, review the output and copy or download text."
+      ],
+      "help": "Line endings are normalized to newlines. With trimming enabled, leading and trailing whitespace is removed before comparison. Case-insensitive comparison uses Unicode lowercase conversion; it is not a language-aware spelling comparison. One copy of an empty line remains unless empty-line removal is enabled. No sorting or database is used. Your input remains available beside the separate result.",
+      "faq": [
+        {
+          "question": "Will it sort my list?",
+          "answer": "No. It preserves the first occurrence of each line in the order you entered."
+        },
+        {
+          "question": "Are uppercase and lowercase entries duplicates?",
+          "answer": "Only if you enable Ignore uppercase / lowercase."
+        }
+      ],
+      "related": [
+        "text-cleaner",
+        "case-converter",
+        "word-counter"
+      ],
+      "url": "/text-tools/remove-duplicate-lines/",
+      "seo": {
+        "primary": "remove duplicate text lines",
+        "title": "Remove Duplicate Lines — Keep the Original Order",
+        "description": "Remove repeated text lines while retaining the first occurrence. Choose case and whitespace rules, review the result, then copy or download it."
+      }
+    },
+    {
+      "id": "text-cleaner",
+      "slug": "text-cleaner",
+      "name": "Text Cleaner",
+      "category": "text-tools",
+      "description": "Tidy spaces and clean up pasted text.",
+      "kind": "clean",
+      "icon": "text",
+      "keywords": [
+        "text cleaner",
+        "text cleaner"
+      ],
+      "intro": "Tidy pasted text by trimming line edges, collapsing repeated spaces and tabs, or removing empty lines. Review the cleaned copy before using it.",
+      "steps": [
+        "Paste text up to 200,000 characters.",
+        "Choose which spacing changes to apply.",
+        "Clean the text, review the result and copy or download it."
+      ],
+      "help": "The cleaner normalizes CRLF and CR line endings to newlines. Trimming removes whitespace at each line edge. Collapsing replaces runs of spaces, tabs and non-breaking spaces with a single space while preserving paragraph newlines. Empty-line removal is optional and off by default. These mechanical edits can change indentation, so avoid applying them to source code or preformatted content without review. Text is not uploaded or saved.",
+      "faq": [
+        {
+          "question": "Does it remove paragraph breaks?",
+          "answer": "Not by default. Empty-line removal is optional; ordinary line breaks remain."
+        },
+        {
+          "question": "Does it correct grammar or spelling?",
+          "answer": "No. It changes whitespace only."
+        }
+      ],
+      "related": [
+        "remove-duplicate-lines",
+        "word-counter",
+        "case-converter"
+      ],
+      "url": "/text-tools/text-cleaner/",
+      "seo": {
+        "primary": "clean text whitespace",
+        "title": "Text Cleaner — Tidy Spaces and Line Breaks",
+        "description": "Clean pasted text with whitespace and line-break options. Review the separate result before copying or downloading. Your text is processed locally."
+      }
+    },
+    {
+      "id": "json-formatter",
+      "slug": "json-formatter",
+      "name": "JSON Formatter",
+      "category": "developer-tools",
+      "description": "Validate, format and minify your JSON.",
+      "kind": "json",
+      "icon": "code",
+      "keywords": [
+        "json formatter",
+        "json formatter",
+        "beautify json",
+        "json validator"
+      ],
+      "intro": "Check JSON syntax, add readable indentation or produce a compact version. Your input stays in your browser and is never sent to a formatting service.",
+      "steps": [
+        "Paste valid JSON into the input editor.",
+        "Choose Format or Minify.",
+        "Review or copy the resulting JSON."
+      ],
+      "help": "JSON needs double-quoted keys and strings. Comments and trailing commas are invalid. Parsing follows JavaScript JSON semantics: very large integers may lose precision and duplicate object keys retain the last value. Use a specialized parser for precision-sensitive data.",
+      "faq": [
+        {
+          "question": "Can I format JSON with comments?",
+          "answer": "No. Comments are not part of standard JSON and produce a validation error."
+        },
+        {
+          "question": "Will formatting preserve very large numbers?",
+          "answer": "JavaScript can lose precision for integers beyond Number.MAX_SAFE_INTEGER. Represent such identifiers as strings or use a specialized parser."
+        }
+      ],
+      "related": [
+        "base64-encoder-decoder",
+        "url-encoder-decoder",
+        "uuid-generator"
+      ],
+      "url": "/developer-tools/json-formatter/",
+      "seo": {
+        "primary": "format and validate JSON",
+        "title": "JSON Formatter — Validate, Beautify and Minify",
+        "description": "Validate JSON syntax, add indentation or minify locally. Get useful errors and copy the result. Comments are unsupported; large integers need care.",
+        "next": [
+          {
+            "id": "base64-encoder-decoder",
+            "reason": "Decode a Base64 text payload before checking its JSON syntax."
+          },
+          {
+            "id": "uuid-generator",
+            "reason": "Generate identifiers for your sample data."
+          }
+        ]
+      }
+    },
+    {
+      "id": "base64-encoder-decoder",
+      "slug": "base64-encoder-decoder",
+      "name": "Base64 Encoder / Decoder",
+      "category": "developer-tools",
+      "description": "Encode or decode Unicode text as Base64.",
+      "kind": "base64",
+      "icon": "code",
+      "keywords": [
+        "base64 encoder / decoder",
+        "base64 encoder decoder"
+      ],
+      "intro": "Encode Unicode text as standard Base64 or decode Base64 back to UTF-8 text. Processing runs locally in a background worker.",
+      "steps": [
+        "Paste text to encode, or a standard Base64 string to decode.",
+        "Choose Encode or Decode.",
+        "Review the result and copy it."
+      ],
+      "help": "Encoding first converts text into UTF-8 bytes. Decoding accepts standard Base64 characters and ignores whitespace, then validates UTF-8. This is a text utility, not a binary file decoder. Base64 is reversible encoding and provides no secrecy. URL-safe Base64 using hyphens or underscores is not supported in this version. Input is limited to two million characters.",
+      "faq": [
+        {
+          "question": "Is Base64 encryption?",
+          "answer": "No. Anyone can decode it. Do not use Base64 to protect passwords or other secrets."
+        },
+        {
+          "question": "Does it support Unicode text?",
+          "answer": "Yes. Text is encoded as UTF-8, including emoji and non-Latin scripts. Invalid UTF-8 bytes are rejected during decoding."
+        }
+      ],
+      "related": [
+        "url-encoder-decoder",
+        "json-formatter",
+        "case-converter"
+      ],
+      "url": "/developer-tools/base64-encoder-decoder/",
+      "seo": {
+        "primary": "Base64 text encoding",
+        "title": "Base64 Encoder & Decoder — UTF-8 Text",
+        "description": "Encode Unicode text as Base64 or decode it to UTF-8 in a browser worker. Supports emoji and non-Latin text; Base64 is encoding, not encryption."
+      }
+    },
+    {
+      "id": "url-encoder-decoder",
+      "slug": "url-encoder-decoder",
+      "name": "URL Encoder / Decoder",
+      "category": "developer-tools",
+      "description": "Escape and decode URL components.",
+      "kind": "url",
+      "icon": "code",
+      "keywords": [
+        "url encoder / decoder",
+        "url encoder decoder"
+      ],
+      "intro": "Encode a URL component or decode percent-escaped UTF-8 text locally. Use it for a query value or path segment that needs escaping.",
+      "steps": [
+        "Paste a component or percent-encoded text.",
+        "Choose Encode or Decode.",
+        "Review and copy the result."
+      ],
+      "help": "Encoding uses encodeURIComponent, which escapes separators such as slash, question mark and ampersand. Use it for an individual value, not an entire URL. Decoding uses decodeURIComponent and rejects malformed percent sequences or invalid UTF-8. Plus signs remain plus signs; this does not implement form-urlencoded plus-to-space conversion. Input is limited to two million characters.",
+      "faq": [
+        {
+          "question": "Should I paste a whole URL?",
+          "answer": "Use a component, such as a query parameter value. Encoding an entire URL also escapes its structural separators."
+        },
+        {
+          "question": "Why does a plus sign stay unchanged when decoding?",
+          "answer": "This follows decodeURIComponent. A plus sign means space only in certain form-encoding conventions."
+        }
+      ],
+      "related": [
+        "base64-encoder-decoder",
+        "json-formatter",
+        "word-counter"
+      ],
+      "url": "/developer-tools/url-encoder-decoder/",
+      "seo": {
+        "primary": "URL component encoding",
+        "title": "URL Encoder & Decoder — Escape URL Components",
+        "description": "Encode a query value or path component and decode percent-escaped UTF-8 text locally. Malformed escapes are rejected; plus signs are not changed to spaces."
+      }
+    },
+    {
+      "id": "uuid-generator",
+      "slug": "uuid-generator",
+      "name": "UUID Generator",
+      "category": "developer-tools",
+      "description": "Create unique identifiers for your projects.",
+      "kind": "uuid",
+      "icon": "code",
+      "keywords": [
+        "uuid generator",
+        "uuid generator"
+      ],
+      "intro": "Generate one or up to 100 random version 4 UUIDs on your device. Copy the batch for test data, application records or temporary identifiers.",
+      "steps": [
+        "Choose a whole-number count from 1 to 100.",
+        "Select Generate UUIDs.",
+        "Copy the generated batch, with one identifier per line."
+      ],
+      "help": "UUID v4 uses cryptographic browser randomness and sets the standard version and variant bits. The fallback uses crypto.getRandomValues when crypto.randomUUID is unavailable; it never falls back to Math.random. Random identifiers have a very low collision probability, but uniqueness is not mathematically guaranteed. A UUID is an identifier, not a password or access token. Generated values remain in page memory and are cleared when you leave or reset.",
+      "faq": [
+        {
+          "question": "Which UUID version is generated?",
+          "answer": "Version 4, with the standard random UUID format and variant bits."
+        },
+        {
+          "question": "Are UUIDs guaranteed to be unique?",
+          "answer": "No random identifier guarantees uniqueness. UUID v4 has an extremely large random space; applications should still enforce their own uniqueness rules."
+        },
+        {
+          "question": "Are generated UUIDs stored?",
+          "answer": "No. They stay in this page until you clear, reset or leave. Favorites remember only the tool ID."
+        }
+      ],
+      "related": [
+        "json-formatter",
+        "password-generator",
+        "base64-encoder-decoder"
+      ],
+      "url": "/developer-tools/uuid-generator/",
+      "seo": {
+        "primary": "generate UUID v4",
+        "title": "UUID Generator — Random Version 4 Identifiers",
+        "description": "Generate and copy up to 100 UUID v4 identifiers with cryptographic browser randomness. Values stay in page memory and are not stored by Tool Fera."
+      }
+    },
+    {
+      "id": "color-converter",
+      "slug": "color-converter",
+      "name": "Color Converter",
+      "category": "developer-tools",
+      "description": "Convert between HEX, RGB and HSL.",
+      "kind": "color",
+      "icon": "code",
+      "keywords": [
+        "color converter",
+        "color converter"
+      ],
+      "intro": "Convert HEX, RGB or HSL into all three formats, with an on-page color preview. Optional alpha values are supported and each result can be copied separately.",
+      "steps": [
+        "Enter a HEX, RGB or HSL color, such as #2f5bff or rgb(47, 91, 255).",
+        "Select Convert color, or press Enter.",
+        "Check the preview and copy HEX, RGB or HSL."
+      ],
+      "help": "Accepted inputs include 3, 4, 6 and 8-digit HEX, numeric or percentage RGB, HSL hue in degrees and optional alpha as a fraction or percentage. Hue wraps around 360 degrees. RGB channels round to 8-bit values, HSL displays one decimal place and alpha displays three, so round trips can differ slightly. Named colors, CSS variables, wide-gamut spaces and CSS calc expressions are not accepted. This is a format conversion tool, not a contrast or color-management checker.",
+      "faq": [
+        {
+          "question": "Can I convert a color with transparency?",
+          "answer": "Yes. Short and long HEX alpha, RGBA and HSLA are supported. Outputs include alpha when it is below 1."
+        },
+        {
+          "question": "Why do values change slightly after converting back?",
+          "answer": "RGB rounds to whole 8-bit channels, and HSL and alpha use display precision. Small rounding differences are expected."
+        },
+        {
+          "question": "Can I use a named CSS color or variable?",
+          "answer": "No. Enter a concrete HEX, RGB or HSL value."
+        }
+      ],
+      "related": [
+        "json-formatter",
+        "url-encoder-decoder",
+        "uuid-generator"
+      ],
+      "url": "/developer-tools/color-converter/",
+      "seo": {
+        "primary": "HEX RGB HSL conversion",
+        "title": "Color Converter — HEX, RGB, HSL and Alpha",
+        "description": "Convert HEX, RGB and HSL colors with an on-page preview. Include optional transparency and copy each format; rounding differences are explained."
+      }
+    },
+    {
+      "id": "qr-code-generator",
+      "slug": "qr-code-generator",
+      "name": "QR Code Generator",
+      "category": "generators",
+      "description": "Turn a link or text into a scannable code.",
+      "kind": "qr",
+      "icon": "generator",
+      "keywords": [
+        "qr code generator",
+        "qr code generator",
+        "qr",
+        "qrcode"
+      ],
+      "intro": "Create a static QR code from a link or text and download it as PNG or SVG. Generation happens in your browser, with no redirect service or tracking added.",
+      "steps": [
+        "Enter a full link or the text to encode.",
+        "Choose a PNG size and select Generate QR code.",
+        "Download PNG or SVG and test it with a scanner before sharing."
+      ],
+      "help": "The code uses medium error correction, a four-module quiet zone and a dark-on-white palette. Input is limited to 1,800 UTF-8 bytes. Long content creates denser codes and may need a larger print size. SVG scales cleanly; PNG is available at 256, 512 or 1,024 pixels. Static codes do not expire here, but their destination links can change or stop working.",
+      "faq": [
+        {
+          "question": "Can I change the destination after printing?",
+          "answer": "No. The content is embedded in a static code. Generate a new code if the destination changes."
+        },
+        {
+          "question": "Does Tool Fera track scans?",
+          "answer": "No tracking or redirect is added. A destination website may have its own analytics."
+        }
+      ],
+      "related": [
+        "url-encoder-decoder",
+        "password-generator",
+        "image-resizer"
+      ],
+      "url": "/generators/qr-code-generator/",
+      "seo": {
+        "primary": "generate static QR code",
+        "title": "QR Code Generator — Download PNG or SVG",
+        "description": "Create a static QR code for a link or text in your browser. Download PNG or SVG, then test it with a scanner. No tracking redirect is added."
+      }
+    },
+    {
+      "id": "password-generator",
+      "slug": "password-generator",
+      "name": "Password Generator",
+      "category": "generators",
+      "description": "Create a strong, random password.",
+      "kind": "password",
+      "icon": "generator",
+      "keywords": [
+        "password generator",
+        "password generator",
+        "secure password"
+      ],
+      "intro": "Create a random password using your browser’s cryptographic random number generator. Choose a length and copy the result into your password manager.",
+      "steps": [
+        "Choose a length between 12 and 64 characters.",
+        "Select Generate password.",
+        "Copy the password and store it securely."
+      ],
+      "help": "Each password includes uppercase and lowercase letters, numbers and symbols. Characters are selected with rejection sampling to avoid modulo bias. Passwords are not saved to localStorage or sent to a server. Use a unique password for every account.",
+      "faq": [
+        {
+          "question": "Are the passwords generated randomly?",
+          "answer": "Yes. The tool uses crypto.getRandomValues and rejection sampling rather than Math.random."
+        },
+        {
+          "question": "Does Tool Fera remember my passwords?",
+          "answer": "No. Passwords stay in page memory. Save a password in your own password manager before leaving."
+        }
+      ],
+      "related": [
+        "qr-code-generator",
+        "random-number-generator",
+        "uuid-generator"
+      ],
+      "url": "/generators/password-generator/",
+      "seo": {
+        "primary": "generate random password",
+        "title": "Password Generator — Cryptographic Browser Randomness",
+        "description": "Generate a random password from 12 to 64 characters, then copy it to your password manager. Generated passwords are not uploaded or saved in history."
+      }
+    },
+    {
+      "id": "random-number-generator",
+      "slug": "random-number-generator",
+      "name": "Random Number Generator",
+      "category": "generators",
+      "description": "Pick a number within your chosen range.",
+      "kind": "random",
+      "icon": "generator",
+      "keywords": [
+        "random number generator",
+        "random number generator"
+      ],
+      "intro": "Generate integers within an inclusive range using your browser’s cryptographic random API. Allow repeats or request a batch of unique numbers.",
+      "steps": [
+        "Enter the inclusive minimum and maximum.",
+        "Choose a count from one to 1,000 and optionally prevent repeats.",
+        "Generate, then copy or download one number per line."
+      ],
+      "help": "Bounds can range from minus one billion to one billion. Rejection sampling avoids modulo bias. Unique batches use bounded sampling without replacement followed by a random shuffle; they cannot request more values than the range contains. Values stay in page memory and are not logged or stored. A random output is not an official draw record or a replacement for independently audited selection procedures.",
+      "faq": [
+        {
+          "question": "Can the minimum or maximum appear?",
+          "answer": "Yes. Both bounds are included."
+        },
+        {
+          "question": "Can a batch contain repeats?",
+          "answer": "Yes by default. Enable Unique numbers to prevent repeats within that batch."
+        }
+      ],
+      "related": [
+        "password-generator",
+        "uuid-generator",
+        "qr-code-generator"
+      ],
+      "url": "/generators/random-number-generator/",
+      "seo": {
+        "primary": "generate random numbers",
+        "title": "Random Number Generator — Choose Range and Count",
+        "description": "Generate random whole numbers within your chosen range using browser cryptographic randomness. Set the count and choose whether repeated values are allowed."
+      }
+    },
+    {
+      "id": "invoice-generator",
+      "slug": "invoice-generator",
+      "name": "Invoice Generator",
+      "category": "generators",
+      "description": "Create a clear invoice for your work.",
+      "kind": "invoice",
+      "icon": "generator",
+      "keywords": [
+        "invoice generator",
+        "invoice generator"
+      ],
+      "intro": "Create a simple downloadable PDF invoice with your details, line items, discount, tax and payment notes. Everything is prepared on your device.",
+      "steps": [
+        "Enter sender, recipient, invoice number and date.",
+        "Add descriptions, quantities and prices; set a currency, discount and your own tax rate.",
+        "Check totals, create the PDF, review it and download."
+      ],
+      "help": "Up to 30 line items are supported. Each quantity times unit price rounds to two decimal places, then line totals are summed. The discount is subtracted before the supplied tax percentage is applied and rounded. The PDF uses the existing local document engine with selectable text and tables. Font substitutions can affect uncommon scripts; review any warning and the downloaded file. You supply legally appropriate invoice details and rates. No payment collection, invoice database, automatic tax calculation or currency conversion is provided.",
+      "faq": [
+        {
+          "question": "Is tax calculated automatically for my country?",
+          "answer": "No. You enter the percentage. The generator does not select official tax rules or determine invoice compliance."
+        },
+        {
+          "question": "Are invoices saved or sent to the recipient?",
+          "answer": "No. They remain in this page until you download them. Tool Fera does not email invoices or store them."
+        },
+        {
+          "question": "When is the discount applied?",
+          "answer": "The discount reduces the subtotal before tax is applied."
+        }
+      ],
+      "related": [
+        "profit-calculator",
+        "percentage-calculator",
+        "word-to-pdf"
+      ],
+      "url": "/generators/invoice-generator/",
+      "seo": {
+        "primary": "create PDF invoice",
+        "title": "Invoice Generator — Download a Simple PDF Invoice",
+        "description": "Create a PDF invoice from your business details and line items. Review totals and download locally; Tool Fera does not store invoice records."
+      }
+    }
+  ],
+  "categories": [
+    {
+      "slug": "pdf-tools",
+      "name": "PDF Tools",
+      "short": "Prepare, combine and convert documents.",
+      "description": "Merge, split, rotate, delete or reorder PDF pages locally. Optimize a PDF, export PNG/JPG page images, combine PNG/JPG files or convert native PDF text into editable Word without a processing server.",
+      "icon": "pdf",
+      "guideTitle": "Build the document you need",
+      "guide": "Merging combines documents in your chosen order. Splitting extracts a selection into a new PDF; enter pages and ranges in the order you want them to appear. Rotate changes selected page orientations; Delete keeps the remaining pages; Reorder requires every page exactly once. Recommended, Strong compression and Best quality are the simple PDF compression levels. The tool first tries structural optimization, then a page-image copy when needed. Page-image results remove selectable text, links and forms; compare the actual savings and review the document. A larger or effectively unchanged output is not offered as a compressed success. PDF to PNG/JPG exports rendered page images; PNG/JPG to PDF embeds your images. PDF to Word preserves page boundaries using editable text containers and recoverable Word tables, with localized images for complex vector diagrams and charts. Font substitutions and unusual layouts may differ. Scanned PDFs use the separate PDF OCR workflow with mobile limits. Native PDF to Word and Word to PDF never invoke OCR. DOCX conversion preserves explicit and saved page breaks, section geometry and intentional spacing. Review complex layouts and recognition errors. PDF-to-image rendering and Word analysis run locally with PDF.js. Editing and page copying use open-source processing in a background worker. They copy page content, but interactive forms, bookmarks and digital signatures may not carry over. Password-protected files are unsupported. Review the downloaded document before sharing it.",
+      "faq": [
+        {
+          "question": "Do PDF files leave my device?",
+          "answer": "PDF editing uses pdf-lib in a browser worker; image rendering uses PDF.js locally. Your documents are not uploaded to Tool Fera or a third-party PDF API."
+        },
+        {
+          "question": "Can I compress or convert a PDF to Word here?",
+          "answer": "Compression offers Recommended, Strong compression and Best quality. It first attempts structural optimization and can use a page-image copy when needed. Image-based compression removes selectable text, links and forms. PDF to Word reconstructs editable text, images and simple tables; scanned pages use the separate PDF OCR tool. Word to PDF accepts DOCX. Both work locally, and complex layouts may differ."
+        },
+        {
+          "question": "Can I process a password-protected PDF?",
+          "answer": "No. Use an unencrypted copy you are authorized to process. This version does not remove passwords or preserve digital signatures."
+        }
+      ],
+      "seo": {
+        "title": "PDF Tools — Compress, Merge, Convert & OCR",
+        "description": "Edit PDF pages, reduce file size, convert PDF and DOCX, or recognize scanned text. Explore local browser tools with clear format and layout limitations."
+      }
+    },
+    {
+      "slug": "image-tools",
+      "name": "Image Tools",
+      "short": "Lighter files. The right dimensions.",
+      "description": "Resize, crop, compress or convert images on your device, or extract English text with local OCR. Set exact dimensions, preserve proportions or crop to fit, choose an output format, and compare actual file sizes before downloading.",
+      "icon": "image",
+      "guideTitle": "Choose dimensions, then format",
+      "guide": "Use Fit to preserve proportions, Fill to crop the center, or Stretch for exact dimensions with possible distortion. JPEG is useful for photographs and fills transparency with white. PNG keeps transparency; WebP supports transparency and adjustable quality. AVIF export is offered only when your browser can encode it. BMP export is uncompressed and can be large. Image work runs in a background worker, with a smaller compatibility fallback for older browsers. Metadata and animation are not preserved.",
+      "faq": [
+        {
+          "question": "Which image formats can I open?",
+          "answer": "JPEG, PNG, WebP, AVIF, BMP and GIF, subject to the browser’s decoder. GIF uses its first frame. HEIC and TIFF are not supported in this version."
+        },
+        {
+          "question": "Which formats can I download?",
+          "answer": "JPEG, PNG, WebP and BMP. AVIF is available only if the browser passes an actual encoding check. Unsupported output types are not offered."
+        },
+        {
+          "question": "Are images uploaded or stored?",
+          "answer": "No. Processing and temporary previews stay on your device. Reset or leave the page to release them. Only tool identifiers are saved in favorites and history."
+        }
+      ],
+      "seo": {
+        "title": "Image Tools — Compress, Resize, Crop & Convert",
+        "description": "Prepare images with local compression, resizing, cropping and format conversion. Extract English text with OCR and review previews before downloading."
+      }
+    },
+    {
+      "slug": "student-tools",
+      "name": "Student Tools",
+      "short": "Understand your grades and progress.",
+      "description": "Calculate GPA and CGPA, check marks and attendance, or build a custom admission aggregate. Use your own institution’s grade points and credit rules.",
+      "icon": "student",
+      "guideTitle": "Credits make the difference",
+      "guide": "A course with more credits contributes more to your GPA. For a cumulative result, weight each semester GPA by its credits instead of taking a simple average. These calculators accept scales up to 10; use the grade points from your institution and check its repeat-course and rounding policies.",
+      "faq": [
+        {
+          "question": "Does the GPA calculator support different grading scales?",
+          "answer": "Yes. Enter your actual grade points on a scale up to 10, including the common 4.0 scale."
+        },
+        {
+          "question": "Is a simple average the same as CGPA?",
+          "answer": "Only when every semester has the same number of credits. The CGPA calculator uses each semester’s credit total."
+        }
+      ],
+      "seo": {
+        "title": "Student Calculators — GPA, CGPA, Marks & Attendance",
+        "description": "Calculate weighted GPA, cumulative grades, marks, attendance and admission aggregates. Use your institution’s own credit, grade-point and weighting rules."
+      }
+    },
+    {
+      "slug": "finance-tools",
+      "name": "Calculators",
+      "short": "Clear answers, with the units shown.",
+      "description": "Calculate percentages and estimate journey fuel costs with your own prices and units. Estimate loan payments, savings, profit, discounts and gross salary equivalents.",
+      "icon": "finance",
+      "guideTitle": "Make the assumptions explicit",
+      "guide": "Start with the amount, unit and rate you intend to use. Our fuel calculator supports kilometres or miles, km/L, L/100 km, and US or Imperial MPG. Choose a country for sensible unit and currency defaults, or override the currency yourself. Enter your own fuel price; no live market rate is assumed. Results are estimates based on your inputs.",
+      "faq": [
+        {
+          "question": "Can I choose different fuel units?",
+          "answer": "Yes. Choose kilometres or miles for distance and km/L, L/100 km, US MPG or Imperial MPG for efficiency. Prices can be per litre, US gallon or Imperial gallon. Set the currency and enter your own price."
+        },
+        {
+          "question": "Are financial results official quotes?",
+          "answer": "No. Calculators provide numerical estimates. Fees, taxes, actual vehicle consumption and other conditions can affect real costs."
+        }
+      ],
+      "seo": {
+        "title": "Free Calculators — Money, Fuel, Percentages & Age",
+        "description": "Estimate payments, savings, profit, discounts, gross salary and trip fuel costs. Use your own rates and units, with formulas and assumptions explained."
+      }
+    },
+    {
+      "slug": "text-tools",
+      "name": "Text Tools",
+      "short": "Count and check your writing.",
+      "description": "Count words and Unicode characters, convert case, remove duplicate lines or clean whitespace. Check reading time and character limits without uploading or saving your text.",
+      "icon": "text",
+      "guideTitle": "Know what a count includes",
+      "guide": "Words are counted as whitespace-separated tokens. Characters are counted by Unicode code point, with a separate total excluding whitespace. Some emoji contain multiple code points, and other applications may treat hyphenation differently. Use the rule required by your assignment or platform. Case conversion follows mechanical Unicode casing rules; review acronyms and names after converting.",
+      "faq": [
+        {
+          "question": "Is pasted text stored?",
+          "answer": "No. The available counters process text in the current page’s memory. Text is not uploaded or stored in your history."
+        },
+        {
+          "question": "Why might counts differ from another editor?",
+          "answer": "Editors use different rules for punctuation, word boundaries and emoji. This tool states its counting rules so you can compare them."
+        }
+      ],
+      "seo": {
+        "title": "Text Tools — Count, Convert Case & Clean Lines",
+        "description": "Count words and Unicode characters, convert text case, remove duplicate lines and clean whitespace. Your writing stays in the browser."
+      }
+    },
+    {
+      "slug": "developer-tools",
+      "name": "Developer Tools",
+      "short": "Readable data. Fewer surprises.",
+      "description": "Generate random UUIDs, convert HEX/RGB/HSL colors, format JSON, encode and decode Base64 text, or escape URL components locally. See clear syntax errors and copy the result without sending your data to an external formatting service.",
+      "icon": "code",
+      "guideTitle": "Valid JSON comes first",
+      "guide": "JSON requires double-quoted keys and strings and does not allow comments or trailing commas. Formatting changes presentation, while parsing follows JavaScript semantics. Very large integers can lose precision; keep precision-sensitive identifiers as strings or use a specialized parser. Base64 is reversible UTF-8 text encoding, not encryption. URL encoding escapes a single component; it should not be applied to an entire URL.",
+      "faq": [
+        {
+          "question": "Does the formatter validate JSON?",
+          "answer": "Yes. Invalid input produces a visible error. Valid input can be formatted or minified."
+        },
+        {
+          "question": "Is my JSON sent to a server?",
+          "answer": "No. Parsing and formatting happen locally in your browser."
+        }
+      ],
+      "seo": {
+        "title": "Developer Tools — JSON, Base64, URLs, UUIDs & Colors",
+        "description": "Format JSON, encode UTF-8 and URL components, generate UUIDs and convert color formats locally. Check errors and copy usable results."
+      }
+    },
+    {
+      "slug": "generators",
+      "name": "Generators",
+      "short": "Create useful outputs on demand.",
+      "description": "Create a static QR code for a link or text, generate passwords and random numbers with your browser’s cryptographic random API, or create a simple PDF invoice. Download the code or copy the password without a server request.",
+      "icon": "generator",
+      "guideTitle": "Use randomness responsibly",
+      "guide": "Create a different password for every account and save it in a password manager. The generator uses cryptographic randomness with unbiased character selection. It never stores generated passwords. A generated password still needs to be handled securely by you. QR codes contain static text or links, with PNG and SVG downloads. Test a code with a scanner before printing; long content creates a denser code. No tracking redirect or expiry is added, but the destination website can change.",
+      "faq": [
+        {
+          "question": "Are generated passwords saved?",
+          "answer": "No. They stay in page memory and are not sent to a server or stored in localStorage."
+        },
+        {
+          "question": "What randomness does the generator use?",
+          "answer": "It uses crypto.getRandomValues with rejection sampling rather than Math.random."
+        }
+      ],
+      "seo": {
+        "title": "Free Generators — QR Codes, Passwords, Numbers & Invoices",
+        "description": "Create static QR codes, cryptographic passwords and random numbers, or a PDF invoice. Generate useful outputs without an account."
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f7f8f5"/><stop offset="1" stop-color="#eaf2ff"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/><path d="M890 0v630M1030 0v630M0 140h1200M0 490h1200" stroke="#dce7f7"/>
+<rect x="76" y="69" width="64" height="64" rx="17" fill="#15223a"/><path d="M90 86h33v8h-13v31h-8V94H90z" fill="#fff"/><path d="M111 98h20v7h-12v5h10v7h-10v8h-8z" fill="#2f5bff"/><path d="M125 118h7v7h-7z" fill="#25d8ff"/>
+<text x="158" y="114" fill="#15223a" font-size="43" font-family="Inter,Arial,sans-serif" font-weight="700">Tool <tspan fill="#2f5bff">Fera</tspan></text>
+<text x="76" y="264" fill="#15223a" font-size="81" font-family="Inter,Arial,sans-serif" font-weight="700" letter-spacing="-4">Less friction.</text><text x="76" y="357" fill="#2f5bff" font-size="81" font-family="Inter,Arial,sans-serif" font-weight="700" letter-spacing="-4">More finished.</text>
+<text x="79" y="434" fill="#526584" font-size="25" font-family="Inter,Arial,sans-serif">Practical tools. Right in your browser.</text>
+<g font-size="20" font-family="Inter,Arial,sans-serif" fill="#32548c"><rect x="76" y="496" width="160" height="48" rx="10" fill="#fff" stroke="#cddcf0"/><text x="104" y="527">PDF &amp; images</text><rect x="250" y="496" width="185" height="48" rx="10" fill="#fff" stroke="#cddcf0"/><text x="275" y="527">Text &amp; code</text><rect x="449" y="496" width="180" height="48" rx="10" fill="#fff" stroke="#cddcf0"/><text x="475" y="527">Calculators</text></g>
+<rect x="850" y="203" width="224" height="224" rx="56" fill="#15223a"/><path d="M897 255h113v28h-43v112h-28V283h-42z" fill="#fff"/><path d="M970 294h71v25h-43v18h37v25h-37v33h-28z" fill="#2f5bff"/><path d="M1019 370h24v25h-24z" fill="#25d8ff"/>
+</svg>

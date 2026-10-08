@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {PDFDocument} from 'pdf-lib';
+import {toolDefinitions} from '../lib/tool-definitions.ts';
+import {tools,toolUrl} from '../lib/catalog.ts';
+import {marksResult,attendanceResult,meritResult,loanResult,savingsResult,profitResult,salaryResult} from '../tools/additional-calculations.ts';
+import {cleanupText} from '../tools/text-cleanup.ts';
+import {randomNumbers} from '../tools/random-numbers.ts';
+import {buildInvoice,invoiceTotals} from '../tools/invoice.ts';
+import {renderWordPDF} from '../tools/word-pdf-render.ts';
+import {readFileBytes,readFileBatch,validateFileSelection,validatePDF,friendlyFileError} from '../tools/file-input.ts';
+import {inspectImageHeader} from '../tools/image-input.ts';
+const root=resolve(process.argv[2]||'/workspace/scratch/acfb0331f292/toolfera-validation-fixtures');await mkdir(root,{recursive:true});
+assert.equal(toolDefinitions.length,45);assert.equal(toolDefinitions.filter(t=>t.kind).length,45);
+for(const tool of tools){assert.ok(tool.intro&&tool.steps?.length>=3&&tool.help&&tool.faq?.length&&tool.related?.length,tool.id+' content');assert.ok(toolUrl(tool).endsWith('/'));}
+assert.equal(marksResult(80,100,100,75).needed,70);assert.equal(marksResult(80,100,0,90).reachable,false);assert.throws(()=>marksResult(110,100,10,75));
+assert.deepEqual(attendanceResult(30,40,75),{percentage:75,needed:0,canMiss:0});assert.equal(attendanceResult(20,40,75).needed,40);assert.equal(attendanceResult(39,40,100).needed,null);assert.equal(attendanceResult(40,40,80).canMiss,10);assert.throws(()=>attendanceResult(2,1,75));
+assert.equal(meritResult([{earned:80,possible:100,weight:40},{earned:90,possible:100,weight:60}]),86);assert.throws(()=>meritResult([{earned:80,possible:100,weight:99}]));
+assert.equal(loanResult(1200,0,12).payment,100);assert.ok(Math.abs(loanResult(10000,6,24).payment-443.2061025)<.0001);assert.throws(()=>loanResult(100,5,0));
+assert.equal(savingsResult(1000,100,0,5).balance,7000);let independentlyCompounded=1000;for(let month=0;month<60;month++)independentlyCompounded=independentlyCompounded*(1+5/1200)+100;assert.ok(Math.abs(savingsResult(1000,100,5,5).balance-independentlyCompounded)<1e-8);assert.throws(()=>savingsResult(1e12,1e12,100,100));
+assert.deepEqual(profitResult(1000,700),{profit:300,margin:30,markup:300/700*100});assert.equal(profitResult(0,100).margin,null);assert.equal(profitResult(100,0).markup,null);
+assert.equal(salaryResult(25,'hour',40,52).annual,52000);assert.equal(salaryResult(1000,'month',40,52).annual,12000);
+const options={trim:true,collapse:true,empty:false,ignoreCase:false};assert.equal(cleanupText(' a\r\na\nb\nb','duplicates',options).text,'a\nb');assert.equal(cleanupText(' A\na\nB','duplicates',{...options,ignoreCase:true}).text,'A\nB');assert.equal(cleanupText(' a  b \n\n c\t d','clean',options).text,'a b\n\nc d');assert.throws(()=>cleanupText('','clean',options));
+const random=randomNumbers(-10,10,21,true);assert.equal(new Set(random).size,21);assert.ok(random.every(n=>n>=-10&&n<=10));assert.deepEqual(randomNumbers(7,7,1,true),[7]);assert.throws(()=>randomNumbers(1,2,3,true));assert.throws(()=>randomNumbers(0,1,1.2,false));
+const invoice={from:'Example Studio\n123 Example Street',to:'Example Client',number:'QA-001',date:'2026-10-03',due:'2026-10-15',currency:'USD',items:[{description:'Design work',quantity:2,price:19.99},{description:'Development',quantity:3,price:50}],tax:10,discount:9.98,note:'Thank you.'};
+const totals=invoiceTotals(invoice.items,10,9.98);assert.deepEqual(totals,{lines:[39.98,150],subtotal:189.98,discount:9.98,tax:18,total:198});assert.throws(()=>buildInvoice({...invoice,date:'2026-02-30'}));assert.throws(()=>buildInvoice({...invoice,from:''}));
+const fonts=await Promise.all(['Regular','Bold','Italic','BoldItalic'].map(style=>readFile('public/_word/fonts/LiberationSans-'+style+'.ttf')));const pdf=await renderWordPDF(buildInvoice(invoice),fonts,()=>{});assert.ok(pdf.blob.size>1000);assert.ok((await PDFDocument.load(await pdf.blob.arrayBuffer())).getPageCount()>=1);await writeFile(root+'/invoice-engine.pdf',new Uint8Array(await pdf.blob.arrayBuffer()));
+const sample=new File([await readFile(root+'/sample.pdf')],'sample.pdf',{type:'application/pdf'}),reads=[];await validatePDF(sample);const first=await readFileBytes(sample,undefined,p=>reads.push(p));const second=await readFileBytes(sample);assert.notEqual(first,second);assert.equal(reads.at(-1).loaded,sample.size);const transferred=structuredClone(first,{transfer:[first]});assert.equal(first.byteLength,0);assert.ok(transferred.byteLength>0);assert.ok((await readFileBytes(sample)).byteLength>0);const batch=await readFileBatch([sample,sample],undefined,p=>reads.push(p));assert.equal(batch.length,2);assert.equal(reads.at(-1).total,sample.size*2);
+assert.throws(()=>validateFileSelection([new File([new Uint8Array(25.3*1048576)],'large.pdf')]),/Maximum allowed size is 20 MB. Your file is 25.3 MB/);assert.throws(()=>validateFileSelection(Array(11).fill(sample),{maxFiles:10}),/Too many files/);assert.throws(()=>validateFileSelection([new File([],'empty.pdf')]),/empty/);await assert.rejects(validatePDF(new File(['hello'],'bad.pdf')),/not a supported PDF/);const abort=new AbortController();abort.abort();await assert.rejects(readFileBytes(sample,abort.signal),{name:'AbortError'});
+assert.doesNotMatch(friendlyFileError(new TypeError('Object.defineProperty called on non-object')),/defineProperty/);assert.match(friendlyFileError(new Error('Encrypted PDF')),/password-protected/);assert.doesNotMatch(friendlyFileError(new Error('Unable to process this file. Try a valid unencrypted PDF.')),/password-protected/);assert.match(friendlyFileError(new RangeError('out of memory')),/memory/);
+for(const message of ['Each output dimension must be at most 8,000 pixels.','Reduce the dimensions. The output limit is 16 million pixels.','Embedded images exceed 24 MB after resizing. Convert fewer pages.'])assert.equal(friendlyFileError(new Error(message)),message);
+const png=new Uint8Array(await readFile(root+'/sample.png'));assert.equal(inspectImageHeader(png).width,1200);const huge=png.slice();new DataView(huge.buffer).setUint32(16,100000);assert.throws(()=>inspectImageHeader(huge),/pixel limit/);assert.throws(()=>inspectImageHeader(new Uint8Array([1,2,3])),/readable/);
+const messages=[];globalThis.postMessage=data=>messages.push(data);await import('../tools/pdf.worker.ts');const request=async(action,files,options={})=>{await globalThis.onmessage({data:{id:1,action,files,...options}});const reply=messages.at(-1);if(reply.error)throw new Error(reply.error);return reply.result};
+for(const inputs of [[sample],batch]){const inspected=await request('inspect',inputs);assert.ok(inspected.counts.every(n=>n===2));}
+for(const name of ['corrupted.pdf','protected.pdf','too-many-pages.pdf']){await assert.rejects(request('inspect',[new File([await readFile(root+'/'+name)],name)]));}
+const brokenPNG=new Uint8Array(await readFile(root+'/corrupted.png'));
+assert.throws(()=>inspectImageHeader(brokenPNG),/damaged or unreadable/);
+await assert.rejects(request('inspect-images',[new File([brokenPNG],'corrupted.png',{type:'image/png'})]),/damaged or unreadable/);
+const imageInspection=await request('inspect-images',[new File([png],'sample.png',{type:'image/png'})]);
+assert.deepEqual(imageInspection.sizes,[{width:1200,height:550}]);
+const report={passed:true,catalogTools:45,availableTools:45,invoiceBytes:pdf.blob.size,checks:['unique tool content and complete catalog dispatch','marks targets and attendance rounding/100% boundary','weighted merit and invalid weights','zero/fixed-rate EMI and savings independent numeric values','profit zero denominators and gross pay units','Unicode line cleanup and unique random batches','invoice cents/date validation and genuine parseable PDF','fresh owned buffers, detachment, reread and aggregate progress','size/file-count/empty/type/cancel validation','friendly encrypted/memory/internal errors','image header pixel limits before decode','PDF worker File compatibility and typed buffers, corrupt/encrypted/page limits']};await writeFile(root+'/platform-engine-results.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

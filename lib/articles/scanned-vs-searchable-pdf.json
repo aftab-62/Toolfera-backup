@@ -1,0 +1,99 @@
+{
+  "slug": "scanned-vs-searchable-pdf",
+  "title": "Scanned, searchable or native-text PDF: how to tell",
+  "seoTitle": "Scanned vs Searchable PDF: Selection Tests & OCR",
+  "description": "Identify image-only, native-text and OCR-layer PDFs with practical checks. Choose native conversion or recognition without confusing appearance with structure.",
+  "primary": "scanned PDF vs searchable PDF",
+  "secondary": [
+    "image-only PDF meaning",
+    "PDF text layer"
+  ],
+  "longTail": [
+    "how to tell if a PDF is scanned or text based",
+    "PDF selects text but copies wrong words"
+  ],
+  "intent": "Informational: scanned PDF vs searchable PDF",
+  "topic": "PDF & documents",
+  "category": "pdf-tools",
+  "relatedTools": [
+    "pdf-ocr",
+    "pdf-to-word",
+    "image-to-text"
+  ],
+  "relatedArticles": [
+    "make-pdf-editable-native-text-or-ocr",
+    "reduce-pdf-file-size-without-losing-quality"
+  ],
+  "published": "2026-10-08",
+  "intro": "A scanned PDF contains pictures of pages. A searchable PDF has a text layer, which may be native text or text recognized from those pictures. The files can look almost identical on screen while behaving very differently when you search, copy or convert them.",
+  "sections": [
+    {
+      "id": "three-document-types-that-can-look-the-same",
+      "title": "Three document types that can look the same",
+      "paragraphs": [
+        "A native-text PDF is commonly exported from an authoring application. Its page can contain actual text objects alongside images and drawings. An image-only PDF may come from a scanner or phone camera: the letters are pixels in a page image. An OCR-layer PDF keeps the scan but adds recognized text, sometimes invisibly, so a viewer can search or select it.",
+        "These labels describe the content, not the filename. A file called report-text.pdf can still be a scan. A scanned page can also be searchable after recognition. Neither appearance nor file size alone proves which structure is present. The distinction helps you choose a workflow that reads the available text instead of unnecessarily guessing it again."
+      ]
+    },
+    {
+      "id": "run-a-practical-three-part-test",
+      "title": "Run a practical three-part test",
+      "paragraphs": [
+        "First, search for a distinctive word you can see on the page. Next, select and copy a full sentence into a plain text editor. Finally, zoom into the text and compare it with any photograph on the page. Search and copy test functionality; zoom provides a visual clue but is not definitive because some PDFs combine outlined letters, images and text.",
+        "A search that finds nothing is not proof of an image-only file: fonts, character mappings or the search term may be the problem. A successful copy is also not proof that the text is accurate. Read the pasted sentence and compare punctuation, numbers and word order with the visible page. That comparison can expose an old or inaccurate OCR layer."
+      ],
+      "list": [
+        "Search for a visible, distinctive word.",
+        "Copy a paragraph and compare its actual text.",
+        "Repeat on another page and inside a table."
+      ]
+    },
+    {
+      "id": "check-more-than-the-cover-page",
+      "title": "Check more than the cover page",
+      "paragraphs": [
+        "A report can have a native title page, scanned appendices and photographed receipts in one PDF. Test the pages that contain the material you need. In a table, copy a few values and verify which column they came from. Selecting text across two columns can produce a surprising order even when both columns contain real text.",
+        "If different pages behave differently, keep that distinction in your workflow. Native text should not be replaced with OCR just because an appendix is scanned. You may be able to process only the relevant page range in the appropriate tool and review the two outputs separately. Preserve the complete original document so the context is not lost."
+      ]
+    },
+    {
+      "id": "choose-the-right-tool-fera-route",
+      "title": "Choose the right Tool Fera route",
+      "paragraphs": [
+        "Use [PDF to Word](/pdf-tools/pdf-to-word/) when the source has extractable text and you need an editable DOCX. It uses native text and layout information, with recoverable tables and localized graphics. Image-only documents receive guidance to use recognition rather than an automatic OCR fallback.",
+        "Use [PDF OCR](/pdf-tools/pdf-ocr/) for scanned PDF pages or [Image to Text OCR](/image-tools/image-to-text/) for a single JPG or PNG. These are separate recognition workflows for printed English. Review the structured result and export TXT or DOCX if needed. They do not currently create a searchable-PDF copy with a text layer over the original page images."
+      ]
+    },
+    {
+      "id": "recognition-creates-text-not-certainty",
+      "title": "Recognition creates text, not certainty",
+      "paragraphs": [
+        "OCR has to infer letters from pixels. A clean scan with good contrast gives it a better starting point than a blurred, skewed or low-resolution photograph. Fine print, unusual fonts, handwriting and tightly packed tables can be difficult. An apparently fluent paragraph can still contain a wrong name or amount, so readability is not an accuracy test.",
+        "Compare key fields with the source, including dates, account references, decimal separators and negative signs. For an invoice, check each amount in its original row. Do not let a text cleaner remove meaningful spacing until you have established the relationships. For editing advice after extraction, see the [editable PDF workflow](/blog/make-pdf-editable-native-text-or-ocr/)."
+      ]
+    },
+    {
+      "id": "compression-can-change-which-features-survive",
+      "title": "Compression can change which features survive",
+      "paragraphs": [
+        "An image-only scan may benefit from image recompression. A native-text PDF may be better served by structural optimization that preserves its text. A full-page image copy can retain the visible appearance but remove the text layer, links and forms. Do not use that approach accidentally on a document that must stay searchable.",
+        "The [PDF compression guide](/blog/reduce-pdf-file-size-without-losing-quality/) explains the trade-offs. After compression, repeat the search and copy tests on the downloaded output. If a submission requires searchable text, check that requirement directly rather than assuming a smaller file still has the same features."
+      ]
+    },
+    {
+      "id": "what-to-keep-when-you-need-reliable-reuse",
+      "title": "What to keep when you need reliable reuse",
+      "paragraphs": [
+        "Keep the original scan, any extracted text and the edited document as separate files. They serve different purposes: the scan records visible source material, the text is a working transcription, and the edited document contains your revisions. A transcription should not quietly replace the source in a workflow where exact wording matters.",
+        "For accessibility, searchable text is only one part of a usable PDF. Reading order, document structure, descriptions for graphics and other requirements may also matter. Tool Fera’s recognition output is not a claim of accessibility certification. If an organization specifies an accessible or archival format, verify that format with its required tools and process."
+      ]
+    }
+  ],
+  "conclusion": "Use what the document actually contains. Selection and copy tests help separate native conversion from recognition; careful review tells you whether the extracted words are trustworthy. A familiar-looking page is not enough to choose either workflow confidently.",
+  "sources": [
+    {
+      "title": "Adobe: scanned documents and OCR",
+      "url": "https://helpx.adobe.com/acrobat/using/scan-documents-pdf.html"
+    }
+  ]
+}

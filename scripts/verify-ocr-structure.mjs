@@ -1,0 +1,38 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {Worker as Thread} from 'node:worker_threads';
+import {resolve} from 'node:path';
+import {createRequire} from 'node:module';
+import {PDFDocument} from 'pdf-lib';
+import {unzipSync,strFromU8} from 'fflate';
+import {packageDOCX} from '../tools/docx-package.ts';
+import {structuredOCR} from '../tools/ocr-layout.ts';
+
+const root=resolve(process.argv[2]||'/workspace/scratch/acfb0331f292/toolfera-document-fidelity');await mkdir(root,{recursive:true});
+const require=createRequire(resolve(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES,'package.json')),canvas=require('@napi-rs/canvas');let mobile=false,liveWorkers=0,liveBitmaps=0;
+Object.assign(globalThis,{DOMMatrix:canvas.DOMMatrix,ImageData:canvas.ImageData,Path2D:canvas.Path2D,requestAnimationFrame:cb=>setImmediate(cb),location:{origin:resolve('public')},window:{matchMedia:()=>({matches:mobile}),requestAnimationFrame:cb=>setImmediate(cb),cancelAnimationFrame:id=>clearImmediate(id)}});
+globalThis.document={createElement:()=>{const c=canvas.createCanvas(1,1);c.toBlob=(cb,mime)=>cb(new Blob([c.toBuffer(mime)]));return c}};
+globalThis.createImageBitmap=async(blob)=>{const image=await canvas.loadImage(Buffer.from(await blob.arrayBuffer()));liveBitmaps++;image.close=()=>liveBitmaps--;return image};
+if(!Uint8Array.prototype.toHex)Uint8Array.prototype.toHex=function(){return Buffer.from(this).toString('hex')};
+globalThis.Worker=class{constructor(){this.thread=new Thread(resolve('node_modules/tesseract.js/src/worker-script/node/index.js'));liveWorkers++;this.thread.once('exit',()=>liveWorkers--);this.thread.on('message',data=>this.onmessage?.({data}));this.thread.on('error',error=>this.onerror?.(error))}postMessage(data,transfer){this.thread.postMessage(data,transfer)}terminate(){return this.thread.terminate()}};
+const blank=(width,height)=>{const c=canvas.createCanvas(width,height),ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,width,height);ctx.fillStyle='#111';return[c,ctx]};
+const[paragraphs,pc]=blank(1000,1100);pc.font='bold 36px sans-serif';pc.fillText('OCR STRUCTURE CHECK',60,80);pc.font='24px sans-serif';for(const [i,text] of ['First paragraph begins with clear printed text.','Second line belongs to the first paragraph.'].entries())pc.fillText(text,60,160+i*36);for(const[i,text]of['Another paragraph follows an intentional gap.','Please review names and numbers after recognition.'].entries())pc.fillText(text,60,290+i*36);
+const[columns,cc]=blank(1200,1000);cc.font='bold 36px sans-serif';cc.fillText('COLUMN READING ORDER',60,70);cc.font='22px sans-serif';for(let i=0;i<5;i++){cc.fillText(`Left column line ${i+1} has complete text.`,60,150+i*34);cc.fillText(`Right column line ${i+1} has complete text.`,650,150+i*34)}
+const[invoice,ic]=blank(800,650);ic.font='bold 34px sans-serif';ic.fillText('INVOICE STRUCTURE CHECK',40,70);ic.font='24px sans-serif';for(const [i,row]of[['Description','Amount'],['Consulting','125.50 USD'],['Travel','40.00 USD'],['Tax','10.00 USD'],['Total','175.50 USD']].entries()){ic.fillText(row[0],40,150+i*42);ic.fillText(row[1],500,150+i*42)}
+const[low,lc]=blank(400,300);lc.font='14px sans-serif';lc.fillStyle='#777';for(const [i,line] of ['Small readable text for upscaling.','The second sentence stays together.','Total amount is 125.50 USD.'].entries())lc.fillText(line,20,70+i*24);
+const sideways=canvas.createCanvas(paragraphs.height,paragraphs.width),sc=sideways.getContext('2d');sc.translate(sideways.width,0);sc.rotate(Math.PI/2);sc.drawImage(paragraphs,0,0);
+const{recognizeImage}=await import('../tools/image-ocr.ts');const results=[];
+for(const[name,input]of[['paragraphs',paragraphs],['columns',columns],['invoice',invoice],['low-resolution',low],['sideways',sideways]]){
+ const bytes=input.toBuffer('image/png');await writeFile(root+`/ocr-${name}.png`,bytes);const messages=[],output=await recognizeImage(new Uint8Array(bytes),new AbortController().signal,message=>messages.push(message));
+ if(name==='paragraphs'){assert.match(output.text,/First paragraph begins/);assert.match(output.text,/text\.\nSecond line belongs/);assert.equal(output.document.summary.paragraphs,3,'heading plus two actual paragraph groups');assert.ok(output.text.includes('\n\n'));assert.equal(output.preparation.contrast,false,'clear page avoids contrast preprocessing')}
+ if(name==='columns'){assert.ok(output.text.indexOf('Left column line 5')>=0);assert.ok(output.text.indexOf('Left column line 5')<output.text.indexOf('Right column line 1'),'column-first reading order');assert.ok(output.document.pages[0].blocks.some(b=>b.type==='columns'))}
+ if(name==='invoice'){assert.match(output.text,/125\.50 USD/);assert.match(output.text,/175\.50 USD/);assert.ok(output.document.summary.tables>=1,'aligned invoice rows become readable tables');assert.ok(output.text.includes('\t'))}
+ if(name==='low-resolution'){assert.equal(output.preparation.upscaled,true);assert.match(output.text,/125\.50 USD/)}
+ if(name==='sideways'){assert.equal(output.preparation.sideways,true);assert.match(output.text,/First paragraph begins/)}
+ const blob=packageDOCX(output.document),xml=strFromU8(unzipSync(new Uint8Array(await blob.arrayBuffer()))['word/document.xml']);assert.match(xml,/<w:t xml:space="preserve">/);assert.ok(!xml.includes('<w:framePr'));await writeFile(root+`/ocr-${name}.txt`,output.text);await writeFile(root+`/ocr-${name}.docx`,new Uint8Array(await blob.arrayBuffer()));results.push({name,confidence:output.confidence,characters:output.text.length,summary:output.document.summary,preparation:output.preparation,text:output.text});await writeFile(root+'/ocr-image-results.json',JSON.stringify(results,null,2));
+}
+const pdf=await PDFDocument.create();for(const input of [paragraphs,invoice]){const bytes=input.toBuffer('image/png'),image=await pdf.embedPng(bytes),page=pdf.addPage([612,792]);page.drawImage(image,{x:0,y:0,width:612,height:792})}await writeFile(root+'/ocr-scanned.pdf',await pdf.save());
+mobile=true;const{ocrPDF,inspectOCRPDF,createOCRWorker}=await import('../tools/pdf-ocr.ts'),pdfjs=await import('pdfjs-dist');pdfjs.GlobalWorkerOptions.workerSrc=resolve('node_modules/pdfjs-dist/build/pdf.worker.mjs');const file=new File([await pdf.save()],'ocr-scanned.pdf'),signal=new AbortController().signal;assert.equal((await inspectOCRPDF(file,signal,()=>{})).pages,2);const messages=[],raw=await ocrPDF(file,null,signal,message=>messages.push(message)),output=structuredOCR(raw.pages,raw.warnings);assert.equal(output.document.pages.length,2);assert.match(output.text,/First paragraph begins/);assert.match(output.text,/175\.50 USD/);assert.ok(messages.some(m=>m.includes('OCR page 2 of 2')));await writeFile(root+'/ocr-scanned.docx',new Uint8Array(await packageDOCX(output.document).arrayBuffer()));await writeFile(root+'/ocr-scanned.txt',output.text);
+await assert.rejects(()=>ocrPDF(file,{pages:[],warnings:[],scans:[1,2,3,4,5,6]},signal,()=>{}),/5 scanned pages/);
+const controller=new AbortController(),worker=createOCRWorker(controller.signal,()=>{}),pending=worker.initialize('eng');controller.abort();await assert.rejects(()=>pending,{name:'AbortError'});worker.dispose();await new Promise(resolve=>setTimeout(resolve,100));assert.equal(liveWorkers,0);assert.equal(liveBitmaps,0);
+const report={passed:true,imageCases:results,pdfOCR:{pages:2,characters:output.text.length,summary:output.document.summary,pageByPageProgress:true},resources:{liveWorkers,liveBitmaps},limitsAndCancellation:true};await writeFile(root+'/ocr-results.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

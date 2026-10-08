@@ -1,0 +1,101 @@
+{
+  "slug": "qr-code-not-scanning-print-checklist",
+  "title": "QR code not scanning? A practical screen and print checklist",
+  "seoTitle": "QR Code Not Scanning: Contrast, Quiet Zone & Print Checks",
+  "description": "Diagnose unreadable QR codes with a practical checklist. Check the destination, border space, image scaling and a real print before distributing it.",
+  "primary": "QR code not scanning",
+  "secondary": [
+    "QR quiet zone",
+    "QR PNG versus SVG printing"
+  ],
+  "longTail": [
+    "QR works on screen but not printed",
+    "QR code border cropped scanning failure"
+  ],
+  "intent": "Informational: QR code not scanning",
+  "topic": "Generators",
+  "category": "generators",
+  "relatedTools": [
+    "qr-code-generator",
+    "image-resizer",
+    "image-compressor"
+  ],
+  "relatedArticles": [
+    "base64-vs-url-encoding",
+    "image-dimensions-vs-file-size"
+  ],
+  "published": "2026-10-08",
+  "intro": "Check the encoded content first, then the quiet zone, contrast and printed module size. A code that scans on a large monitor may fail when shrunk onto a flyer. Test the final version with a real scanner in the situation where people will use it.",
+  "sections": [
+    {
+      "id": "verify-the-content-before-troubleshooting-the-artwork",
+      "title": "Verify the content before troubleshooting the artwork",
+      "paragraphs": [
+        "A scanner may successfully read the code while the destination fails to open. Those are different problems. Check that the link is complete, has the intended scheme and points to the correct page. A typo in the encoded URL is not repaired by increasing the image size.",
+        "Create a static code with [QR Code Generator](/generators/qr-code-generator/) and scan it before designing the surrounding artwork. Tool Fera embeds the link or text you supply; it does not add a tracking redirect. A static code does not expire on a Tool Fera subscription, but the destination can become unavailable or change later."
+      ]
+    },
+    {
+      "id": "protect-the-clear-border-around-the-code",
+      "title": "Protect the clear border around the code",
+      "paragraphs": [
+        "QR codes need a quiet zone: blank space around the symbol that helps a scanner distinguish it from nearby graphics. DENSO WAVE specifies four modules on every side. A module is one of the small square units in the code, not a fixed number of millimetres for every code.",
+        "Tool Fera’s generator includes that margin. Do not crop it away to make the graphic fit tightly inside a card. A colored rule, text label or photograph placed directly against the code can interfere with the required clear area. Leave the margin intact when placing the exported PNG or SVG into a layout."
+      ]
+    },
+    {
+      "id": "use-strong-contrast-and-preserve-square-geometry",
+      "title": "Use strong contrast and preserve square geometry",
+      "paragraphs": [
+        "Keep a clear difference between the dark modules and the light background. Decorative gradients, transparent placement over a photograph or low-contrast colors can make reading harder. A code stretched into a rectangle no longer has the same square module geometry.",
+        "Scale proportionally. Do not use a design tool’s independent width and height controls to force a QR image into an arbitrary shape. If a code must fit a small area, shorten unnecessary content and test the new output instead of distorting the symbol. The [dimensions guide](/blog/image-dimensions-vs-file-size/) explains why changing dimensions is separate from reducing bytes."
+      ]
+    },
+    {
+      "id": "choose-png-or-svg-according-to-the-destination",
+      "title": "Choose PNG or SVG according to the destination",
+      "paragraphs": [
+        "PNG is a raster image with a fixed pixel grid. It works well when exported at an adequate size and placed without damaging resampling. SVG describes shapes that can scale without the same raster blur, making it useful for compatible print and design workflows. Tool Fera offers both formats.",
+        "A receiving application may reject SVG or render it differently, so inspect the final export, not just the source file. A screenshot of the QR preview is not the same as downloading the code. Screenshots can include extra UI, scaling artifacts or an incomplete border. Use the actual download and keep its proportions."
+      ]
+    },
+    {
+      "id": "shorter-content-often-makes-a-less-dense-symbol",
+      "title": "Shorter content often makes a less dense symbol",
+      "paragraphs": [
+        "More content can require more modules. At the same printed width, those modules become smaller and harder for a camera to distinguish. Use the intended destination URL without unrelated text, redundant parameters or accidental whitespace. Do not remove parameters that the destination genuinely requires.",
+        "The tool bounds input by UTF-8 bytes, so a character count alone does not predict every input’s encoded size. Non-Latin characters may occupy multiple bytes. If you are constructing a link, encode its individual components correctly rather than encoding the whole address; the [encoding guide](/blog/base64-vs-url-encoding/) covers that distinction."
+      ]
+    },
+    {
+      "id": "test-the-final-physical-or-screen-version",
+      "title": "Test the final physical or screen version",
+      "paragraphs": [
+        "Print one example at the intended size before ordering a batch. Test it under realistic light and viewing distance, with more than one available scanner if possible. Glossy surfaces, poor printing, folds and glare can affect a code that worked on a monitor.",
+        "There is no universal minimum print width that guarantees success for every code, camera and distance. The required space depends on module count, output quality and the actual use case. An image that scans when enlarged on screen does not establish that the final small label is reliable."
+      ],
+      "list": [
+        "Scan the downloaded code and verify the destination.",
+        "Keep the four-module quiet zone untouched.",
+        "Preserve square proportions and strong contrast.",
+        "Test the final print or final screen placement.",
+        "Recheck the destination before distributing a large batch."
+      ]
+    },
+    {
+      "id": "do-not-solve-a-failed-scan-with-destructive-compression",
+      "title": "Do not solve a failed scan with destructive compression",
+      "paragraphs": [
+        "QR images contain sharp, high-contrast edges. Heavy lossy compression can add blur and ringing around those edges. If you need a smaller file for a website, compare the exported result carefully and scan that exact copy. A smaller byte count is not useful if the code becomes unreadable.",
+        "Do not insert a large logo over the symbol and assume error correction will absorb it. Tool Fera does not offer a custom-logo guarantee. Keep an unaltered export as a reference and record the destination beside the asset. When the link changes, create and test a new static code rather than expecting an already printed code to update itself."
+      ]
+    }
+  ],
+  "conclusion": "A dependable QR code is a tested code, not merely a generated graphic. Protect its border, geometry and contrast, then verify the exact version people will encounter. Separate scanning failures from destination failures so you fix the correct problem.",
+  "sources": [
+    {
+      "title": "DENSO WAVE: QR code area and quiet zone",
+      "url": "https://www.qrcode.com/en/howto/code.html"
+    }
+  ]
+}

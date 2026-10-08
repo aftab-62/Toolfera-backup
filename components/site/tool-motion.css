@@ -1,0 +1,786 @@
+/* Adapted from the two user-supplied animation references; demo globals removed. */
+.dl-button {
+    --duration: 2300;
+    --success: #2f5bff;
+    --grey-light: #89b1ee;
+    --grey: #2f5bff;
+    --grey-dark: #142e53;
+    --light: #dceaff;
+    --shadow: rgba(35, 72, 140, .12);
+    --shadow-dark: rgba(35, 72, 140, .22);
+    display: block;
+    text-decoration: none;
+    perspective: 500px;
+    & > div {
+        position: relative;
+        background: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        padding: 16px 24px;
+        box-shadow: 0 4px 12px var(--shadow);
+        .icon {
+            --color: var(--grey);
+            margin-right: 12px;
+            position: relative;
+            transform: translateZ(8px);
+            div {
+                overflow: hidden;
+                position: relative;
+                width: 20px;
+                height: 22px;
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    top: 2px;
+                    transition: opacity .3s ease;
+                }
+                &:before {
+                    left: 6px;
+                    background-image: radial-gradient(circle at 0 100%, var(--color) 2px, #fff 0px)
+                }
+                &:after {
+                    right: 6px;
+                    background-image: radial-gradient(circle at 100% 100%, var(--color) 2px, #fff 0px)
+                }
+                svg {
+                    width: 20px;
+                    height: 18px;
+                    display: block;
+                    margin-top: 2px;
+                    position: relative;
+                    z-index: 1;
+                    &.arrow {
+                        color: #fff;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 2;
+                        transform: translateY(-1px);
+                    }
+                    &.shape {
+                        color: var(--color);
+                        transition: color .4s ease;
+                    }
+                }
+            }
+            span {
+                --s: 1;
+                position: absolute;
+                left: 1px;
+                right: 1px;
+                bottom: 2px;
+                background: var(--color);
+                height: 6px;
+                border-radius: 50%;
+                display: block;
+                transform: translateY(0) scale(var(--s));
+            }
+        }
+        .label {
+            --color: var(--grey-dark);
+            line-height: 22px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--color);
+            position: relative;
+            transition: color .4s ease;
+            transform: translateZ(8px);
+            & > div {
+                display: flex;
+                transition: opacity .25s ease;
+                &:not(.show) {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                }
+                &.hide {
+                    opacity: 0;
+                }
+                .counter {
+                    overflow: hidden;
+                    display: flex;
+                    height: 18px;
+                    line-height: 18px;
+                    margin: 2px 0;
+                    position: relative;
+                    transition: opacity .3s ease;
+                    &:before,
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        height: 3px;
+                        z-index: 1;
+                    }
+                    &:before {
+                        top: 0;
+                        background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+                    }
+                    &:after {
+                        bottom: 0;
+                        background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+                    }
+                    span {
+                        display: inline-block;
+                        margin: 0 4px 0 2px;
+                    }
+                    ul {
+                        --y: 0;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                        width: 10px;
+                        height: 18px;
+                        -webkit-backface-visibility: hidden;
+                        transform: translateY(var(--y)) translateZ(0);
+                        &:nth-child(1) {
+                            transition: transform calc(var(--duration) * .2ms) ease-in-out;
+                        }
+                        &:nth-child(2) {
+                            transition: transform calc(var(--duration) * .8ms) ease-in-out;
+                        }
+                        &:nth-child(3) {
+                            transition: transform calc(var(--duration) * .8ms) ease-in-out;
+                        }
+                        li {
+                            width: 10px;
+                            height: 18px;
+                        }
+                    }
+                    &.hide {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .progress {
+            --s: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            transform-origin: 50% 100%;
+            transform: scaleY(var(--s));
+            transition: transform .4s ease;
+            &:before,
+            &:after {
+                --s: 1;
+                content: '';
+                background: var(--success);
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                transform-origin: 0 50%;
+                transform: scaleX(var(--s));
+            }
+            &:before {
+                opacity: .35;
+            }
+            &:after {
+                --s: 0;
+                transition: transform calc(var(--duration) * .9ms) ease-in-out;
+            }
+        }
+    }
+    &.active {
+        & > div {
+            animation: download-button calc(var(--duration) * 1ms) linear forwards;
+            .icon {
+                div {
+                    &:before,
+                    &:after {
+                        opacity: 0;
+                        transition-delay: calc(var(--duration) * .1ms);
+                    }
+                }
+                svg {
+                    &.arrow {
+                        animation: download-arrow calc(var(--duration) * .18ms) linear 4 calc(var(--duration) * .2ms);
+                    }
+                }
+                span {
+                    animation: download-span calc(var(--duration) * .18ms) linear 4 calc(var(--duration) * .2ms);
+                }
+            }
+            .label {
+                & > div {
+                    .counter {
+                        ul {
+                            &:nth-child(1) {
+                                --y: -18px;
+                                transition-delay: calc(var(--duration) * .72ms);
+                            }
+                            &:nth-child(2) {
+                                --y: -180px;
+                                transition-delay: calc(var(--duration) * .09ms);
+                                animation: download-motion calc(var(--duration) * .5ms) linear forwards calc(var(--duration) * .19ms);
+                            }
+                            &:nth-child(3) {
+                                --y: -540px;
+                                transition-delay: calc(var(--duration) * .075ms);
+                                animation: download-motion calc(var(--duration) * .8ms) linear forwards calc(var(--duration) * .075ms);
+                            }
+                        }
+                    }
+                }
+            }
+            .progress {
+                --s: 1;
+                transition-delay: calc(var(--duration) * .1ms);
+                &:after {
+                    --s: 1;
+                    transition-delay: calc(var(--duration) * .1ms);
+                }
+            }
+        }
+    }
+    &.done {
+        & > div {
+            .icon {
+                --color: var(--success);
+            }
+        }
+        .label {
+            --color: var(--success);
+            .counter {
+                width: 0;
+            }
+        }
+    }
+}
+
+@keyframes download-arrow {
+    38% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    39% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    40% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    41% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1px);
+        opacity: 1;
+    }
+}
+
+@keyframes download-span {
+    25% {
+        transform: translateY(2px) scale(var(--s));
+    }
+    55% {
+        transform: translateY(2px) scale(var(--s));
+    }
+    80%,
+    100% {
+        transform: translateY(0) scale(var(--s));
+    }
+}
+
+@keyframes download-motion {
+    20%,
+    70% {
+        filter: blur(.4px);
+    }
+}
+
+@keyframes download-button {
+    0% {
+        transform: translateX(0) translateZ(0) scale(1) rotateY(0deg);
+    }
+    10% {
+        transform: translateX(0) translateZ(0) scale(.96) rotateY(0deg);
+        box-shadow: 0 4px 8px var(--shadow-dark);
+    }
+    20% {
+        transform: translateX(-16px) translateZ(32px) scale(1) rotateY(-16deg);
+        box-shadow: 4px 12px 20px var(--shadow-dark);
+    }
+    85% {
+        transform: translateX(16px) translateZ(32px) scale(1) rotateY(16deg);
+        box-shadow: -4px 12px 20px var(--shadow-dark);
+    }
+    95% {
+        transform: translateX(0) translateZ(0) scale(1.12) rotateY(0deg);
+        box-shadow: 0 8px 24px var(--shadow-dark);
+    }
+    100% {
+        transform: translateX(0) translateZ(0) scale(1) rotateY(0deg);
+    }
+}
+.compress-button {
+    --button-width: 152px;
+    --background: #2f5bff;
+    --background-transparent: rgba(47, 91, 255, 0);
+    --background-hover: #214ddd;
+    --background-back: #132e55;
+    --shadow: rgba(0, 9, 61, 0.125);
+    --text: #F6F8FF;
+    --paper: #F6F8FF;
+    --paper-lines: #c1d6ff;
+    --paper-shadow: rgba(0, 9, 61, 0.15);
+    --zipper: #25d8ff;
+    --zipper-end: #c1d6ff;
+    --zipper-line: #25d8ff;
+    --zipper-lines: #99c7ff;
+    --tick: #F6F8FF;
+    display: -webkit-box;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 0;
+    line-height: 24px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 3px;
+    color: var(--text);
+    background: var(--background-back);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    -webkit-transform: scale(var(--scale, 1)) translateZ(0);
+    transform: scale(var(--scale, 1)) translateZ(0);
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.compress-button:not(.compress):active {
+    --scale: .95;
+}
+
+.compress-button:not(.compress):hover {
+    --b: var(--background-hover);
+}
+
+.compress-button .paper {
+    width: 26px;
+    height: 32px;
+    pointer-events: none;
+    position: absolute;
+    top: -2px;
+    left: var(--left, 50%);
+    margin: 0 0 0 -13px;
+    background: var(--paper);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px var(--paper-shadow);
+    opacity: 0;
+    -webkit-transform: translate(var(--x, 0), var(--y, -68px));
+    transform: translate(var(--x, 0), var(--y, -68px));
+}
+
+.compress-button .paper:before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    width: 18px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--paper-lines);
+    box-shadow: 0 6px 0 var(--paper-lines), 0 12px 0 var(--paper-lines), 0 18px 0 var(--paper-lines);
+}
+
+.compress-button .paper.left {
+    --left: 25%;
+    --x: -12px;
+    --y: -52px;
+}
+
+.compress-button .paper.right {
+    --left: 75%;
+    --x: 12px;
+    --y: -52px;
+}
+
+.compress-button .inner {
+    position: relative;
+    z-index: 1;
+    padding: 10px 0;
+    width: var(--button-width);
+    border-radius: 3px;
+    color: var(--text);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    background: var(--b, var(--background));
+    box-shadow: 0 1px 2px var(--shadow), 0 4px 7px var(--shadow);
+    -webkit-transition: background .4s;
+    transition: background .4s;
+}
+
+.compress-button .inner span {
+    display: block;
+    opacity: var(--span-o, 1);
+    -webkit-transform: translateY(var(--span-y, 0)) translateZ(0);
+    transform: translateY(var(--span-y, 0)) translateZ(0);
+    -webkit-transition: opacity 0.3s linear var(--span-de, 0.5s), -webkit-transform 0.3s ease var(--span-de, 0.5s);
+    transition: opacity 0.3s linear var(--span-de, 0.5s), -webkit-transform 0.3s ease var(--span-de, 0.5s);
+    transition: transform 0.3s ease var(--span-de, 0.5s), opacity 0.3s linear var(--span-de, 0.5s);
+    transition: transform 0.3s ease var(--span-de, 0.5s), opacity 0.3s linear var(--span-de, 0.5s), -webkit-transform 0.3s ease var(--span-de, 0.5s);
+}
+
+.compress-button .inner svg {
+    width: 20px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: calc(var(--button-width) / 2);
+    margin-left: -10px;
+    fill: none;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--tick);
+    opacity: var(--tick-o, 0);
+    -webkit-transform: scale(var(--tick-s, 0.5));
+    transform: scale(var(--tick-s, 0.5));
+    -webkit-transition: opacity 0.3s linear var(--tick-de, 0s), -webkit-transform 0.4s ease var(--tick-de, 0s);
+    transition: opacity 0.3s linear var(--tick-de, 0s), -webkit-transform 0.4s ease var(--tick-de, 0s);
+    transition: transform 0.4s ease var(--tick-de, 0s), opacity 0.3s linear var(--tick-de, 0s);
+    transition: transform 0.4s ease var(--tick-de, 0s), opacity 0.3s linear var(--tick-de, 0s), -webkit-transform 0.4s ease var(--tick-de, 0s);
+}
+
+.compress-button .inner .zipper {
+    width: calc(var(--button-width) + 12px);
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 12px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.compress-button .inner .zipper:before,
+.compress-button .inner .zipper:after {
+    content: '';
+    position: absolute;
+    top: var(--top, 1px);
+    left: var(--left, 1px);
+    height: 3px;
+    width: 2px;
+    border-radius: 1px;
+    box-shadow: 5px 0 0 var(--zipper-lines), 10px 0 0 var(--zipper-lines), 15px 0 0 var(--zipper-lines), 20px 0 0 var(--zipper-lines), 25px 0 0 var(--zipper-lines), 30px 0 0 var(--zipper-lines), 35px 0 0 var(--zipper-lines), 40px 0 0 var(--zipper-lines), 45px 0 0 var(--zipper-lines), 50px 0 0 var(--zipper-lines), 55px 0 0 var(--zipper-lines), 60px 0 0 var(--zipper-lines), 65px 0 0 var(--zipper-lines), 70px 0 0 var(--zipper-lines), 75px 0 0 var(--zipper-lines), 80px 0 0 var(--zipper-lines), 85px 0 0 var(--zipper-lines), 90px 0 0 var(--zipper-lines), 95px 0 0 var(--zipper-lines), 100px 0 0 var(--zipper-lines), 105px 0 0 var(--zipper-lines), 110px 0 0 var(--zipper-lines), 115px 0 0 var(--zipper-lines), 120px 0 0 var(--zipper-lines), 125px 0 0 var(--zipper-lines), 130px 0 0 var(--zipper-lines), 135px 0 0 var(--zipper-lines), 140px 0 0 var(--zipper-lines), 145px 0 0 var(--zipper-lines);
+    background: var(--zipper-lines);
+}
+
+.compress-button .inner .zipper:after {
+    --top: 8px;
+    --left: 3px;
+}
+
+.compress-button .inner .zipper .gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200%;
+    right: 12px;
+    z-index: 1;
+    background: -webkit-gradient(linear, left top, right top, from(var(--background-transparent)), color-stop(33.33%, var(--background-transparent)), color-stop(66.66%, var(--background)), to(var(--background)));
+    background: linear-gradient(to right, var(--background-transparent) 0%, var(--background-transparent) 33.33%, var(--background) 66.66%, var(--background) 100%);
+    background-size: 300% 100%;
+    background-position-x: var(--gradient, 100%);
+    -webkit-transition: background-position var(--gradient-d, 0s) ease var(--gradient-de, 0s);
+    transition: background-position var(--gradient-d, 0s) ease var(--gradient-de, 0s);
+}
+
+.compress-button .inner .zipper .line {
+    width: calc(var(--button-width) + 12px);
+    height: 2px;
+    margin: 5px 0;
+    position: relative;
+    left: -12px;
+    z-index: 2;
+    background: var(--zipper-line);
+    -webkit-transform: translateX(calc(calc(var(--button-width) * -1) + 8px));
+    transform: translateX(calc(calc(var(--button-width) * -1) + 8px));
+}
+
+.compress-button .inner .zipper .line:before,
+.compress-button .inner .zipper .line:after {
+    content: '';
+    position: absolute;
+    right: var(--right, 0);
+    width: var(--width, 6px);
+    height: var(--height, 2px);
+    border-radius: 1px;
+}
+
+.compress-button .inner .zipper .line:before {
+    background: var(--zipper-end);
+}
+
+.compress-button .inner .zipper .line:after {
+    --right: -7px;
+    --width: 8px;
+    --height: 8px;
+    -webkit-transform: translate(0, -3px) scaleY(0.6) rotate(-45deg);
+    transform: translate(0, -3px) scaleY(0.6) rotate(-45deg);
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background: var(--zipper);
+}
+
+.compress-button.compress {
+    --span-o: 0;
+    --span-y: 8px;
+    --span-de: 0s;
+    --tick-o: 0;
+    --tick-s: 1;
+    --tick-de: 0s;
+    --gradient: 0%;
+    --gradient-d: .9s;
+    --gradient-de: .9s;
+}
+
+.compress-button.compress .paper {
+    -webkit-animation: compress-paper .95s linear forwards;
+    animation: compress-paper .95s linear forwards;
+}
+
+.compress-button.compress .inner {
+    -webkit-animation: compress-fold .95s linear forwards;
+    animation: compress-fold .95s linear forwards;
+}
+
+.compress-button.compress .inner .zipper {
+    -webkit-animation: compress-zipper 1.8s linear;
+    animation: compress-zipper 1.8s linear;
+}
+
+.compress-button.compress .inner .zipper .line {
+    -webkit-animation: compress-line .65s linear forwards .95s;
+    animation: compress-line .65s linear forwards .95s;
+}
+
+@-webkit-keyframes compress-paper {
+
+    10%,
+    100% {
+        opacity: 1;
+    }
+
+    0%,
+    5% {
+        -webkit-transform: translate(var(--x, 0), var(--y, -68px));
+        transform: translate(var(--x, 0), var(--y, -68px));
+    }
+
+    30% {
+        -webkit-transform: translate(0, 1px);
+        transform: translate(0, 1px);
+    }
+
+    50%,
+    70% {
+        -webkit-transform: translate(0, -3px);
+        transform: translate(0, -3px);
+    }
+
+    95%,
+    100% {
+        -webkit-transform: translate(0, 4px);
+        transform: translate(0, 4px);
+    }
+}
+
+@keyframes compress-paper {
+
+    10%,
+    100% {
+        opacity: 1;
+    }
+
+    0%,
+    5% {
+        -webkit-transform: translate(var(--x, 0), var(--y, -68px));
+        transform: translate(var(--x, 0), var(--y, -68px));
+    }
+
+    30% {
+        -webkit-transform: translate(0, 1px);
+        transform: translate(0, 1px);
+    }
+
+    50%,
+    70% {
+        -webkit-transform: translate(0, -3px);
+        transform: translate(0, -3px);
+    }
+
+    95%,
+    100% {
+        -webkit-transform: translate(0, 4px);
+        transform: translate(0, 4px);
+    }
+}
+
+@-webkit-keyframes compress-line {
+    60% {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+
+    80% {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes compress-line {
+    60% {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+
+    80% {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes compress-fold {
+
+    10%,
+    80% {
+        -webkit-transform: perspective(500px) rotateX(-20deg) translateZ(16px);
+        transform: perspective(500px) rotateX(-20deg) translateZ(16px);
+    }
+}
+
+@keyframes compress-fold {
+
+    10%,
+    80% {
+        -webkit-transform: perspective(500px) rotateX(-20deg) translateZ(16px);
+        transform: perspective(500px) rotateX(-20deg) translateZ(16px);
+    }
+}
+
+@-webkit-keyframes compress-zipper {
+
+    20%,
+    90% {
+        opacity: 1;
+    }
+}
+
+@keyframes compress-zipper {
+
+    20%,
+    90% {
+        opacity: 1;
+    }
+}
+
+
+/* Stable label footprint; the rolling counter is visual download feedback. */
+.dl-button{width:max-content;max-width:100%;margin-top:4px;border-radius:9px;outline-offset:5px;--success:#2f5bff}
+.dl-button>div{padding:12px 18px;min-height:46px;border:1px solid #c4d8f7;border-radius:9px;max-width:100%;gap:0}
+.dl-button>div .icon{flex:none}.dl-button>div .label{min-width:68px;font-size:14px;line-height:22px}
+.dl-button>div .label>.default{position:relative;white-space:normal}
+.dl-button>div .label>.state{position:absolute;left:0;top:0;align-items:center}
+.dl-button>div .label>.state .download-done{opacity:0;transition:opacity .25s}
+.dl-button.done>div .label>.state .download-done{opacity:1}
+.dl-button.active>div .label>.default,.dl-button.done>div .label>.default{opacity:0}
+.dl-button:focus-visible,.compress-button:focus-visible{outline:3px solid #25d8ff;outline-offset:4px}
+.dl-button:hover:not(.active)>div{border-color:#2f5bff}.dl-button .progress:after{background:linear-gradient(90deg,#2f5bff,#25d8ff)}
+.compress-button{position:relative;--button-width:170px;max-width:100%;min-height:44px;border-radius:8px}
+.compress-button .inner{min-height:44px;border-radius:8px;padding:10px 12px}
+.compress-button:disabled{cursor:default}.compress-button:disabled:not(.compress){opacity:.48}
+.compress-button.real-success{--tick-o:1;--tick-s:1}.compress-button.compress:not(.real-success) .inner:after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#25d8ff,transparent);animation:action-progress-light 1.4s ease-in-out infinite}
+.action-motion{position:relative;display:inline-flex;width:20px;height:22px;flex:none;align-items:center;justify-content:center}
+.action-motion svg{width:18px;height:18px}.action-motion .action-sheet{position:absolute;width:10px;height:13px;border:1.5px solid currentColor;border-radius:2px;background:inherit}
+.action-motion .action-sheet:first-child{translate:-3px -2px}.action-motion .action-sheet:last-child{translate:3px 2px}
+.action-running .action-resize{animation:action-resize 1.1s ease-in-out infinite}.action-running .action-convert .action-sheet{animation:action-convert 1.1s ease-in-out infinite}.action-running .action-convert .action-sheet:last-child{animation-delay:.55s}
+.action-running .action-merge .action-sheet{animation:action-merge 1s ease-in-out infinite}.action-running .action-split .action-sheet{animation:action-split 1s ease-in-out infinite}
+.action-running .action-rotate,.action-reset:active .action-motion{animation:action-rotate .65s ease-in-out}.action-running .action-generate{animation:action-generate .8s ease-in-out infinite}.action-running .action-analyze:after,.action-running .action-ocr:after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#25d8ff;animation:action-scan 1.1s ease-in-out infinite}
+.action-success svg{animation:action-check .28s ease-out both}.action-button{gap:9px}.action-button[aria-busy=true]{opacity:.85}.action-reset,.action-copy{display:inline-flex;gap:7px;align-items:center;justify-content:center}
+@keyframes action-resize{50%{scale:1.2;rotate:5deg}}
+@keyframes action-convert{50%{translate:5px 0;opacity:.35;rotate:20deg}}
+@keyframes action-merge{50%{translate:0 0}}
+@keyframes action-split{50%{translate:var(--separate, -5px) 0}}
+.action-split .action-sheet:last-child{--separate:5px}
+@keyframes action-rotate{to{rotate:360deg}}
+@keyframes action-generate{50%{scale:1.25;opacity:.65;rotate:12deg}}
+@keyframes action-scan{50%{translate:0 18px;opacity:.5}}
+@keyframes action-check{from{scale:.5;opacity:0}to{scale:1;opacity:1}}
+@media(max-width:430px){.dl-button>div{padding:12px 15px}.button-row{gap:12px}.button-row .action-button{max-width:100%;white-space:normal;text-align:left}}
+/* Keep the supplied 3D, rolling-column and progress-line choreography intact. */
+.compress-button.sequence-finished:not(.real-success){--span-o:1;--span-y:0;--span-de:0s}
+.compress-button.real-success{--span-o:0;--span-y:0;--span-de:0s}
+.action-running .action-rotate{animation-iteration-count:infinite}
+.action-reset.action-running .action-rotate{animation-iteration-count:1}
+.action-running .action-copy-icon{animation:action-copy-feedback .65s ease-in-out}
+@keyframes action-copy-feedback{50%{opacity:.4;scale:1.1}100%{opacity:1;scale:1}}
+
+/* Reduced effects retain finite feedback, readable progress and truthful success.
+   Device motion preference never removes processing/download synchronization. */
+@media(prefers-reduced-motion:reduce){
+:root .dl-button.active>div,
+:root .compress-button,
+:root .compress-button .inner,
+:root .action-motion{transform:none!important;translate:none!important;rotate:none!important;scale:none!important}
+:root .compress-button.compress .paper{top:-18px;transform:none!important;animation:action-soft-feedback 1.55s ease-in-out both!important}
+:root .compress-button.compress .paper.middle{animation-delay:.12s!important}
+:root .compress-button.compress .paper.right{animation-delay:.24s!important}
+:root .compress-button.compress .zipper{animation:action-soft-feedback 1.8s ease-in-out both!important}
+:root .compress-button.compress .zipper .line{transform:none!important}
+:root .compress-button.compress:not(.real-success){--span-o:1;--span-y:0}
+:root .compress-button.real-success{--span-o:0}
+:root .action-running .action-motion,
+:root .dl-button.active .icon svg.arrow{animation:action-soft-feedback .8s ease-in-out infinite!important}
+:root .action-reset.action-running .action-motion,
+:root .action-copy.action-running .action-motion{animation-duration:.65s!important;animation-iteration-count:1!important}
+:root .dl-button .counter ul{transform:translateY(var(--y))!important;animation:none!important}
+:root .dl-button>div .label>.state .counter ul{transition:none!important}
+:root .dl-button>div .progress:after{transform:none!important;width:calc(var(--download-progress,0) * 100%);right:auto}
+}
+@keyframes action-soft-feedback{0%,100%{opacity:.2}50%{opacity:1}}
+
+.compress-button:disabled.compress{opacity:1}
+
+/* Keep finite action feedback inside the rounded button, without label reflow. */
+.action-button,.action-reset,.action-copy,.compress-button,.compress-button .inner{position:relative;overflow:hidden;isolation:isolate}
+.action-button,.action-reset,.action-copy{min-height:46px;max-width:100%}
+.action-label{display:grid;min-width:0;line-height:1.4}
+.action-label>span{grid-area:1/1;overflow-wrap:anywhere}
+.action-label-size{visibility:hidden;pointer-events:none}
+.compress-button{height:46px;min-height:46px}
+.compress-button .inner{height:46px}
+.compress-button .inner>span{white-space:nowrap}
+.dl-button{max-width:100%;border-radius:8px;overflow:hidden}
+.dl-button>div{max-width:100%;box-sizing:border-box}
+@keyframes action-progress-light{from{background-position:200% 0;opacity:.55}50%{opacity:1}to{background-position:-100% 0;opacity:.55}}
+.compress-button.compress:not(.real-success) .inner:after{background-size:200% 100%;animation-name:action-progress-light;transform:none;translate:none}

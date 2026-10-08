@@ -1,0 +1,127 @@
+{
+  "slug": "base64-vs-url-encoding",
+  "title": "Base64 versus URL encoding: what to encode and when",
+  "seoTitle": "Base64 vs URL Encoding: UTF-8, Query Values & Pitfalls",
+  "description": "Understand Base64 and percent encoding with small examples. Avoid double encoding, whole-URL escaping and treating reversible encoding as encryption.",
+  "primary": "Base64 vs URL encoding",
+  "secondary": [
+    "percent encoding versus Base64",
+    "UTF-8 Base64 text"
+  ],
+  "longTail": [
+    "why URL shows percent 2526 double encoding",
+    "URL decoder plus sign versus space"
+  ],
+  "intent": "Informational: Base64 vs URL encoding",
+  "topic": "Developer",
+  "category": "developer-tools",
+  "relatedTools": [
+    "base64-encoder-decoder",
+    "url-encoder-decoder",
+    "json-formatter"
+  ],
+  "relatedArticles": [
+    "fix-invalid-json",
+    "qr-code-not-scanning-print-checklist"
+  ],
+  "published": "2026-10-08",
+  "intro": "Base64 represents bytes using a limited text alphabet. URL component encoding escapes characters so a value can occupy a URL component without becoming URL syntax. They solve different problems. Neither transformation hides a secret from someone who can read and decode it.",
+  "sections": [
+    {
+      "id": "ask-which-layer-your-system-expects",
+      "title": "Ask which layer your system expects",
+      "paragraphs": [
+        "Before encoding anything, identify the destination: a Base64 field, a query parameter value, a path segment or an ordinary text field. Read the data contract. Applying the wrong encoding can produce plausible-looking text that the receiver interprets incorrectly. A string containing percent signs is not automatically URL-encoded data.",
+        "For an API request, the surrounding JSON structure and the encoded field are separate layers. You might Base64-encode one field and then serialize the whole object as JSON. Do not encode the complete object again unless the interface explicitly requires that. The [JSON repair guide](/blog/fix-invalid-json/) covers syntax checks after a wrapper has been decoded."
+      ]
+    },
+    {
+      "id": "base64-starts-from-bytes",
+      "title": "Base64 starts from bytes",
+      "paragraphs": [
+        "Text needs a character encoding before it can become bytes. Tool Fera’s [Base64 Encoder & Decoder](/developer-tools/base64-encoder-decoder/) uses UTF-8 text, so emoji and non-Latin characters are handled as encoded text rather than being assumed to fit one byte each. The tool is not a general binary-file uploader.",
+        "A small example is the text hello, whose UTF-8 bytes encode as aGVsbG8=. Ordinary padded Base64 uses four output characters for each three-byte group, with padding for the final incomplete group. It can therefore increase storage size. Treat it as a representation for transport, not a file compressor."
+      ]
+    },
+    {
+      "id": "url-component-encoding-protects-boundaries",
+      "title": "URL component encoding protects boundaries",
+      "paragraphs": [
+        "A query value containing an ampersand could be mistaken for the separator before another parameter. Encoding the value prevents that character from acting as URL syntax. In Tool Fera’s [URL Encoder & Decoder](/developer-tools/url-encoder-decoder/), A&B becomes A%26B and a space becomes %20 under encodeURIComponent semantics.",
+        "Encode the value or single path component, not the entire URL. Encoding https://example.com/?q=A&B as one component also escapes the scheme and separators, which is not how to assemble that address. Use a URL-building API or encode individual values at the boundary where they are inserted."
+      ]
+    },
+    {
+      "id": "a-plus-sign-is-not-always-a-space",
+      "title": "A plus sign is not always a space",
+      "paragraphs": [
+        "Some form-encoded query conventions represent a space with a plus sign. That is distinct from simply applying decodeURIComponent. Tool Fera’s component decoder leaves a literal plus sign as a plus sign; it does not silently change it to a space. If you are handling form-encoded data, use the convention expected by that format.",
+        "Malformed percent sequences are rejected. An incomplete escape or invalid UTF-8 sequence should not be “fixed” by guessing the missing bytes. Check where the value was copied and which encoding produced it. Truncated data is different from data that merely needs decoding."
+      ],
+      "table": {
+        "headers": [
+          "Task",
+          "Example input",
+          "Expected representation"
+        ],
+        "rows": [
+          [
+            "UTF-8 text to Base64",
+            "hello",
+            "aGVsbG8="
+          ],
+          [
+            "Escape a query value",
+            "A&B",
+            "A%26B"
+          ],
+          [
+            "Escape a space in a component",
+            "hello world",
+            "hello%20world"
+          ],
+          [
+            "Component decoding of plus",
+            "A+B",
+            "A+B"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "avoid-double-encoding",
+      "title": "Avoid double encoding",
+      "paragraphs": [
+        "If A&B is encoded once, it becomes A%26B. Encoding that output again escapes the percent sign and gives A%2526B. A receiver decoding once gets A%26B, not A&B. This is a common reason a URL shows escape sequences instead of the intended characters.",
+        "Keep raw values separate from encoded values in your code and notes. Encode at the interface boundary and decode at the matching boundary. Do not repeatedly run a decoder until the result “looks right”; a literal percent sequence may be meaningful user data. The number of encoding layers should come from the protocol, not visual guesswork."
+      ]
+    },
+    {
+      "id": "base64url-is-a-related-but-different-variant",
+      "title": "Base64URL is a related but different variant",
+      "paragraphs": [
+        "Standard Base64 can contain characters that need care in a URL. The URL-safe alphabet uses substitutions to avoid some of those conflicts, and padding conventions can differ by protocol. Do not assume that every decoder accepts every variant automatically.",
+        "Tool Fera’s text tool is described as Base64, not a complete token-processing or Base64URL verification suite. If you are reading a signed token, decoding a payload does not verify its signature or prove the token is trustworthy. Use the application’s proper validation library for that job."
+      ]
+    },
+    {
+      "id": "encoding-is-not-encryption",
+      "title": "Encoding is not encryption",
+      "paragraphs": [
+        "Anyone who knows the encoding can reverse it without a secret key. Putting a password, API token or private document in Base64 does not make it safe to publish. URL encoding is likewise visible data representation, not concealment. Local processing reduces unnecessary transmission to the tool, but it does not protect a value once you paste it into a public link.",
+        "Before sharing a result, remove secrets and check the decoded meaning. If the encoded text will go into a QR code, remember that a scanner can reveal it. The [QR testing checklist](/blog/qr-code-not-scanning-print-checklist/) focuses on readability and correct destinations, not making encoded content confidential."
+      ]
+    }
+  ],
+  "conclusion": "Choose the encoding from the destination’s rules, keep raw and encoded values distinct and test a round trip with a harmless example. That avoids the most common boundary mistakes while keeping reversible representation separate from security.",
+  "sources": [
+    {
+      "title": "RFC 4648: Base64 and URL-safe alphabets",
+      "url": "https://www.rfc-editor.org/rfc/rfc4648"
+    },
+    {
+      "title": "MDN encodeURIComponent reference",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent"
+    }
+  ]
+}

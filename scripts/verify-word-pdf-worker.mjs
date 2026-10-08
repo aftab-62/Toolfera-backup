@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {DOMParser} from '@xmldom/xmldom';
+import {parseDOCX} from '../tools/word-docx-parser.ts';
+
+const root=process.argv[2],input=await readFile(process.argv[3]),messages=[],requests=[];
+globalThis.DOMParser=DOMParser;
+globalThis.postMessage=message=>messages.push(message);
+globalThis.fetch=async url=>{
+ assert.match(url,/^\/_word\/fonts\/LiberationSans-(Regular|Bold|Italic|BoldItalic)\.ttf$/);
+ requests.push(url);return new Response(await readFile('public'+url));
+};
+let ocrCalls=0;globalThis.Worker=class{constructor(){ocrCalls++;throw Error('OCR must not be requested')}};
+await import('../tools/word-pdf.worker.ts');
+await globalThis.onmessage({data:{action:'read',bytes:new Uint8Array(input)}});
+const archive=messages.at(-1).result;assert(archive?.['word/document.xml']);
+const model=await parseDOCX(archive,new AbortController().signal,()=>{});
+messages.length=0;
+await globalThis.onmessage({data:{action:'convert',model}});
+const converted=messages.at(-1);assert(!converted.error);assert.equal(converted.result.pages,16);assert.equal(requests.length,4);assert(messages.some(m=>m.progress==='Generating PDF page 16…'));
+messages.length=0;
+await globalThis.onmessage({data:{action:'read',bytes:new Uint8Array([0,1,2])}});
+assert.match(messages.at(-1).error,/^This DOCX is damaged or unsupported/);
+messages.length=0;
+await globalThis.onmessage({data:{action:'unsupported'}});
+assert.equal(messages.at(-1).error,'Choose a supported Word operation.');
+const cancelled=new AbortController();cancelled.abort();await assert.rejects(parseDOCX(archive,cancelled.signal,()=>{}),{name:'AbortError'});
+assert.equal(ocrCalls,0);
+const report={passed:true,method:'Actual worker source message handler in Node with local font-fetch adapter; not a browser Worker',pages:16,fontRequests:requests,progressReachesLastPage:true,damagedArchiveHumanError:true,unsupportedOperationHumanError:true,abortedParse:true,ocrWorkerCalls:ocrCalls};
+await writeFile(root+'/worker-results.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

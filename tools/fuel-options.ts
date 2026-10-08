@@ -1,0 +1,28 @@
+export const currencies=['USD','EUR','GBP','CAD','AUD','JPY','CNY','INR','PKR','AED','SAR','CHF','SEK','NOK','DKK','NZD','SGD','HKD','ZAR','BRL','MXN','TRY','KRW','IDR','MYR','THB','BDT','EGP','QAR','KWD'];
+export const fuelRegions=[
+ {id:'custom',name:'Choose a country / region',currency:'USD',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'us',name:'United States',currency:'USD',distance:'mi',efficiency:'mpg',price:'gal'},
+ {id:'uk',name:'United Kingdom',currency:'GBP',distance:'mi',efficiency:'mpg-imp',price:'L'},
+ {id:'de',name:'Germany',currency:'EUR',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'fr',name:'France',currency:'EUR',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'es',name:'Spain',currency:'EUR',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'pk',name:'Pakistan',currency:'PKR',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'in',name:'India',currency:'INR',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'ae',name:'United Arab Emirates',currency:'AED',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'sa',name:'Saudi Arabia',currency:'SAR',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'ca',name:'Canada',currency:'CAD',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'au',name:'Australia',currency:'AUD',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'nz',name:'New Zealand',currency:'NZD',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'jp',name:'Japan',currency:'JPY',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'cn',name:'China',currency:'CNY',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'ch',name:'Switzerland',currency:'CHF',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'se',name:'Sweden',currency:'SEK',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'no',name:'Norway',currency:'NOK',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'dk',name:'Denmark',currency:'DKK',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'sg',name:'Singapore',currency:'SGD',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'hk',name:'Hong Kong',currency:'HKD',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'za',name:'South Africa',currency:'ZAR',distance:'km',efficiency:'L/100km',price:'L'},
+ {id:'br',name:'Brazil',currency:'BRL',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'mx',name:'Mexico',currency:'MXN',distance:'km',efficiency:'km/L',price:'L'},
+ {id:'tr',name:'Türkiye',currency:'TRY',distance:'km',efficiency:'L/100km',price:'L'}
+] as const;

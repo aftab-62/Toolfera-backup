@@ -1,0 +1,1 @@
+export const navs=[{title:'PDF',ids:['pdf-tools']},{title:'Image',ids:['image-tools']},{title:'Student',ids:['student-tools']},{title:'Calculators',ids:['finance-tools']},{title:'Text',ids:['text-tools']},{title:'Developer',ids:['developer-tools']},{title:'More',ids:['generators']}];

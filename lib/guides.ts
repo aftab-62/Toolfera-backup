@@ -1,0 +1,7 @@
+import {articles,articleUrl} from './articles.ts';
+export type GuideSummary={slug:string;title:string;description:string;topic:string;href:string;category:string};
+export const privacyGuide:GuideSummary={slug:'browser-tools-and-privacy',title:'What “processed in your browser” actually means',description:'Understand file picking, local processing, saved tool IDs and the practical limits of doing the work on your device.',topic:'Privacy & productivity',category:'all',href:'/blog/browser-tools-and-privacy/'};
+// This is a published-content list, not a set of speculative article routes.
+export const guides:GuideSummary[]=[privacyGuide,...articles.map(a=>({slug:a.slug,title:a.title,description:a.description,topic:a.topic,category:a.category,href:articleUrl(a)}))];
+export const getGuide=(slug:string)=>guides.find(g=>g.slug===slug);
+export const guideTopics=[{name:'PDF & documents',href:'/pdf-tools/',text:'Conversion, page handling and smaller files.'},{name:'Images',href:'/image-tools/',text:'Dimensions, formats and image quality.'},{name:'Student',href:'/student-tools/',text:'Grades, marks and academic calculations.'},{name:'Calculators',href:'/finance-tools/',text:'Percentages, assumptions and numerical estimates.'},{name:'Text & productivity',href:'/text-tools/',text:'Word counts, Unicode and deliberate cleanup.'},{name:'Developer',href:'/developer-tools/',text:'JSON, encoding and useful code utilities.'},{name:'Generators',href:'/generators/',text:'QR codes, randomness and useful outputs.'}];

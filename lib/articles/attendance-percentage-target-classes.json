@@ -1,0 +1,89 @@
+{
+  "slug": "attendance-percentage-target-classes",
+  "title": "Attendance percentage: how many classes reach your target?",
+  "seoTitle": "Attendance Target Calculator Explained: Classes & Formula",
+  "description": "Work out attendance percentage, classes needed and allowable absences. Follow a changing-denominator example and distinguish estimates from school policy.",
+  "primary": "how many classes to reach attendance target",
+  "secondary": [
+    "attendance percentage formula",
+    "classes I can miss attendance"
+  ],
+  "longTail": [
+    "18 out of 25 classes reach 75 percent attendance",
+    "why attending one class changes both attendance counts"
+  ],
+  "intent": "Informational: how many classes to reach attendance target",
+  "topic": "Student",
+  "category": "student-tools",
+  "relatedTools": [
+    "attendance-calculator",
+    "percentage-calculator",
+    "marks-calculator"
+  ],
+  "relatedArticles": [
+    "percentage-vs-percentage-points",
+    "gpa-vs-cgpa-credit-weighted"
+  ],
+  "published": "2026-10-08",
+  "intro": "Attendance is attended classes divided by conducted classes, multiplied by 100. To reach a target by attending future classes, both numbers increase. That changing denominator is why dividing a percentage shortfall by a fixed number usually gives the wrong answer.",
+  "sections": [
+    {
+      "id": "use-the-same-kind-of-session-in-both-counts",
+      "title": "Use the same kind of session in both counts",
+      "paragraphs": [
+        "Count attended and conducted sessions under the same policy. If your institution counts a double lecture as two sessions, apply that convention consistently. A cancelled session should not automatically be treated as a missed conducted class. Lab and lecture attendance may also be tracked separately.",
+        "The [Attendance Calculator](/student-tools/attendance-calculator/) needs your attended total, conducted total and target percentage. It cannot know how a school treats approved leave, late arrival or partial attendance. Get the current official counts first; a correct formula applied to the wrong record is still a wrong estimate."
+      ]
+    },
+    {
+      "id": "calculate-the-current-percentage",
+      "title": "Calculate the current percentage",
+      "paragraphs": [
+        "If you attended 18 of 25 conducted classes, current attendance is 18 ÷ 25 × 100 = 72%. The denominator is all conducted classes, not only the ones you attended. If no class has been conducted, this ratio is undefined; it is not a meaningful 0% or 100% record.",
+        "For a direct ratio calculation, the [Percentage Calculator](/student-tools/percentage-calculator/) can show the same arithmetic. Attendance planning goes further because a future attended session adds one to both attended and conducted totals. Keeping those two changes together is the key to reaching a reliable target."
+      ]
+    },
+    {
+      "id": "solve-for-future-classes-attended",
+      "title": "Solve for future classes attended",
+      "paragraphs": [
+        "Let A be attended classes, T conducted classes and r the target as a decimal. If you attend every one of the next x classes, the future ratio is (A + x) ÷ (T + x). To reach the target, it must be at least r. Rearranging gives x ≥ (rT − A) ÷ (1 − r), for targets below 100%.",
+        "With A = 18, T = 25 and r = 0.75, the result is (18.75 − 18) ÷ 0.25 = 3. Attend the next three classes and the ratio becomes 21 ÷ 28 = 75%. An answer of 2 would give 20 ÷ 27, approximately 74.07%, which is still below the target."
+      ]
+    },
+    {
+      "id": "round-required-classes-upward",
+      "title": "Round required classes upward",
+      "paragraphs": [
+        "The calculation may yield a fraction of a class, but ordinary attendance records count whole sessions. For 20 attended out of 30 at a 75% target, x ≥ (22.5 − 20) ÷ 0.25 = 10. For a different target, a value such as 6.2 would mean at least 7 complete future attended sessions under this model.",
+        "Do not rely on a displayed rounded percentage being equal to the requirement. A value shown as 75% could be slightly below 75% before rounding. Use the underlying counts and the policy’s actual threshold. Institutions may apply different display and eligibility rules."
+      ]
+    },
+    {
+      "id": "work-out-how-many-future-absences-are-possible",
+      "title": "Work out how many future absences are possible",
+      "paragraphs": [
+        "If you are already above a target, missing m future classes keeps A fixed while T increases. The condition is A ÷ (T + m) ≥ r. For a positive target, rearrange to m ≤ A ÷ r − T and round down to a whole number of classes.",
+        "For 24 attended out of 30 with a 75% target, m ≤ 24 ÷ 0.75 − 30 = 2. Missing two gives 24 ÷ 32 = 75%; missing three gives approximately 72.73%. This estimate assumes no other sessions change the counts. A later attended class, a correction to the register or a different policy changes the result."
+      ]
+    },
+    {
+      "id": "recognize-cases-the-formula-cannot-promise",
+      "title": "Recognize cases the formula cannot promise",
+      "paragraphs": [
+        "If you have ever missed a class, attending a finite number of future classes cannot make the overall ratio exactly 100% under this model. It approaches 100% but does not erase the past absence. A target of zero is also a special case rather than a reason to divide by zero in an allowable-absence formula.",
+        "Check how many sessions remain. If the calculator says you need 10 but only 6 are scheduled, attending them all does not reach the target. Talk to the institution about its actual policy; the calculation does not create an exemption or certify eligibility. It is a planning aid based on the counts you enter."
+      ]
+    },
+    {
+      "id": "keep-a-record-you-can-update",
+      "title": "Keep a record you can update",
+      "paragraphs": [
+        "Write down the conducted total, attended total and date of the estimate. After each session, update both counts consistently. Do not add future scheduled classes to the conducted total before they happen unless you are deliberately making a forecast and label it that way.",
+        "Tool Fera does not store your attendance inputs in its recent-tool list. Keep your own record and compare it with the official register. For other student calculations, use [Marks Calculator](/student-tools/marks-calculator/) or the [credit-weighted GPA guide](/blog/gpa-vs-cgpa-credit-weighted/). Attendance percentage, marks percentage and GPA describe different aspects of academic progress and should stay separately labeled."
+      ]
+    }
+  ],
+  "conclusion": "Use actual session counts, account for the denominator changing and round whole-class requirements in the safe direction. Then compare the mathematical estimate with the remaining timetable and your institution’s rules. A target is useful only when there are enough eligible future sessions to reach it.",
+  "sources": []
+}

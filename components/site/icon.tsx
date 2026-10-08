@@ -1,0 +1,3 @@
+import { FileText,Image,GraduationCap,Wallet,CaseSensitive,Braces,Sparkles,Fuel,Calculator,ScanLine,LockKeyhole,Percent,Combine,Minimize2,QrCode } from 'lucide-react';
+const icons:Record<string,typeof FileText>={pdf:FileText,image:Image,student:GraduationCap,finance:Wallet,text:CaseSensitive,code:Braces,generator:Sparkles,'pdf-merger':Combine,'pdf-compressor':Minimize2,'gpa-calculator':Calculator,'cgpa-calculator':GraduationCap,'percentage-calculator':Percent,'qr-code-generator':QrCode,'fuel-cost-calculator':Fuel,'password-generator':LockKeyhole,'image-resizer':ScanLine};
+export function Icon({name,className}:{name:string;className?:string}){const C=icons[name]||FileText;return <C className={className} size={22} strokeWidth={1.7} aria-hidden="true"/>}
