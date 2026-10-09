@@ -1,4 +1,9 @@
 import {finishAction} from './action-sequence.ts';
+/** Same rolling digit columns, with a truthful phase when motion is reduced. */
+export function downloadCounterOffsets(progress:number){
+ const percentage=Math.min(100,Math.max(0,Math.floor(progress*100)));
+ return percentage===100?[-18,-180,-540]:[0,-Math.floor(percentage/10)*18,-(percentage%10)*18];
+}
 export async function runDownloadSequence({href,signal,duration,doneDuration=0,beforeDone,onDone,onRequested,onProgress,activate,nextFrame}:{href:string;signal:AbortSignal;duration:number;doneDuration?:number;beforeDone?:()=>Promise<void>;onDone:()=>void;onRequested?:()=>void;onProgress?:(progress:number)=>void;activate:()=>void;nextFrame:()=>Promise<void>}){
  const start=performance.now(),url=new URL(href,location.origin);
  if(!['blob:','data:'].includes(url.protocol))throw new Error('The prepared download link is invalid. Generate the result again.');

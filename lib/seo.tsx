@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type {Article} from './article-types';
 // One build/runtime setting changes all canonicals, sitemap and schema together.
-const canonicalOrigin=new URL(process.env.SITE_URL||'https://utilityhub.maftab7806.chatgpt.site').origin;
+const canonicalOrigin=new URL(process.env.SITE_URL||'https://toolfera.xyz').origin;
 export const site={name:'Tool Fera',origin:canonicalOrigin,description:'Free browser-based PDF, image, student, calculator, text, developer and generator tools. Process your inputs on your device without an account.',ogImage:'/brand/toolfera-social.png'};
 export function seo(title:string,description:string,path:string,noindex=false):Metadata{
  const full=title.includes('Tool Fera')?title:`${title} | Tool Fera`;const url=new URL(path,site.origin).href;

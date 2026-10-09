@@ -4,7 +4,7 @@ import {readdir,readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {tools,categories,toolUrl,categoryTools} from '../lib/catalog.ts';
 const project=fileURLToPath(new URL('../',import.meta.url));
-const origin='https://utilityhub.maftab7806.chatgpt.site';
+const origin='https://toolfera.xyz';
 const runtime=spawn(process.execPath,['--import','./scripts/sites-env.mjs','./node_modules/wrangler/bin/wrangler.js','dev','--config','dist/server/wrangler.json','--local','--persist-to','.wrangler/state','--ip','127.0.0.1','--port','8787','--inspector-port','0'],{cwd:project,stdio:['ignore','pipe','pipe']});
 let logs='';runtime.stdout.on('data',d=>logs+=d);runtime.stderr.on('data',d=>logs+=d);
 const pages=['/',...categories.map(c=>'/'+c.slug+'/'),...tools.map(toolUrl),'/about/','/blog/','/blog/browser-tools-and-privacy/','/contact/','/privacy-policy/','/terms-of-use/','/disclaimer/'];

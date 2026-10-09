@@ -8,7 +8,7 @@ import {articles} from '../lib/articles.ts';
 import {guides} from '../lib/guides.ts';
 import {categoryContent} from '../lib/category-content.ts';
 const project=fileURLToPath(new URL('../',import.meta.url));
-const origin=process.env.SITE_URL||'https://utilityhub.maftab7806.chatgpt.site';
+const origin=process.env.SITE_URL||'https://toolfera.xyz';
 const pages=['/',...categories.map(c=>`/${c.slug}/`),...tools.filter(t=>t.kind).map(toolUrl),'/about/','/blog/',...guides.map(g=>g.href),'/privacy-policy/','/terms-of-use/','/disclaimer/'];
 const errors=[],check=(ok,msg)=>{if(!ok)errors.push(msg);};
 const decode=s=>(s||'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#(?:x27|39);/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n)));

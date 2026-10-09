@@ -763,7 +763,7 @@
 :root .dl-button.active .icon svg.arrow{animation:action-soft-feedback .8s ease-in-out infinite!important}
 :root .action-reset.action-running .action-motion,
 :root .action-copy.action-running .action-motion{animation-duration:.65s!important;animation-iteration-count:1!important}
-:root .dl-button .counter ul{transform:translateY(var(--y))!important;animation:none!important}
+:root .dl-button .counter ul{transform:translateY(var(--counter-progress-y,0px))!important;animation:none!important}
 :root .dl-button>div .label>.state .counter ul{transition:none!important}
 :root .dl-button>div .progress:after{transform:none!important;width:calc(var(--download-progress,0) * 100%);right:auto}
 }

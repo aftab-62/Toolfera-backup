@@ -1,3 +1,43 @@
+# Tool Fera — targeted action-animation QA
+
+Date: 9 October 2026. Primary source baseline: `ae1492a903cac5fcbe78d943e120a67244cbcf54` on `aftab-62/Toolfera/main`.
+
+This is a current targeted verification record, not a claim that the requested physical-mobile acceptance passed. Earlier SEO/deployment QA below is explicitly historical and was not rerun.
+
+## Completed / verified
+
+- All 46 current production tool interfaces were rendered and inspected at **1363 × 936**. No horizontal overflow was observed in those desktop route checks. Interface inspection does not establish that every tool operation passed.
+- The supplied mobile recording was visually inspected. Its visible URL is the secondary ChatGPT Sites copy. Download digits show 100% while the progress line is still advancing. The phone's OS reduced-motion preference cannot be read from a recording.
+- A confirmed shared reduced-motion code path immediately used the final rolling-digit offsets. The candidate instead derives those offsets from the existing real animation progress. Normal-motion CSS/keyframes, Download choreography and timing, and `runDownloadSequence` are unchanged.
+- Runtime changes are limited to `tools/download-action.ts`, `components/site/animated-download-button.tsx`, and one declaration in `components/site/tool-motion.css`. `scripts/download-action.test.mjs` adds five targeted regression checks.
+- Five automated checks passed: intermediate digit offsets; progress/choreography/Done/paint/download ordering; missing-output failure without false Done; cancellation without activation; and repeat progress starting fresh. Network and activation are mocked in these tests.
+- TypeScript passed with `pnpm exec tsc --noEmit --incremental false`.
+- One native Vercel-compatible `pnpm run build:vercel` passed. Build ID: `Vsnr8sN3naeh0V3HoqjE5`. No runtime source has changed since that build; documentation-only updates do not require rebuilding.
+- Desktop PDF Compressor completed two real operations and two actual browser downloads. Original fixture: 80,122 bytes; both downloaded PDFs: 75,813 bytes, valid PDF header and one parsed page. Compression paper positions visibly changed in captured desktop observations.
+- Desktop Download observations captured the initial zero state, intermediate rolling-digit/progress transforms, eventual Done state and the two saved browser files. Captured screenshots did not reliably show all intermediate states; the complete visible 0 → intermediate → 100 → Done sequence is therefore **partially verified**, not claimed as a mobile visual pass.
+- QR Generator produced an actual 512 × 512 image from entered text. Reset cleared the input and removed its downloads. Generate/Reset active feedback was observed in the rendered DOM; a complete frame-by-frame visual choreography check was not performed.
+- Captured browser errors were from a `chrome-extension://` content script. No Tool Fera application-origin error was found in these captured checks. This is not a guarantee that all untested actions are error-free.
+- Hash comparison against the primary Git tree found 481 of 484 existing tracked files unchanged before documentation updates. All converter/processing algorithms, SEO, sitemap/robots, canonicals/schema, Google/Bing configuration, IndexNow files, header/homepage/search/menu logic and dependency files remained byte-identical.
+- No IndexNow notification, sitemap submission, indexing request, or search-engine configuration change was performed.
+
+## Partially verified / remaining acceptance
+
+- The available browser is desktop-only at 1363 × 936. Its advertised API exposes neither viewport/device emulation nor OS reduced-motion emulation. The actual tested motion preference was `prefers-reduced-motion: reduce = false`.
+- **320, 360, 375, 390 and 430 px were not rendered or interacted with in this run.** No physical Android or iPhone was used. Physical-device testing was not performed.
+- The repaired reduced-motion digit path is covered by source inspection and automated logic tests; its rendered reduced-motion/mobile appearance remains unverified.
+- The recording establishes a Download mismatch but does not establish that every normal-motion mobile action is broken or repaired. No additional tool-specific bug was reproduced; no speculative tool-specific animation changes were made.
+- Reset/new-file/reload/scroll/double-tap/background/foreground coverage across all tools and requested mobile widths was not completed. Mocked cancellation/retry tests are not substitutes for those interactions.
+- The shared fix is used by 24 download-capable tools. That is component reach, not 24 physical-device failures or passes.
+- No Lighthouse, mobile performance timing, real-user Core Web Vitals, rankings or field-device metrics were measured.
+
+Full route and viewport matrices: [targeted action audit](https://github.com/aftab-62/Toolfera/blob/main/docs/MOBILE_ACTION_QA_2026-10-09.md).
+
+Deployment/commit IDs are reported in the final release receipt, rather than inferred from build success.
+
+---
+
+## Historical QA — 8 October 2026 (not newly retested)
+
 # Tool Fera — dedicated SEO/content QA
 
 Date: 8 October 2026. Published Tool Fera version 33, continuing version 32; no processing algorithms changed. This report contains checks from the current SEO/content phase only, not recycled conversion or physical-device results.
